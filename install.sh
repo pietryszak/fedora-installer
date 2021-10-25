@@ -70,6 +70,9 @@ sudo dnf install -y neofetch
 # Htop
 sudo dnf install -y htop
 
+# bpytop
+sudo dnf install -y bpytop
+
 # Thunderbird
 sudo dnf install -y thunderbird
 
