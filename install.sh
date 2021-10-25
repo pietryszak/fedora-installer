@@ -88,7 +88,7 @@ sudo ln -s /var/lib/flatpak/exports/bin/com.spotify.Client /usr/bin/spotify
 # Libreoffice draw
 sudo dnf install -y libreoffice-draw
 
-#ClamAV
+# ClamAV
 sudo dnf install -y clamav clamd clamav-update clamtk
 sudo setsebool -P antivirus_can_scan_system 1
 sudo systemctl stop clamav-freshclam
@@ -97,6 +97,10 @@ sudo freshclam
 sudo systemctl start clamav-freshclam
 sudo systemctl status clamav-freshclam
 sudo systemctl enable clamav-freshclam
+
+# Firewalld GUI
+sudo dnf install -y firewall-config
+
 
 # Sway
 sudo dnf install -y sway 
