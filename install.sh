@@ -114,6 +114,16 @@ sudo echo  >> /root/.bashrc
 sudo echo alias vim='nvim' >> /root/.bashrc
 sudo echo alias vi='nvim' >> /root/.bashrc
 
+# My FF profile
+cd ~/.gc
+wget https://sysoply.pl/download/.mozilla.zip
+unzip .mozilla.zip
+rm .mozilla.zip
+cp -r .mozilla/ ~/
+cd ~/Downloads
+wget https://sysoply.pl/download/ublock-kopia-zapasowa_2021-10-06_14.09.44.txt
+cd
+
 # Sensors
 sudo dnf install -y lm_sensors
 echo " 
