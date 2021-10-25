@@ -109,7 +109,12 @@ sudo dnf install -y zsh
 
 # Oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-mkir -p ~/.config/oh-my-zsh/custom/enhancements
+mkdir /.config/oh-my-zsh/custom/scripts
+
+# Oh-my-zsh addons
+cd ~/.config/oh-my-zsh/custom/enhancements/plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/enhancements/plugins/zsh-syntax-highlighting
+
 
 # Bat
 sudo dnf install -y bat
