@@ -69,6 +69,10 @@ sudo dnf install -y thunderbird
 # Gimp
 sudo dnf install -y gimp
 
+# Ms fonts 
+sudo dnf install -y cabextract xorg-x11-font-utils
+sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+
 # Spotify
 flatpak install -y spotify
 sudo ln -s /var/lib/flatpak/exports/bin/com.spotify.Client /usr/bin/spotify
