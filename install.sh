@@ -12,14 +12,14 @@ max_parallel_downloads=10
 defaultyes=True">> /etc/dnf/dnf.conf'
 
 # RPM Fusion - extra repo for apps not provided by Fedora or RH
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf groupupdate core
-sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-sudo dnf groupupdate sound-and-video
-sudo dnf install rpmfusion-free-release-tainted
-sudo dnf install libdvdcss
-sudo dnf install rpmfusion-nonfree-release-tainted
-sudo dnf install \*-firmware
+sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf groupupdate -y core
+sudo dnf groupupdate -y multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+sudo dnf groupupdate -y  sound-and-video
+sudo dnf install -y rpmfusion-free-release-tainted
+sudo dnf install -y libdvdcss
+sudo dnf install -y rpmfusion-nonfree-release-tainted
+sudo dnf install -y \*-firmware
 
 # Update system
 sudo dnf -y update
@@ -40,4 +40,6 @@ sudo dnf install -y neofetch
 # Htop
 sudo dnf install -y htop
 
+# Spotify
+flatpak install -y spotify
 
