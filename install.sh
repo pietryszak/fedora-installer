@@ -5,6 +5,8 @@
 # Fedora installer sysoply.pl Paweł Pietryszak 2021
 
 ############################################################################################################################################
+# GTK theme
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 
 # DNF settings
 sudo bash -c 'echo "fastestmirror=True
@@ -42,4 +44,5 @@ sudo dnf install -y htop
 
 # Spotify
 flatpak install -y spotify
+sudo ln -s /var/lib/flatpak/exports/bin/com.spotify.Client /usr/bin/spotify
 
