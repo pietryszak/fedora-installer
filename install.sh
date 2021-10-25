@@ -85,6 +85,9 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 sudo flatpak install -y spotify
 sudo ln -s /var/lib/flatpak/exports/bin/com.spotify.Client /usr/bin/spotify
 
+# Sway
+sudo dnf install -y sway 
+
 # Sensors
 sudo dnf install -y lm_sensors
 echo " 
