@@ -62,7 +62,7 @@ sudo dnf install -y gnome-extensions-app
 sudo dnf install -y gnome-tweaks
 
 # Neovim
-sudo dnf install -y neovim
+sudo dnf install -y neovim python3-neovim
 
 # Neofetch
 sudo dnf install -y neofetch
@@ -103,8 +103,12 @@ sudo dnf install -y sway
 
 # Barshrc alias
 echo  >> ~/.bashrc
-echo alias vim="nvim" >> ~/.bashrc
-echo alias vi="nvim" >> ~/.bashrc
+echo alias vim='nvim' >> ~/.bashrc
+echo alias vi='nvim' >> ~/.bashrc
+source ~/.bashrc
+sudo echo  >> /root/.bashrc
+sudo echo alias vim='nvim' >> /root/.bashrc
+sudo echo alias vi='nvim' >> /root/.bashrc
 
 # Sensors
 sudo dnf install -y lm_sensors
