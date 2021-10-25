@@ -102,9 +102,11 @@ sudo systemctl enable clamav-freshclam
 sudo dnf install -y firewall-config
 
 # Zsh
-sudo dnf install -y util-linux-user
 sudo dnf install -y zsh
-sudo usermod --shell /bin/zsh $USER
+
+# Oh-my-zsh
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+mkir -p ~/.config/oh-my-zsh/custom/enhancements
 
 # Sway
 sudo dnf install -y sway 
