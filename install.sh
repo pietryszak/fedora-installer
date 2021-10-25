@@ -14,6 +14,9 @@ max_parallel_downloads=10
 defaultyes=True">> /etc/dnf/dnf.conf'
 sudo sed -i 's/installonly_limit=3/installonly_limit=2/g' /etc/dnf/dnf.conf
 
+# Update system
+sudo dnf -y update
+
 # RPM Fusion - extra repo for apps not provided by Fedora or RH free and nonfree
 sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
@@ -37,8 +40,12 @@ sudo dnf install -y libdvdcss
 sudo dnf install -y rpmfusion-nonfree-release-tainted
 sudo dnf install -y \*-firmware
 
-# Update system
-sudo dnf -y update
+# Intel multimedia codecs
+sudo dnf install -y intel-media-driver
+sudo dnf install -y libva-intel-driver 
+
+# Install codecs 
+sudo dnf install -y ffmpeg
 
 # Create folders
 mkdir ~/.gc
