@@ -84,8 +84,13 @@ echo "
 "
 yes | sudo sensors-detect
 
+# Remove apps th
 # Folder cleanup
 rm ~/install.sh
 
 # Restart
-reboot
+sudo dnf upgrade --refresh
+sudo dnf check
+sudo dnf -y autoremove
+sudo dnf update
+sudo reboot
