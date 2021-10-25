@@ -101,6 +101,11 @@ sudo systemctl enable clamav-freshclam
 # Sway
 sudo dnf install -y sway 
 
+# Barshrc alias
+echo  >> ~/.bashrc
+echo alias vim="nvim" >> ~/.bashrc
+echo alias vi="nvim" >> ~/.bashrc
+
 # Sensors
 sudo dnf install -y lm_sensors
 echo " 
