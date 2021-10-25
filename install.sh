@@ -111,6 +111,9 @@ sudo dnf install -y zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 mkir -p ~/.config/oh-my-zsh/custom/enhancements
 
+# Bat
+sudo dnf install -y bat
+
 # Sway
 sudo dnf install -y sway 
 
