@@ -8,14 +8,21 @@
 # GTK theme
 gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 
+# Sudo timeout
+sudo bash -c 'echo "
+Defaults        env_reset,timestamp_timeout=30" >>  /etc/sudoers'
+
 # DNF settings
 sudo bash -c 'echo "fastestmirror=True
 max_parallel_downloads=10
-defaultyes=True">> /etc/dnf/dnf.conf'
+defaultyes=True" >> /etc/dnf/dnf.conf'
 sudo sed -i 's/installonly_limit=3/installonly_limit=2/g' /etc/dnf/dnf.conf
 
 # Update system
 sudo dnf -y update
+
+# Remove apps 
+sudo dnf remove -y gnome-maps gnome-clocks rhythmbox gnome-weather gnome-contacts gnome-tour totem
 
 # RPM Fusion - extra repo for apps not provided by Fedora or RH free and nonfree
 sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
@@ -74,7 +81,8 @@ sudo dnf install -y cabextract xorg-x11-font-utils
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 # Spotify
-flatpak install -y spotify
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak install -y spotify
 sudo ln -s /var/lib/flatpak/exports/bin/com.spotify.Client /usr/bin/spotify
 
 # Sensors
@@ -88,7 +96,6 @@ echo "
 "
 yes | sudo sensors-detect
 
-# Remove apps th
 # Folder cleanup
 rm ~/install.sh
 
