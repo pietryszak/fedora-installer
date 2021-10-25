@@ -101,6 +101,10 @@ sudo systemctl enable clamav-freshclam
 # Firewalld GUI
 sudo dnf install -y firewall-config
 
+# Zsh
+sudo dnf install -y util-linux-user
+sudo dnf install -y zsh
+sudo usermod --shell /bin/zsh $USER
 
 # Sway
 sudo dnf install -y sway 
