@@ -10,14 +10,15 @@ echo "
 yes | sudo sensors-detect
 
 # Spotify part 2
-yes | DISPLAY= lpf update 
+
 echo " 
 ############################################################################################################################################
 
-# INSTALLING PACKEGE. IT'S TAKE A TIME. PLEASE WAIT !
+# INSTALLING PACKEGE. IT'S TAKE A TIME. PLEASE WAIT ! TO CONTINUE PRESS q !!
 
 ############################################################################################################################################
 "
+yes | DISPLAY= lpf update
 
 # Reboot
 sudo reboot
