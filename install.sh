@@ -140,6 +140,11 @@ sudo dnf remove -y alacritty
 # Insall kitty
 sudo dnf install -y kitty
 
+# Install caprine
+sudo dnf copr enable -y  dusansimic/caprine 
+sudo dnf update -y
+sudo dnf install -y caprine
+
 # Barshrc alias
 echo  >> ~/.bashrc
 echo alias vim='nvim' >> ~/.bashrc
@@ -176,6 +181,6 @@ rm ~/install.sh
 # Restart
 sudo dnf upgrade --refresh
 sudo dnf check
-sudo dnf -y autoremove
-sudo dnf update
+sudo dnf autoremove -y
+sudo dnf update -y
 sudo reboot
