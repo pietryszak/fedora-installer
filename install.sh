@@ -162,17 +162,6 @@ cd ~/Downloads
 wget https://sysoply.pl/download/ublock-kopia-zapasowa_2021-10-06_14.09.44.txt
 cd
 
-# Sensors
-sudo dnf install -y lm_sensors
-echo " 
-############################################################################################################################################
-
-# FINDING SENSORS. IT'S TAKE A TIME. PLEASE WAIT !
-
-############################################################################################################################################
-"
-yes | sudo sensors-detect
-
 # Sudo timeout back to default
 sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        env_reset,timestamp_timeout=60/g' /etc/default/grub
 
@@ -190,3 +179,5 @@ sudo usermod -a -G pkg-build pietryszak
 
 # Folder cleanup
 rm ~/install.sh
+
+exit
