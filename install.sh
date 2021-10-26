@@ -168,8 +168,11 @@ sudo dnf autoremove -y
 sudo dnf update -y
 
 #Spotify
-#sudo flatpak install -y spotify
-#sudo ln -s /var/lib/flatpak/exports/bin/com.spotify.Client /usr/bin/spotify
 sudo dnf install -y lpf-spotify-client
-sudo usermod -a -G pkg-build pietryszak
+sudo usermod -a -G pkg-build $USER
+echo " 
+############################################################################################################################################
+# PLEASE PROVIDE YOUR PASSWORD !
+############################################################################################################################################
+"
 su - $USER
