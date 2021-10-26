@@ -3,16 +3,7 @@ sudo dnf install -y lm_sensors
 echo " 
 ############################################################################################################################################
 
-
-
-
-
 # FINDING SENSORS. IT'S TAKE A TIME. PLEASE WAIT !
-
-
-
-
-
 
 ############################################################################################################################################
 "
@@ -28,7 +19,6 @@ echo "
 "
 sudo -u pkg-build lpf build spotify-client 
 sudo dnf install -y /var/lib/lpf/rpms/spotify-client/spotify-client-*.rpm
-
 
 # Reboot
 sudo reboot
