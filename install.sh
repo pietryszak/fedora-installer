@@ -10,7 +10,7 @@ gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 
 # Sudo timeout
 sudo bash -c 'echo "
-Defaults        env_reset,timestamp_timeout=30" >>  /etc/sudoers'
+Defaults        env_reset,timestamp_timeout=60" >>  /etc/sudoers'
 
 # DNF settings
 sudo bash -c 'echo "fastestmirror=True
@@ -83,10 +83,8 @@ sudo dnf install -y gimp
 sudo dnf install -y cabextract xorg-x11-font-utils
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
-# Spotify
+# Flathub
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-sudo flatpak install -y spotify
-sudo ln -s /var/lib/flatpak/exports/bin/com.spotify.Client /usr/bin/spotify
 
 # Libreoffice draw
 sudo dnf install -y libreoffice-draw
@@ -175,12 +173,20 @@ echo "
 "
 yes | sudo sensors-detect
 
-# Folder cleanup
-rm ~/install.sh
+# Sudo timeout back to default
+sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        env_reset,timestamp_timeout=60/g' /etc/default/grub
 
-# Restart
+# Last update
 sudo dnf upgrade --refresh
 sudo dnf check
 sudo dnf autoremove -y
 sudo dnf update -y
-sudo reboot
+
+#Spotify
+#sudo flatpak install -y spotify
+#sudo ln -s /var/lib/flatpak/exports/bin/com.spotify.Client /usr/bin/spotify
+sudo dnf install -y lpf-spotify-client
+sudo usermod -a -G pkg-build pietryszak
+
+# Folder cleanup
+rm ~/install.sh
