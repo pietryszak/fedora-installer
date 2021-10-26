@@ -150,7 +150,7 @@ code --install-extension esbenp.prettier-vscode
 code --install-extension redhat.vscode-xml
 code --install-extension visualstudioexptteam.vscodeintellicode
 code --install-extension ms-azuretools.vscode-docker           
-code --install-extension vscode-icons-team.vscode-icons
+code --install-extension jonathanharty.gruvbox-material-icon-theme
 code --install-extension redhat.vscode-yaml            
 
 
