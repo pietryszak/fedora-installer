@@ -54,9 +54,6 @@ sudo dnf install -y libva-intel-driver
 # Install codecs 
 sudo dnf install -y ffmpeg
 
-# Create folders
-mkdir ~/.gc
-
 # Gnome extensions
 sudo dnf install -y gnome-extensions-app 
 sudo dnf install -y gnome-tweaks
