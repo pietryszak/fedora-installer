@@ -10,6 +10,7 @@ echo "
 yes | sudo sensors-detect
 
 # Spotify part 2
+yes | DISPLAY= lpf update 
 echo " 
 ############################################################################################################################################
 
@@ -17,8 +18,6 @@ echo "
 
 ############################################################################################################################################
 "
-sudo -u pkg-build lpf build spotify-client 
-sudo dnf install -y /var/lib/lpf/rpms/spotify-client/spotify-client-*.rpm
 
 # Reboot
 sudo reboot
