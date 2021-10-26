@@ -124,8 +124,8 @@ wget https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloL
 wget https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Bold.ttf
 wget https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Italic.ttf
 wget https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Bold%20Italic.ttf
-sudo mkdir -p ~/.local/share/fonts/nerd
-sudo cp MesloLGS* ~/.local/share/fonts/nerd
+mkdir -p ~/.local/share/fonts/nerd
+cp MesloLGS* ~/.local/share/fonts/nerd
 fc-cache -fv
 
 # Bat
