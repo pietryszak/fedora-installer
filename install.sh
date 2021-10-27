@@ -156,6 +156,7 @@ code --install-extension redhat.vscode-xml
 code --install-extension visualstudioexptteam.vscodeintellicode
 code --install-extension ms-azuretools.vscode-docker   
 code --install-extension redhat.vscode-yaml 
+code --install-extension xadillax.viml
 code --install-extension jonathanharty.gruvbox-material-icon-theme
 code --install-extension jdinhlife.gruvbox
            
