@@ -78,6 +78,9 @@ sudo dnf install -y bat
 # Perl for fzf
 sudo dnf install -y perl
 
+#
+sudo dnf install -y ripgrep
+
 # Neofetch
 sudo dnf install -y neofetch
 
