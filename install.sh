@@ -69,6 +69,15 @@ sudo dnf install -y nodejs
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
+# FZF for neovim
+sudo dnf install -y  fzf
+
+# Bat - new cat ;)
+sudo dnf install -y bat
+
+# Perl for fzf
+sudo dnf install -y perl
+
 # Neofetch
 sudo dnf install -y neofetch
 
