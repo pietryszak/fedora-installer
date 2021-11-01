@@ -61,7 +61,9 @@ sudo dnf install -y gnome-tweaks
 # Neovim
 sudo dnf install -y neovim python3-neovim
 sudo dnf install -y powerline-fonts
-mkdir -p ~/.config/nvim
+
+# Nodejs for neovim plugins
+sudo dnf install -y nodejs
 
 # Vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
