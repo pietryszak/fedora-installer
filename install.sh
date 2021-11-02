@@ -58,6 +58,9 @@ sudo dnf install -y ffmpeg
 sudo dnf install -y gnome-extensions-app 
 sudo dnf install -y gnome-tweaks
 
+# Wl-clipboard
+sudo dnf install -y wl-clipboard
+
 # Neovim
 sudo dnf install -y neovim python3-neovim
 sudo dnf install -y powerline-fonts
@@ -78,7 +81,7 @@ sudo dnf install -y bat
 # Perl for fzf
 sudo dnf install -y perl
 
-#
+# Ripgrep
 sudo dnf install -y ripgrep
 
 # Neofetch
