@@ -89,6 +89,8 @@ sudo dnf install -y most
 
 # Grimshot - sway screenshot tool
 sudo dnf install -y grimshot
+mkdir -p $HOME/Pictures/screenshots
+echo 'XDG_SCREENSHOTS_DIR="$HOME/Pictures/screenshots"' | sudo tee -a ~/.config/user-dirs.dirs
 
 # Neofetch
 sudo dnf install -y neofetch
