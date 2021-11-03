@@ -84,6 +84,9 @@ sudo dnf install -y perl
 # Ripgrep
 sudo dnf install -y ripgrep
 
+# Most 
+sudo dnf install -y most
+
 # Neofetch
 sudo dnf install -y neofetch
 
