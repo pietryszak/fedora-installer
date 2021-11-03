@@ -84,8 +84,11 @@ sudo dnf install -y perl
 # Ripgrep
 sudo dnf install -y ripgrep
 
-# Most 
+# Most = man pager
 sudo dnf install -y most
+
+# Grimshot - sway screenshot tool
+sudo dnf install -y grimshot
 
 # Neofetch
 sudo dnf install -y neofetch
