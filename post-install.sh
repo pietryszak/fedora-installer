@@ -1,22 +1,3 @@
-# My dotfiles
-cd ~/.gc/
-mkdir -p myconfig
-cd myconfig
-git clone https://github.com/pietryszak/dotfiles.git
-cd dotfiles 
-cd 
-
-# Sensors
-sudo dnf install -y lm_sensors
-echo " 
-############################################################################################################################################
-
-# FINDING SENSORS. IT'S TAKE A TIME. PLEASE WAIT !
-
-############################################################################################################################################
-"
-yes | sudo sensors-detect
-
 # Sudo timeout back to default
 sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        env_reset,timestamp_timeout=60/g' /etc/default/grub
 
