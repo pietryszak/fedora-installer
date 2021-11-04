@@ -165,6 +165,9 @@ sudo dnf remove -y alacritty
 # Insall kitty
 sudo dnf install -y kitty
 
+# Install kernel headers
+sudo dnf install -y kernel-devel kernel-headers    
+
 # Install caprine
 sudo dnf copr enable -y  dusansimic/caprine 
 sudo dnf update -y
