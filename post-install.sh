@@ -28,6 +28,11 @@ echo "
 "
 yes | DISPLAY= lpf update
 
+# Bashrc alias for root 
+sudo echo  >> /root/.bashrc
+sudo echo alias vim='nvim' >> /root/.bashrc
+sudo echo alias vi='nvim' >> /root/.bashrc
+
 # Oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
