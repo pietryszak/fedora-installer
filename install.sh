@@ -18,11 +18,11 @@ max_parallel_downloads=10
 defaultyes=True" >> /etc/dnf/dnf.conf'
 sudo sed -i 's/installonly_limit=3/installonly_limit=2/g' /etc/dnf/dnf.conf
 
-# Update system
-sudo dnf -y update
-
 # Remove apps 
 sudo dnf remove -y gnome-maps gnome-clocks rhythmbox gnome-weather gnome-contacts gnome-tour totem gnome-terminal
+
+# Update system
+sudo dnf -y update
 
 # RPM Fusion - extra repo for apps not provided by Fedora or RH free and nonfree
 sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
