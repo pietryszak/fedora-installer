@@ -203,6 +203,10 @@ echo  >> ~/.bashrc
 echo alias vim='nvim' >> ~/.bashrc
 echo alias vi='nvim' >> ~/.bashrc
 source ~/.bashrc
+sudo bash -c "sudo echo  >> /root/.bashrc"
+sudo bash -c "sudo echo alias vim='nvim' >> /root/.bashrc"
+sudo bash -c "sudo echo alias vi='nvim' >> /root/.bashrc"
+sudo bash -c  "source ~/.bashrc"
 
 # My FF profile
 cd ~/.gc
