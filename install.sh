@@ -198,14 +198,11 @@ code --install-extension xadillax.viml
 code --install-extension jonathanharty.gruvbox-material-icon-theme
 code --install-extension jdinhlife.gruvbox
            
-# Barshrc alias
+# Barshrc alias for user
 echo  >> ~/.bashrc
 echo alias vim='nvim' >> ~/.bashrc
 echo alias vi='nvim' >> ~/.bashrc
 source ~/.bashrc
-sudo echo  >> /root/.bashrc
-sudo echo alias vim='nvim' >> /root/.bashrc
-sudo echo alias vi='nvim' >> /root/.bashrc
 
 # My FF profile
 cd ~/.gc
