@@ -134,7 +134,6 @@ sudo dnf install -y zsh
 
 # Oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-mkdir /.config/oh-my-zsh/custom/scripts
 
 # Oh-my-zsh addons
 cd ~/.config/oh-my-zsh/custom/plugins
