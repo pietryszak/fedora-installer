@@ -183,6 +183,9 @@ cd VirtualBox
 LatestVirtualBoxVersion=$(wget -qO - https://download.virtualbox.org/virtualbox/LATEST-STABLE.TXT) && wget "https://download.virtualbox.org/virtualbox/${LatestVirtualBoxVersion}/Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack"
 yes | sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack
 
+# Virtualbox NAT Network
+VBoxManage natnetwork add --netname NatNetwork --network "10.0.2.0/24" --enable
+
 # Install caprine
 sudo dnf copr enable -y  dusansimic/caprine 
 sudo dnf update -y
