@@ -220,6 +220,24 @@ sudo dnf check
 sudo dnf autoremove -y
 sudo dnf update -y
 
+# My dotfiles
+cd ~/.gc/
+mkdir -p myconfig
+cd myconfig
+git clone https://github.com/pietryszak/dotfiles.git
+cd 
+
+# Sensors
+sudo dnf install -y lm_sensors
+echo " 
+############################################################################################################################################
+
+# FINDING SENSORS. IT'S TAKE A TIME. PLEASE WAIT !
+
+############################################################################################################################################
+"
+yes | sudo sensors-detect
+
 #Spotify
 sudo dnf install -y lpf-spotify-client
 sudo usermod -a -G pkg-build $USER
