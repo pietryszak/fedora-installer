@@ -248,6 +248,3 @@ sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        e
 #Spotify
 sudo dnf install -y lpf-spotify-client
 sudo usermod -a -G pkg-build $USER
-
-# Oh-my-zsh
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
