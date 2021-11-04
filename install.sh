@@ -153,8 +153,8 @@ sudo dnf install -y sway
 # Remove apps 
 sudo dnf remove -y alacritty
 
-# Insall kitty
-sudo dnf install -y kitty
+# Insall terminator
+sudo dnf install -y terminator
 
 # Install kernel headers
 sudo dnf install -y kernel-devel kernel-headers    
