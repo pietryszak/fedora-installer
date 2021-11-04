@@ -245,6 +245,9 @@ yes | sudo sensors-detect
 # Sudo timeout back to default
 sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        env_reset,timestamp_timeout=60/g' /etc/default/grub
 
+# Rust 
+sudo dnf install -y rust cargo
+
 #Spotify
 sudo dnf install -y lpf-spotify-client
 sudo usermod -a -G pkg-build $USER
