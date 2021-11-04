@@ -17,6 +17,9 @@ echo "
 "
 yes | sudo sensors-detect
 
+# Sudo timeout back to default
+sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        env_reset,timestamp_timeout=60/g' /etc/default/grub
+
 # Spotify part 2
 
 echo " 
