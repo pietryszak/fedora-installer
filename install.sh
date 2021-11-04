@@ -168,6 +168,21 @@ sudo dnf install -y kitty
 # Install kernel headers
 sudo dnf install -y kernel-devel kernel-headers    
 
+# Virtualbox
+sudo dnf install -y VirtualBox kernel-devel-$(uname -r) akmod-VirtualBox
+sudo akmods   
+sudo systemctl restart vboxdrv  
+lsmod  | grep -i vbox
+sudo usermod -a -G vboxusers $USER   
+sudo modprobe vboxdrv  
+
+# Virtualbox extensions pack
+cd ~/.gc
+mkdir -p VirtualBox
+cd VirtualBox
+LatestVirtualBoxVersion=$(wget -qO - https://download.virtualbox.org/virtualbox/LATEST-STABLE.TXT) && wget "https://download.virtualbox.org/virtualbox/${LatestVirtualBoxVersion}/Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack"
+yes | sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack
+
 # Install caprine
 sudo dnf copr enable -y  dusansimic/caprine 
 sudo dnf update -y
