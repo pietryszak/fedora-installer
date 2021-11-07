@@ -253,7 +253,6 @@ sudo dnf install -y python3-pip
 
 # Sway info for windows classes
 pip install --user swaytools  
-export PATH=$PATH:~/.local/bin
 
 #Spotify
 sudo dnf install -y lpf-spotify-client
