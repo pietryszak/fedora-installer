@@ -5,8 +5,6 @@
 # Fedora installer sysoply.pl Paweł Pietryszak 2021
 
 ############################################################################################################################################
-# GTK theme
-gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 
 # Sudo timeout
 sudo bash -c 'echo "
@@ -242,6 +240,18 @@ sudo dnf upgrade --refresh
 sudo dnf check
 sudo dnf autoremove -y
 sudo dnf update -y
+
+# GTK Gruvbox theme
+cd ~/.gc
+git clone https://github.com/TheGreatMcPain/gruvbox-material-gtk.git
+cd gruvbox-material-gtk
+mkir -p ~/.local/share/themes/
+cp themes/* ~/.local/share/themes/
+cd
+
+# Gruvbox gtk icons 
+sudo wget -qO- https://git.io/papirus-icon-theme-install | sh
+
 
 # My dotfiles
 cd ~/.gc/
