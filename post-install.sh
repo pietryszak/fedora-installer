@@ -1,17 +1,3 @@
-# Spotify part 2
-
-echo " 
-############################################################################################################################################
-
-# INSTALLING PACKAGE. IT'S TAKE A TIME. PLEASE WAIT ! TO CONTINUE PRESS q !!
-
-############################################################################################################################################
-"
-DISPLAY= lpf update
-
-# Oh-my-zsh
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # Oh-my-zsh addons
 cd ~/.config/oh-my-zsh/custom/plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
