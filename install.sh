@@ -197,9 +197,25 @@ code --install-extension redhat.vscode-yaml
 code --install-extension xadillax.viml
 code --install-extension jonathanharty.gruvbox-material-icon-theme
 code --install-extension jdinhlife.gruvbox
- 
+
+# Rust 
+sudo dnf install -y rust cargo
+
+# Python pip
+sudo dnf install -y python3-pip
+
+# Sway info for windows classes
+pip install --user swaytools  
+
 # Spotify flatpak
 sudo flatpak install -y spotify 
+ 
+# Ncspot
+dnf install -y pulseaudio-libs-devel libxcb-devel openssl-devel ncurses-devel dbus-devel
+cd ~/.gc
+git clone https://github.com/hrkfdn/ncspot.git
+cd ncspot
+cargo install ncspot
  
 # Barshrc alias for user
 echo  >> ~/.bashrc
@@ -233,15 +249,6 @@ mkdir -p myconfig
 cd myconfig
 git clone https://github.com/pietryszak/dotfiles.git
 cd 
-
-# Rust 
-sudo dnf install -y rust cargo
-
-# Python pip
-sudo dnf install -y python3-pip
-
-# Sway info for windows classes
-pip install --user swaytools  
 
 # Sensors
 sudo dnf install -y lm_sensors
