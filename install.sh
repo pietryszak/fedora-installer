@@ -197,7 +197,10 @@ code --install-extension redhat.vscode-yaml
 code --install-extension xadillax.viml
 code --install-extension jonathanharty.gruvbox-material-icon-theme
 code --install-extension jdinhlife.gruvbox
-           
+ 
+# Spotify flatpak
+sudo flatpak install -y spotify 
+ 
 # Barshrc alias for user
 echo  >> ~/.bashrc
 echo alias vim='nvim' >> ~/.bashrc
@@ -231,6 +234,15 @@ cd myconfig
 git clone https://github.com/pietryszak/dotfiles.git
 cd 
 
+# Rust 
+sudo dnf install -y rust cargo
+
+# Python pip
+sudo dnf install -y python3-pip
+
+# Sway info for windows classes
+pip install --user swaytools  
+
 # Sensors
 sudo dnf install -y lm_sensors
 echo " 
@@ -241,18 +253,6 @@ echo "
 ############################################################################################################################################
 "
 yes | sudo sensors-detect
-
-# Sudo timeout back to default
-sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        env_reset,timestamp_timeout=60/g' /etc/default/grub
-
-# Rust 
-sudo dnf install -y rust cargo
-
-# Python pip
-sudo dnf install -y python3-pip
-
-# Sway info for windows classes
-pip install --user swaytools  
 
 # Oh-my-zsh ALWAYS AS LAST
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
