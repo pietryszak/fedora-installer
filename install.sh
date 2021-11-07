@@ -225,22 +225,6 @@ sudo bash -c "sudo echo alias vim='nvim' >> /root/.bashrc"
 sudo bash -c "sudo echo alias vi='nvim' >> /root/.bashrc"
 sudo bash -c  "source ~/.bashrc"
 
-# My FF profile
-cd ~/.gc
-wget https://sysoply.pl/download/.mozilla.zip
-unzip .mozilla.zip
-rm .mozilla.zip
-cp -r .mozilla/ ~/
-cd ~/Downloads
-wget https://sysoply.pl/download/ublock-kopia-zapasowa_2021-10-06_14.09.44.txt
-cd
-
-# Last update
-sudo dnf upgrade --refresh
-sudo dnf check
-sudo dnf autoremove -y
-sudo dnf update -y
-
 # GTK Gruvbox theme
 cd ~/.gc
 git clone https://github.com/TheGreatMcPain/gruvbox-material-gtk.git
@@ -251,7 +235,19 @@ cd
 
 # Gruvbox gtk icons 
 sudo wget -qO- https://git.io/papirus-icon-theme-install | sh
+cd ~/.gc
+wget https://sysoply.pl/download/Gruvbox.tar.gz
+tar -xf Gruvbox.tar.gz -C ~/.local/share/icons/ 
 
+# My FF profile
+cd ~/.gc
+wget https://sysoply.pl/download/.mozilla.zip
+unzip .mozilla.zip
+rm .mozilla.zip
+cp -r .mozilla/ ~/
+cd ~/Downloads
+wget https://sysoply.pl/download/ublock-kopia-zapasowa_2021-10-06_14.09.44.txt
+cd
 
 # My dotfiles
 cd ~/.gc/
@@ -270,6 +266,12 @@ echo "
 ############################################################################################################################################
 "
 yes | sudo sensors-detect
+
+# Last update
+sudo dnf upgrade --refresh
+sudo dnf check
+sudo dnf autoremove -y
+sudo dnf update -y
 
 # Oh-my-zsh ALWAYS AS LAST
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
