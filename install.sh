@@ -253,3 +253,6 @@ sudo dnf install -y python3-pip
 
 # Sway info for windows classes
 pip install --user swaytools  
+
+# Oh-my-zsh ALWAYS AS LAST
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
