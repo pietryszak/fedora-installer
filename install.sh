@@ -253,13 +253,3 @@ sudo dnf install -y python3-pip
 
 # Sway info for windows classes
 pip install --user swaytools  
-
-#Spotify
-sudo dnf install -y lpf-spotify-client
-sudo usermod -a -G pkg-build $USER
-echo " 
-############################################################################################################################################
-# PLEASE PROVIDE YOUR PASSWORD !
-############################################################################################################################################
-"
-su - $USER
