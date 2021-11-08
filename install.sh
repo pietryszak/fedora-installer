@@ -246,13 +246,6 @@ cd ~/Downloads
 wget https://sysoply.pl/download/ublock-kopia-zapasowa_2021-10-06_14.09.44.txt
 cd
 
-# My dotfiles
-cd ~/.gc/
-mkdir -p myconfig
-cd myconfig
-git clone https://github.com/pietryszak/dotfiles.git
-tar -xf Gruvbox.tar.gz -C ~/.local/share/icons/
-
 # Sensors
 sudo dnf install -y lm_sensors
 echo " 
