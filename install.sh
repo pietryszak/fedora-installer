@@ -215,6 +215,12 @@ git clone https://github.com/hrkfdn/ncspot.git
 cd ncspot
 cargo install ncspot
  
+# Spotifyd fo spotfitui
+sudo dnf copr enable -y szpadel/spotifyd
+sudo dnf install -y spotifyd
+systemctl --user start spotifyd.service 
+systemctl --user enable spotifyd.service  
+ 
 # Barshrc alias for user
 echo  >> ~/.bashrc
 echo alias vim='nvim' >> ~/.bashrc
