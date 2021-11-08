@@ -233,11 +233,8 @@ mkir -p ~/.local/share/themes/
 cp themes/* ~/.local/share/themes/
 cd
 
-# Gruvbox gtk icons 
+# Papirus gtk icons for gruvbox 
 sudo wget -qO- https://git.io/papirus-icon-theme-install | sh
-cd ~/.gc
-wget https://sysoply.pl/download/Gruvbox.tar.gz
-tar -xf Gruvbox.tar.gz -C ~/.local/share/icons/ 
 
 # My FF profile
 cd ~/.gc
@@ -254,7 +251,7 @@ cd ~/.gc/
 mkdir -p myconfig
 cd myconfig
 git clone https://github.com/pietryszak/dotfiles.git
-cd 
+tar -xf Gruvbox.tar.gz -C ~/.local/share/icons/
 
 # Sensors
 sudo dnf install -y lm_sensors
