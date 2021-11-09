@@ -344,7 +344,7 @@ tar -xf Gruvbox.tar.gz -C ~/.local/share/icons/
 \cp -r ~/.config/zsh/.zshrc ~/
 
 # Copy ublock list to proper folder
-\cp -r ~/.gc/dotfiles/ublock ~/Downloads
+\cp -r ~/.gc/dotfiles/ublock/my-ublock-backup.txt ~/Downloads
 
 # Sudo timeout back to default
 sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        env_reset,timestamp_timeout=60/g' /etc/default/grub
