@@ -220,7 +220,11 @@ sudo dnf copr enable -y szpadel/spotifyd
 sudo dnf install -y spotifyd
 systemctl --user start spotifyd.service 
 systemctl --user enable spotifyd.service  
- 
+
+# Spotify TUI
+sudo dnf copr enable -y atim/spotify-tui
+sudo dnf install -y spotify-tui
+
 # Barshrc alias for user
 echo  >> ~/.bashrc
 echo alias vim='nvim' >> ~/.bashrc
