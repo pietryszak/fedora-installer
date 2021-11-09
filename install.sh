@@ -6,6 +6,12 @@
 
 ############################################################################################################################################
 
+# GTK theme
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+
+# gc folder 
+mkdir ~/.gc
+
 # Sudo timeout
 sudo bash -c 'echo "
 Defaults        env_reset,timestamp_timeout=60" >>  /etc/sudoers'
