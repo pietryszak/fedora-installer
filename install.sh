@@ -250,9 +250,6 @@ wget https://sysoply.pl/download/.mozilla.zip
 unzip .mozilla.zip
 rm .mozilla.zip
 cp -r .mozilla/ ~/
-cd ~/Downloads
-wget https://sysoply.pl/download/ublock-kopia-zapasowa_2021-10-06_14.09.44.txt
-cd
 
 # Sensors
 sudo dnf install -y lm_sensors
@@ -345,6 +342,9 @@ tar -xf Gruvbox.tar.gz -C ~/.local/share/icons/
 
 # Copy zshrc list to proper folder
 \cp -r ~/.config/zsh/.zshrc ~/
+
+# Copy ublock list to proper folder
+\cp -r ~/.gc/dotfiles/ublock ~/Downloads
 
 # Sudo timeout back to default
 sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        env_reset,timestamp_timeout=60/g' /etc/default/grub
