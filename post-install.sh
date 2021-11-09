@@ -8,7 +8,10 @@ cd ~/.gc/
 mkdir -p myconfig
 cd myconfig
 git clone https://github.com/pietryszak/dotfiles.git
+
+# Copy icons from dotfiles to proper folder
 cd dotfiles/themes/
+mkdir -p ~/.local/share/icons
 tar -xf Gruvbox.tar.gz -C ~/.local/share/icons/
 
 
