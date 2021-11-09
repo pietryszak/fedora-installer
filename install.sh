@@ -192,7 +192,7 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 dnf check-update
 sudo dnf install -y code
 
-# Install VSCodium plugins
+# Install VSCode plugins
 code --install-extension esbenp.prettier-vscode
 code --install-extension redhat.vscode-xml
 code --install-extension visualstudioexptteam.vscodeintellicode
