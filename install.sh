@@ -245,7 +245,7 @@ sudo bash -c  "source ~/.bashrc"
 cd ~/.gc
 git clone https://github.com/TheGreatMcPain/gruvbox-material-gtk.git
 cd gruvbox-material-gtk
-mkir -p ~/.local/share/themes/
+mkdir -p ~/.local/share/themes/
 cp themes/* ~/.local/share/themes/
 cd
 
