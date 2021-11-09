@@ -215,7 +215,7 @@ pip install --user swaytools
 sudo flatpak install -y spotify 
  
 # Ncspot
-dnf install -y pulseaudio-libs-devel libxcb-devel openssl-devel ncurses-devel dbus-devel
+sudo dnf install -y pulseaudio-libs-devel libxcb-devel openssl-devel ncurses-devel dbus-devel
 cd ~/.gc
 git clone https://github.com/hrkfdn/ncspot.git
 cd ncspot
