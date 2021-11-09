@@ -48,6 +48,8 @@ tar -xf Gruvbox.tar.gz -C ~/.local/share/icons/
 # Copy virtualbox list to proper folder
 \cp -r ~/.gc/dotfiles/virtualbox ~/.config
 
+# Copy zsh list to proper folder
+\cp -r ~/.gc/dotfiles/zsh ~/.config
 
 # Sudo timeout back to default
 sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        env_reset,timestamp_timeout=60/g' /etc/default/grub
