@@ -246,7 +246,7 @@ cd ~/.gc
 git clone https://github.com/TheGreatMcPain/gruvbox-material-gtk.git
 cd gruvbox-material-gtk
 mkdir -p ~/.local/share/themes/
-cp themes/* ~/.local/share/themes/
+cp -r themes/* ~/.local/share/themes/
 cd
 
 # Papirus gtk icons for gruvbox 
