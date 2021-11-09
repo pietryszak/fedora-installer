@@ -282,6 +282,7 @@ sudo dnf upgrade --refresh
 sudo dnf check
 sudo dnf autoremove -y
 sudo dnf update -y
+sudo dnf upgrade -y
 
 # Oh-my-zsh ALWAYS AS LAST
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
