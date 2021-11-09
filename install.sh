@@ -291,6 +291,7 @@ fc-cache -fv
 cd ~/.gc
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.gc/oh-my-zsh/custom}/themes/powerlevel10k
 
+
 # My dotfiles
 cd ~/.gc/
 git clone https://github.com/pietryszak/dotfiles.git
