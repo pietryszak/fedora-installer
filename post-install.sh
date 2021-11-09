@@ -1,7 +1,10 @@
+# Oh-my-zsh
+ZSH="$HOME/.gc/oh-my-zsh" sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
 # Oh-my-zsh addons
-cd ~/.config/oh-my-zsh/custom/plugins
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+cd ~/.gc/oh-my-zsh/custom/plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.gc/oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.gc/oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # My dotfiles
 cd ~/.gc/
@@ -50,6 +53,9 @@ tar -xf Gruvbox.tar.gz -C ~/.local/share/icons/
 
 # Copy zsh list to proper folder
 \cp -r ~/.gc/dotfiles/zsh ~/.config
+
+# Copy zshrc list to proper folder
+\cp -r ~/.config/zsh/.zshrc ~/
 
 # Sudo timeout back to default
 sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        env_reset,timestamp_timeout=60/g' /etc/default/grub
