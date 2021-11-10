@@ -282,6 +282,7 @@ git clone https://github.com/pietryszak/dotfiles.git
 cd ~/.gc/dotfiles/themes/
 mkdir -p ~/.local/share/icons
 tar -xf Gruvbox.tar.gz -C ~/.local/share/icons/
+cd
 
 # Copy bat  config to proper folder
 \cp -r ~/.gc/dotfiles/bat ~/.config
