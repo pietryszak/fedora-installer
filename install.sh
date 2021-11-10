@@ -73,12 +73,6 @@ sudo dnf install -y nodejs
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-# FZF
-cd ~/.gc
-git clone --depth 1 https://github.com/junegunn/fzf.git
-cd fzf
-yes | ./install
-
 # Bat - new cat ;)
 sudo dnf install -y bat
 
@@ -251,23 +245,15 @@ unzip .mozilla.zip
 rm .mozilla.zip
 cp -r .mozilla/ ~/
 
-# Sensors
-sudo dnf install -y lm_sensors
-echo " 
-############################################################################################################################################
+# ZSH 
+sudo dnf install -y zsh
+chsh -s $(which zsh)
 
-# FINDING SENSORS. IT'S TAKE A TIME. PLEASE WAIT !
-
-############################################################################################################################################
-"
-yes | sudo sensors-detect
-
-# Last update
-sudo dnf upgrade --refresh
-sudo dnf check
-sudo dnf autoremove -y
-sudo dnf update -y
-sudo dnf upgrade -y
+# FZF
+cd ~/.gc
+git clone --depth 1 https://github.com/junegunn/fzf.git
+cd fzf
+yes | ./install
 
 # Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -343,6 +329,24 @@ tar -xf Gruvbox.tar.gz -C ~/.local/share/icons/
 
 # Copy ublock list to proper folder
 \cp -r ~/.gc/dotfiles/ublock/my-ublock-backup.txt ~/Downloads
+
+# Sensors
+sudo dnf install -y lm_sensors
+echo " 
+############################################################################################################################################
+
+# FINDING SENSORS. IT'S TAKE A TIME. PLEASE WAIT !
+
+############################################################################################################################################
+"
+yes | sudo sensors-detect
+
+# Last update
+sudo dnf upgrade --refresh
+sudo dnf check
+sudo dnf autoremove -y
+sudo dnf update -y
+sudo dnf upgrade -y
 
 # Sudo timeout back to default
 sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        env_reset,timestamp_timeout=60/g' /etc/default/grub
