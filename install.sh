@@ -312,17 +312,21 @@ cd
 # Copy shortcuts list to proper folder
 \cp -r ~/.gc/dotfiles/shortcuts ~/.config
 
-# Copy spotifyd list to proper folder
+# Copy spotifyd config to proper folder
 \cp -r ~/.gc/dotfiles/spotifyd ~/.config
 
-# Copy spotify-tui list to proper folder
+# Copy spotify-tui config to proper folder
 \cp -r ~/.gc/dotfiles/spotify-tui ~/.config
 
-# Copy sway list to proper folder
+# Copy sway config to proper folder
 \cp -r ~/.gc/dotfiles/sway ~/.config
 
-# Copy VirtualBox list to proper folder
+# Copy VirtualBox config to proper folder
 \cp -r ~/.gc/dotfiles/VirtualBox ~/.config
+
+# Cpoy Caprine config to proper folder
+\cp -r ~/.gc/dotfiles/Caprine ~/.config
+
 
 # Copy zsh list to proper folder
 \cp -r ~/.gc/dotfiles/zsh ~/.config
