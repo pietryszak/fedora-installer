@@ -333,11 +333,13 @@ cd
 \cp -r ~/.gc/dotfiles/zsh/scripts/* ~/.oh-my-zsh/custom
 
 # Copy zshrc config to proper folder
-\cp -r ~/.config/zsh/.zshrc ~/
+\cp -r ~/.gc/dotfiles/zsh/.zshrc ~/
 
-# Copy zshrc list to proper folder
-\cp -r ~/.config/zsh/.p10k.zsh ~/
-.p10k.zsh
+# Copy zshrc config to proper folder
+\cp -r ~/.gc/dotfiles/zsh/.p10k.zsh ~/
+
+# Copy terminator config to proper folder
+\cp -r ~/.gc/dotfiles/terminator/ ~/.config
 
 # My FF profile
 cd ~/.gc/dotfiles
