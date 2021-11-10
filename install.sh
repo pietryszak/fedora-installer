@@ -317,8 +317,8 @@ cd
 # Copy sway list to proper folder
 \cp -r ~/.gc/dotfiles/sway ~/.config
 
-# Copy virtualbox list to proper folder
-\cp -r ~/.gc/dotfiles/virtualbox ~/.config
+# Copy VirtualBox list to proper folder
+\cp -r ~/.gc/dotfiles/VirtualBox ~/.config
 
 # Copy zsh list to proper folder
 \cp -r ~/.gc/dotfiles/zsh ~/.config
