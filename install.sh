@@ -289,7 +289,7 @@ mkdir -p ~/.local/share/fonts/nerd
 cp MesloLGS* ~/.local/share/fonts/nerd
 fc-cache -fv
 cd ~/.gc
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.gc/oh-my-zsh/custom}/themes/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.gc/oh-my-zsh}/themes/powerlevel10k
 
 
 # My dotfiles
