@@ -238,18 +238,6 @@ cd
 # Papirus gtk icons for gruvbox 
 sudo wget -qO- https://git.io/papirus-icon-theme-install | sh
 
-# My FF profile
-cd ~/.gc
-wget https://sysoply.pl/download/.mozilla.zip
-unzip .mozilla.zip
-cp -r .mozilla/ ~/
-
-# My Thunderbird profile
-cd ~/.gc
-wget https://sysoply.pl/download/.thunderbird.zip
-unzip .thunderbird.zip
-cp -r .thunderbird ~/
-
 # ZSH 
 sudo dnf install -y util-linux-user
 sudo dnf install -y zsh
@@ -280,6 +268,17 @@ cp MesloLGS* ~/.local/share/fonts/nerd
 fc-cache -fv
 cd ~/.gc
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# Sensors
+sudo dnf install -y lm_sensors
+echo " 
+############################################################################################################################################
+
+# FINDING SENSORS. IT'S TAKE A TIME. PLEASE WAIT !
+
+############################################################################################################################################
+"
+yes | sudo sensors-detect
 
 # My dotfiles
 cd ~/.gc/
@@ -340,16 +339,19 @@ cd
 \cp -r ~/.config/zsh/.p10k.zsh ~/
 .p10k.zsh
 
-# Sensors
-sudo dnf install -y lm_sensors
-echo " 
-############################################################################################################################################
+# My FF profile
+cd ~/.gc/dotfiles
+wget https://sysoply.pl/download/.mozilla.zip
+unzip .mozilla.zip
+rm .mozilla.zip
+cp -r .mozilla/ ~/
 
-# FINDING SENSORS. IT'S TAKE A TIME. PLEASE WAIT !
-
-############################################################################################################################################
-"
-yes | sudo sensors-detect
+# My Thunderbird profile
+cd ~/.gc/dotfiles
+wget https://sysoply.pl/download/.thunderbird.zip
+unzip .thunderbird.zip
+rm .thunderbird.zip
+cp -r .thunderbird ~/
 
 # Last update
 sudo dnf upgrade --refresh
