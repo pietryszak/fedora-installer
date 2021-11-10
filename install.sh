@@ -325,9 +325,6 @@ tar -xf Gruvbox.tar.gz -C ~/.local/share/icons/
 # Copy zshrc list to proper folder
 \cp -r ~/.config/zsh/.zshrc ~/
 
-# Copy ublock list to proper folder
-\cp -r ~/.gc/dotfiles/ublock/my-ublock-backup.txt ~/Downloads
-
 # Sensors
 sudo dnf install -y lm_sensors
 echo " 
