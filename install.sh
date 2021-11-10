@@ -239,8 +239,13 @@ sudo wget -qO- https://git.io/papirus-icon-theme-install | sh
 cd ~/.gc
 wget https://sysoply.pl/download/.mozilla.zip
 unzip .mozilla.zip
-rm .mozilla.zip
 cp -r .mozilla/ ~/
+
+# My Thunderbird profile
+cd ~/.gc
+wget https://sysoply.pl/download/.thunderbird.zip
+unzip .thunderbird.zip
+cp -r .thunderbird ~/
 
 # ZSH 
 sudo dnf install -y util-linux-user
