@@ -356,6 +356,12 @@ cd
 # Copy terminator config to proper folder
 \cp -r ~/.gc/dotfiles/terminator/ ~/.config
 
+# Copy bash_aliases to user folder
+\cp -r ~/.gc/dotfiles/bashrc/* ~/
+
+# copy bash_aliases to sudo/root folder
+sudo \cp -r ~/.gc/dotfiles/bashrc/* /root  
+
 # My FF profile
 cd ~/.gc/dotfiles
 wget https://sysoply.pl/download/.mozilla.zip
