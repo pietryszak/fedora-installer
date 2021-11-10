@@ -330,12 +330,15 @@ cd
 # Cpoy Caprine config to proper folder
 \cp -r ~/.gc/dotfiles/Caprine ~/.config
 
+# Copy zsh sripts to proper folder
+\cp -r ~/.gc/dotfiles/zsh/scripts/* ~/.oh-my-zsh/custom
 
-# Copy zsh list to proper folder
-\cp -r ~/.gc/dotfiles/zsh ~/.config
+# Copy zshrc config to proper folder
+\cp -r ~/.config/zsh/.zshrc ~/
 
 # Copy zshrc list to proper folder
-\cp -r ~/.config/zsh/.zshrc ~/
+\cp -r ~/.config/zsh/.p10k.zsh ~/
+.p10k.zsh
 
 # Sensors
 sudo dnf install -y lm_sensors
