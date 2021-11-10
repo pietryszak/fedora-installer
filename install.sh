@@ -232,7 +232,13 @@ sudo dnf install -y spotify-tui
 #sudo bash -c "sudo echo alias sudo='sudo ' >> /root/.bashrc"
 #sudo bash -c  "source ~/.bashrc"
 
-# Bash aliases 
+# Bash aliases for user
+bash -c 'echo "
+if [ -f ~/.bash_aliases ]; then
+. ~/.bash_aliases
+fi">> ~/.bashrc'
+
+# Bash aliases for sudo/root
 sudo bash -c 'echo "
 if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases
