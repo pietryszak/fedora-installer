@@ -368,6 +368,9 @@ cd
 # copy bash_aliases to sudo/root folder
 sudo \cp -r ~/.gc/dotfiles/bashrc/.bash_aliases /root  
 
+# copy qt5ct config to to proper folder
+\cp -r ~/.gc/dotfiles/qt5ct ~/.config
+
 # My FF profile
 cd ~/.gc/dotfiles
 wget https://sysoply.pl/download/.mozilla.zip
