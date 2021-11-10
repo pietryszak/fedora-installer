@@ -363,10 +363,10 @@ cd
 \cp -r ~/.gc/dotfiles/terminator/ ~/.config
 
 # Copy bash_aliases to user folder
-\cp -r ~/.gc/dotfiles/bashrc/* ~/
+\cp -r ~/.gc/dotfiles/bashrc/.bash_aliases ~/ 
 
 # copy bash_aliases to sudo/root folder
-sudo \cp -r ~/.gc/dotfiles/bashrc/* /root  
+sudo \cp -r ~/.gc/dotfiles/bashrc/.bash_aliases /root  
 
 # My FF profile
 cd ~/.gc/dotfiles
