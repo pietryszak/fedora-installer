@@ -99,6 +99,9 @@ sudo dnf install -y htop
 # bpytop
 sudo dnf install -y bpytop
 
+# nnn
+sudo dnf install -y nnn 
+
 # Thunderbird
 sudo dnf install -y thunderbird
 
