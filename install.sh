@@ -218,18 +218,25 @@ sudo dnf copr enable -y atim/spotify-tui
 sudo dnf install -y spotify-tui
 
 # Barshrc alias for user
-echo  >> ~/.bashrc
-echo alias vim='nvim' >> ~/.bashrc
-echo alias vi='nvim' >> ~/.bashrc
+#echo  >> ~/.bashrc
+#echo alias vim='nvim' >> ~/.bashrc
+#echo alias vi='nvim' >> ~/.bashrc
 
 # Bash only checks the first word of a command for an alias, any words after that are not checked. That means in a command like sudo ll, only the first word (sudo) is checked by bash for an alias, ll is ignored. We can tell bash to check the next word after the alias (i.e sudo) by adding a space to the end of the alias value.
-echo alias sudo='sudo ' >> ~/.bashrc
+#echo alias sudo='sudo ' >> ~/.bashrc
+#sudo bash -c  "source ~/.bashrc"
 
-source ~/.bashrc
-sudo bash -c "sudo echo  >> /root/.bashrc"
-sudo bash -c "sudo echo alias vim='nvim' >> /root/.bashrc"
-sudo bash -c "sudo echo alias vi='nvim' >> /root/.bashrc"
-sudo bash -c  "source ~/.bashrc"
+#sudo bash -c "sudo echo  >> /root/.bashrc"
+#sudo bash -c "sudo echo "alias vim='nvim'" >> /root/.bashrc"
+#sudo bash -c "sudo echo alias vi='nvim' >> /root/.bashrc"
+#sudo bash -c "sudo echo alias sudo='sudo ' >> /root/.bashrc"
+#sudo bash -c  "source ~/.bashrc"
+
+# Bash aliases 
+sudo bash -c 'echo "
+if [ -f ~/.bash_aliases ]; then
+. ~/.bash_aliases
+fi">> ~/.bashrc'
 
 # GTK Gruvbox theme
 cd ~/.gc
@@ -238,6 +245,10 @@ cd gruvbox-material-gtk
 mkdir -p ~/.local/share/themes/
 cp -r themes/* ~/.local/share/themes/
 cd
+
+# QT5 apps theme
+sudo dnf install -y qt5ct
+
 
 # Papirus gtk icons for gruvbox 
 sudo wget -qO- https://git.io/papirus-icon-theme-install | sh
