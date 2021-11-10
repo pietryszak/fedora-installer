@@ -243,8 +243,9 @@ rm .mozilla.zip
 cp -r .mozilla/ ~/
 
 # ZSH 
+sudo dnf install -y util-linux-user
 sudo dnf install -y zsh
-sudo sed -i 's|/bin/bash|/usr/bin/zsh|g' /etc/passwd
+sudo chsh -s $(which zsh) $USER
 
 # FZF
 cd ~/.gc
