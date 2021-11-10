@@ -127,9 +127,6 @@ sudo systemctl enable clamav-freshclam
 # Firewalld GUI
 sudo dnf install -y firewall-config
 
-# Bat
-sudo dnf install -y bat
-
 # Sway
 sudo dnf install -y sway 
 
