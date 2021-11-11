@@ -96,9 +96,6 @@ sudo dnf install -y neofetch
 # Htop
 sudo dnf install -y htop
 
-# Bptop
-sudo dnf install -y bpytop
-
 # nnn
 sudo dnf install -y nnn 
 
