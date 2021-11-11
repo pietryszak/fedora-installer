@@ -197,6 +197,9 @@ sudo dnf install -y python3-pip
 # Sway info for windows classes
 pip install --user swaytools  
 
+# 7zip
+sudo dnf install -y p7zip p7zip-plugins
+
 # Spotify flatpak
 sudo flatpak install -y spotify 
  
