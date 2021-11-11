@@ -136,8 +136,11 @@ sudo dnf install -y sway
 # Remove apps 
 sudo dnf remove -y alacritty
 
-# Insall terminator
+# Install terminator
 sudo dnf install -y terminator
+
+# Install transsmision
+sudo dnf install -y transmissiony
 
 # Install kernel headers
 sudo dnf install -y kernel-devel kernel-headers    
@@ -254,7 +257,6 @@ cd
 
 # QT5 apps theme
 sudo dnf install -y qt5ct
-
 
 # Papirus gtk icons for gruvbox 
 sudo wget -qO- https://git.io/papirus-icon-theme-install | sh
