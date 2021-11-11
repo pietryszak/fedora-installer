@@ -140,9 +140,6 @@ sudo dnf install -y terminator
 sudo dnf install -y transmission
 
 # Install kernel headers
-sudo dnf install -y kernel-devel kernel-headers    
-
-# Virtualbox
 echo " 
 ############################################################################################################################################
 
@@ -150,6 +147,9 @@ echo "
 
 ############################################################################################################################################
 "
+sudo dnf install -y kernel-devel kernel-headers    
+
+# Virtualbox
 sudo dnf install -y VirtualBox kernel-devel-$(uname -r) akmod-VirtualBox
 sudo akmods   
 sudo systemctl restart vboxdrv  
