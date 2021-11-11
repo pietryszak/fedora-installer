@@ -250,6 +250,7 @@ sudo bash -c 'echo "
 if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases
 fi">> ~/.bashrc'
+source ~/.bash_aliases
 
 # GTK Gruvbox theme
 cd ~/.gc
