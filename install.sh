@@ -321,9 +321,6 @@ cd
 # Copy bat  config to proper folder
 \cp -r ~/.gc/dotfiles/bat ~/.config
 
-# Copy bpytop config to proper folder
-\cp -r ~/.gc/dotfiles/bpytop ~/.config
-
 # Copy Code config to proper folder
 \cp -r ~/.gc/dotfiles/Code ~/.config
 
