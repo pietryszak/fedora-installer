@@ -252,7 +252,14 @@ sudo dnf install -y qt5ct
 sudo bash -c 'echo "QT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment'
 
 # Papirus gtk icons for gruvbox 
+cd ~/.gc
 sudo wget -qO- https://git.io/papirus-icon-theme-install | sh
+
+# Papirus folders
+cd ~/.gc
+https://github.com/PapirusDevelopmentTeam/papirus-folders.git
+papirus-folders -C brown --theme Papirus-Dark
+cd
 
 # ZSH 
 sudo dnf install -y util-linux-user
