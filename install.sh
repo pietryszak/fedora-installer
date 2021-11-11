@@ -137,7 +137,7 @@ sudo dnf remove -y alacritty
 sudo dnf install -y terminator
 
 # Install transsmision
-sudo dnf install -y transmissiony
+sudo dnf install -y transmission
 
 # Install kernel headers
 sudo dnf install -y kernel-devel kernel-headers    
