@@ -246,6 +246,7 @@ cd
 
 # QT5 apps theme
 sudo dnf install -y qt5ct
+sudo bash -c 'echo "QT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment'
 
 # Papirus gtk icons for gruvbox 
 sudo wget -qO- https://git.io/papirus-icon-theme-install | sh
