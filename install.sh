@@ -380,14 +380,21 @@ cd ~/.gc/dotfiles
 wget https://sysoply.pl/download/.mozilla.zip
 unzip .mozilla.zip
 rm .mozilla.zip
-cp -r .mozilla/ ~/
+\cp -r .mozilla/ ~/
 
-# My Thunderbird profile
+# My Thunderbird profile public
 cd ~/.gc/dotfiles
-wget https://sysoply.pl/download/.thunderbird.zip
-unzip .thunderbird.zip
-rm .thunderbird.zip
-cp -r .thunderbird ~/
+wget https://sysoply.pl/download/Public/thunderbird-public.7z
+7z x thunderbird-public.7z
+rm thunderbird-public.7z
+\cp -r .thunderbird ~/
+
+# My Thunderbird cache public
+cd ~/.gc/dotfiles
+wget https://sysoply.pl/download/Public/thunderbird-cache-public.7z
+7z x thunderbird-cache-public.7z
+rm thunderbird-cache-public.7z
+\cp -r thunderbird ~/.cache
 
 # Last update
 sudo dnf upgrade --refresh
