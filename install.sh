@@ -318,7 +318,7 @@ cd
 \cp -r ~/.gc/dotfiles/bat ~/.config
 
 # Copy Code config to proper folder
-\cp -r ~/.gc/dotfiles/Code ~/.config
+\cp -r ~/.gc/dotfiles/Code/settings.json ~/.config/Code/user/
 
 # Copy htop config to proper folder 
 \cp -r ~/.gc/dotfiles/htop ~/.config
