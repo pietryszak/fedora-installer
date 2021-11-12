@@ -371,6 +371,10 @@ sudo \cp -r ~/.gc/dotfiles/bashrc/.bash_aliases /root
 # copy qt5ct config to to proper folder
 \cp -r ~/.gc/dotfiles/qt5ct ~/.config
 
+# copy gedit config to to proper folder
+\cp -r ~/.gc/dotfiles/gedit/* ~/.local/share/gedit/styles
+gsettings set org.gnome.gedit.preferences.editor scheme 'gruvbox-dark' 
+
 # My FF profile
 cd ~/.gc/dotfiles
 wget https://sysoply.pl/download/.mozilla.zip
