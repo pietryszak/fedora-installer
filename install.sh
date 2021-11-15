@@ -299,14 +299,8 @@ sudo dnf install -y meson
 # Cmake
 sudo dnf install -y cmake
 
-# Wayland devel for kanshi
-sudo dnf install -y wayland-devel
-
-# Scdoc for kanshi
-sudo dnf install -y scdoc
-
-# Libvarlink for kanshi
-sudo dnf install -y libvarlink-devel
+# Kanshi
+ sudo dnf install -y kanshi 
 
 # Sensors
 sudo dnf install -y lm_sensors
