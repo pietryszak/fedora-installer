@@ -225,7 +225,22 @@ sudo dnf install -y cmake
  cd ~/.gc
  wget https://static.zenkit.com/downloads/desktop-apps/base/zenkit-base-linux.rpm
 sudo rpm -i zenkit-base-linux.rpm 
+
+# Notorious dependiences
+sudo dnf install -y gtk3-devel
+sudo dnf install -y gobject-introspection-devel 
  
+ # Notorious
+cd ~/.gc 
+git clone https://gitlab.gnome.org/GabMus/notorious
+cd notorious
+mkdir build
+cd build
+meson ..
+meson configure -Dprefix=$PWD/testdir # use this line if you want to avoid installing system wide
+ninja
+ninja install
+
 # Ncspot
 echo " 
 ############################################################################################################################################
