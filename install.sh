@@ -296,6 +296,13 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # Meson
 sudo dnf install -y meson
 
+# Cmake
+sudo dnf install -y cmake
+
+# Wayland devel for kanshi
+sudo dnf install -y wayland-devel
+
+
 # Sensors
 sudo dnf install -y lm_sensors
 echo " 
