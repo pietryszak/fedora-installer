@@ -245,6 +245,9 @@ sudo cp notorious /usr/bin
 # Dropbox for notorious sync
 sudo dnf install -y dropbox
 
+# Waybar
+sudo dnf install -y waybar
+
 # Ncspot
 echo " 
 ############################################################################################################################################
