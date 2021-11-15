@@ -212,6 +212,20 @@ sudo dnf install -y p7zip p7zip-plugins
 # Spotify flatpak
 sudo flatpak install -y spotify 
  
+ # Meson
+sudo dnf install -y meson
+
+# Cmake
+sudo dnf install -y cmake
+
+# Kanshi
+ sudo dnf install -y kanshi 
+ 
+ # Zenkit
+ cd ~/.gc
+ wget https://static.zenkit.com/downloads/desktop-apps/base/zenkit-base-linux.rpm
+sudo rpm -i zenkit-base-linux.rpm 
+ 
 # Ncspot
 echo " 
 ############################################################################################################################################
@@ -301,15 +315,6 @@ cp MesloLGS* ~/.local/share/fonts/nerd
 fc-cache -fv
 cd ~/.gc
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
-# Meson
-sudo dnf install -y meson
-
-# Cmake
-sudo dnf install -y cmake
-
-# Kanshi
- sudo dnf install -y kanshi 
 
 # Sensors
 sudo dnf install -y lm_sensors
