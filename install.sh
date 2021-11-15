@@ -306,7 +306,7 @@ sudo dnf install -y wayland-devel
 sudo dnf install -y scdoc
 
 # Libvarlink for kanshi
-sudo dnf install -y libvarlink
+sudo dnf install -y libvarlink-devel
 
 # Sensors
 sudo dnf install -y lm_sensors
