@@ -293,6 +293,9 @@ fc-cache -fv
 cd ~/.gc
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
+# Meson
+sudo dnf install -y meson
+
 # Sensors
 sudo dnf install -y lm_sensors
 echo " 
