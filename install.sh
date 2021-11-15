@@ -242,6 +242,9 @@ ninja
 ninja install
 sudo cp notorious /usr/bin
 
+# Dropbox for notorious sync
+sudo dnf install -y dropbox
+
 # Ncspot
 echo " 
 ############################################################################################################################################
