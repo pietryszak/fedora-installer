@@ -240,6 +240,7 @@ meson ..
 meson configure -Dprefix=$PWD/testdir # use this line if you want to avoid installing system wide
 ninja
 ninja install
+sudo cp notorious /usr/bin
 
 # Ncspot
 echo " 
