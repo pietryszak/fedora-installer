@@ -167,6 +167,10 @@ yes | sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_P
 # Virtualbox NAT Network
 VBoxManage natnetwork add --netname NatNetwork --network "10.0.2.0/24" --enable
 
+# Vmware Workstation
+cd ~/.gc
+wget --user-agent="Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:94.0) Gecko/20100101 Firefox/94.0" https://www.vmware.com/go/getworkstation-linux
+
 # Install caprine
 sudo dnf copr enable -y  dusansimic/caprine 
 sudo dnf update -y
