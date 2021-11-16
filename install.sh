@@ -75,7 +75,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 # Bat - new cat ;)
 sudo dnf install -y bat
-export BAT_PAGER="less -RF"
 
 # Perl for fzf
 sudo dnf install -y perl
