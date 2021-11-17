@@ -267,6 +267,10 @@ cd
 sudo dnf install -y qt5ct
 sudo bash -c 'echo "QT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment'
 
+# Mouse fix for VM
+sudo bash -c 'echo "
+WLR_NO_HARDWARE_CURSORS=1" >> /etc/environment'
+
 # Papirus gtk icons for gruvbox 
 cd ~/.gc
 sudo wget -qO- https://git.io/papirus-icon-theme-install | sh
