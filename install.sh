@@ -296,8 +296,7 @@ cd ~/.gc
 sudo wget -qO- https://git.io/papirus-icon-theme-install | sh
 
 # Papirus folders
-cd ~/.gc
-git clone https://github.com/PapirusDevelopmentTeam/papirus-folders.git
+wget -qO- https://git.io/papirus-folders-install | sh
 papirus-folders -C brown --theme Papirus-Dark
 cd
 
