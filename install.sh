@@ -402,7 +402,7 @@ sudo \cp -r ~/.gc/dotfiles/bashrc/.bash_aliases /root
 \cp -r ~/.gc/dotfiles/qt5ct ~/.config
 
 # Copy gedit config to to proper folder
-\cp -r ~/.gc/dotfiles/gedit/* ~/.local/share/gedit/styles
+sudo \cp -r ~/.gc/dotfiles/gedit/* /usr/share/gtksourceview-4/styles
 gsettings set org.gnome.gedit.preferences.editor scheme 'gruvbox-dark' 
 
 # Copy notorious .desktop file to to proper folder
