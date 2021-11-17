@@ -145,7 +145,8 @@ sudo dnf install -y transmission
 # Install kernel headers
 red=`tput setaf 1`
 bold=`tput bold`
-echo "$(tput setaf 1)$(tput bold)INSTALLING KERNEL HEADERS. IT'S TAKE A TIME. PLEASE WAIT."
+reset=`tput sgr0`
+echo "${red}${bold}INSTALLING KERNEL HEADERS. IT'S TAKE A TIME. PLEASE WAIT.${reset}"
 sudo dnf install -y kernel-devel kernel-headers    
 
 # Virtualbox
