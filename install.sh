@@ -344,12 +344,6 @@ yes | sudo sensors-detect
 cd ~/.gc
 git clone https://github.com/pietryszak/dotfiles.git
 
-# Copy icons from dotfiles to proper folder
-cd ~/.gc/dotfiles/themes/
-mkdir -p ~/.local/share/icons
-tar -xf Gruvbox.tar.gz -C ~/.local/share/icons/
-cd
-
 # Copy bat  config to proper folder
 \cp -r ~/.gc/dotfiles/bat ~/.config
 
