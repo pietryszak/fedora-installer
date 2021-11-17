@@ -243,7 +243,7 @@ meson ..
 meson configure -Dprefix=$PWD/testdir
 ninja
 ninja install
-cp ~/.gc/notorious/build/testdir/share/applications/org.gabmus.notorious.desktop ~/.local/share/applications 
+sudo cp ~/.gc/notorious/build/testdir/bin/notorious /usr/bin
 
 # Dropbox for notorious sync
 sudo dnf install -y dropbox
@@ -413,16 +413,21 @@ cd
 # Copy bash_aliases to user folder
 \cp -r ~/.gc/dotfiles/bashrc/.bash_aliases ~/ 
 
-# copy bash_aliases to sudo/root folder
+# Copy bash_aliases to sudo/root folder
 sudo \cp -r ~/.gc/dotfiles/bashrc/.bash_aliases /root  
 
-# copy qt5ct config to to proper folder
+# Copy qt5ct config to to proper folder
 \cp -r ~/.gc/dotfiles/qt5ct ~/.config
 
-# copy gedit config to to proper folder
+# Copy gedit config to to proper folder
 \cp -r ~/.gc/dotfiles/gedit/* ~/.local/share/gedit/styles
 gsettings set org.gnome.gedit.preferences.editor scheme 'gruvbox-dark' 
 
+# Copy notorious .desktop file to to proper folder
+sudo \cp -r ~/.gc/dotfiles/gedit/* /usr/share/applications/
+
+# Copy foot terminal config to to proper folder
+\cp -r ~/.gc/dotfiles/foot ~/.config
 # My FF profile
 cd ~/.gc/dotfiles
 wget https://sysoply.pl/download/.mozilla.zip
