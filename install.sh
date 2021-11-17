@@ -348,7 +348,7 @@ git clone https://github.com/pietryszak/dotfiles.git
 \cp -r ~/.gc/dotfiles/bat ~/.config
 
 # Copy Code config to proper folder
-\cp -r ~/.gc/dotfiles/Code/settings.json ~/.config/Code/user/
+\cp -r ~/.gc/dotfiles/Code/settings.json ~/.config/Code/User/
 
 # Copy htop config to proper folder 
 \cp -r ~/.gc/dotfiles/htop ~/.config
