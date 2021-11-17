@@ -136,6 +136,9 @@ sudo dnf remove -y alacritty
 # Install terminator
 sudo dnf install -y terminator
 
+# Install foot terminal
+sudo dnf install -y foot
+
 # Install transsmision
 sudo dnf install -y transmission
 
