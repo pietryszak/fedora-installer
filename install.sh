@@ -241,6 +241,7 @@ meson configure -Dprefix=$PWD/testdir
 ninja
 ninja install
 sudo cp ~/.gc/notorious/build/testdir/bin/notorious /usr/bin
+cd
 
 # Dropbox for notorious sync
 sudo dnf install -y dropbox
@@ -249,13 +250,7 @@ sudo dnf install -y dropbox
 sudo dnf install -y waybar
 
 # Ncspot
-echo " 
-############################################################################################################################################
-
-# INSTALLING NCSPOT. IT'S TAKE A TIME. PLEASE WAIT !
-
-############################################################################################################################################
-"
+echo "${red}${bold}INSTALLING NCSPOT. IT'S TAKE A TIME. PLEASE WAIT.${reset}"
 sudo dnf install -y pulseaudio-libs-devel libxcb-devel openssl-devel ncurses-devel dbus-devel
 cd ~/.gc
 git clone https://github.com/hrkfdn/ncspot.git
