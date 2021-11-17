@@ -341,7 +341,7 @@ echo "${red}${bold}FINDING SENSORS. IT'S TAKE A TIME. PLEASE WAIT.${reset}"
 yes | sudo sensors-detect
 
 # My dotfiles
-cd ~/.gc/
+cd ~/.gc
 git clone https://github.com/pietryszak/dotfiles.git
 
 # Copy icons from dotfiles to proper folder
