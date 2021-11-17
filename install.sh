@@ -143,13 +143,9 @@ sudo dnf install -y foot
 sudo dnf install -y transmission
 
 # Install kernel headers
-echo " 
-############################################################################################################################################
-
-# INSTALLING KERNEL HEADERS. IT'S TAKE A TIME. PLEASE WAIT !
-
-############################################################################################################################################
-"
+red=`tput setaf 1`
+bold=`tput bold`
+echo "$(tput setaf 1)$(tput bold)INSTALLING KERNEL HEADERS. IT'S TAKE A TIME. PLEASE WAIT."
 sudo dnf install -y kernel-devel kernel-headers    
 
 # Virtualbox
