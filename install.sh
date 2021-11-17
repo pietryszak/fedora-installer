@@ -250,6 +250,9 @@ sudo dnf install -y dropbox
 sudo dnf install -y waybar
 
 # Ncspot
+red=`tput setaf 1`
+bold=`tput bold`
+reset=`tput sgr0`
 echo "${red}${bold}INSTALLING NCSPOT. IT'S TAKE A TIME. PLEASE WAIT.${reset}"
 sudo dnf install -y pulseaudio-libs-devel libxcb-devel openssl-devel ncurses-devel dbus-devel
 cd ~/.gc
