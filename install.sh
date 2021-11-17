@@ -334,13 +334,10 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 # Sensors
 sudo dnf install -y lm_sensors
-echo " 
-############################################################################################################################################
-
-# FINDING SENSORS. IT'S TAKE A TIME. PLEASE WAIT !
-
-############################################################################################################################################
-"
+red=`tput setaf 1`
+bold=`tput bold`
+reset=`tput sgr0`
+echo "${red}${bold}FINDING SENSORS. IT'S TAKE A TIME. PLEASE WAIT.${reset}"
 yes | sudo sensors-detect
 
 # My dotfiles
