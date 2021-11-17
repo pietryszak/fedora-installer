@@ -410,25 +410,29 @@ sudo \cp -r ~/.gc/dotfiles/gedit/* /usr/share/applications/
 
 # Copy foot terminal config to to proper folder
 \cp -r ~/.gc/dotfiles/foot ~/.config
-# My FF profile
+
+# My FF profile public
 cd ~/.gc/dotfiles
-wget https://sysoply.pl/download/.mozilla.zip
-unzip .mozilla.zip
-rm .mozilla.zip
-\cp -r .mozilla/ ~/
+wget wget https://sysoply.pl/download/Public/firefox-public.7z
+7z x  firefox-public.7z
+\cp -r .mozilla ~/
+
+# My FF cache profile
+cd ~/.gc/dotfiles
+wget wget https://sysoply.pl/download/Public/firefox-cache-public.7z
+7z x firefox-cache-public.7z
+\cp -r mozilla ~/.cache
 
 # My Thunderbird profile public
 cd ~/.gc/dotfiles
 wget https://sysoply.pl/download/Public/thunderbird-public.7z
 7z x thunderbird-public.7z
-rm thunderbird-public.7z
 \cp -r .thunderbird ~/
 
 # My Thunderbird cache public
 cd ~/.gc/dotfiles
 wget https://sysoply.pl/download/Public/thunderbird-cache-public.7z
 7z x thunderbird-cache-public.7z
-rm thunderbird-cache-public.7z
 \cp -r thunderbird ~/.cache
 
 # Remove apps 
