@@ -240,10 +240,10 @@ cd notorious
 mkdir build
 cd build
 meson ..
-meson configure -Dprefix=$PWD/testdir # use this line if you want to avoid installing system wide
+meson configure -Dprefix=$PWD/testdir
 ninja
 ninja install
-sudo cp notorious /usr/bin
+cp ~/.gc/notorious/build/testdir/share/applications/org.gabmus.notorious.desktop ~/.local/share/applications 
 
 # Dropbox for notorious sync
 sudo dnf install -y dropbox
