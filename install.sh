@@ -20,7 +20,7 @@ defaultyes=True" >> /etc/dnf/dnf.conf'
 sudo sed -i 's/installonly_limit=3/installonly_limit=2/g' /etc/dnf/dnf.conf
 
 # Remove apps 
-sudo dnf remove -y gnome-maps gnome-clocks rhythmbox gnome-weather gnome-contacts gnome-tour totem gnome-terminal
+sudo dnf remove -y gnome-maps gnome-clocks rhythmbox gnome-weather gnome-contacts gnome-tour totem
 
 # Update system
 sudo dnf -y update
@@ -129,9 +129,6 @@ sudo dnf install -y firewall-config
 
 # Sway
 sudo dnf install -y sway 
-
-# Remove apps 
-sudo dnf remove -y alacritty
 
 # Install terminator
 sudo dnf install -y terminator
@@ -443,6 +440,9 @@ wget https://sysoply.pl/download/Public/thunderbird-cache-public.7z
 7z x thunderbird-cache-public.7z
 rm thunderbird-cache-public.7z
 \cp -r thunderbird ~/.cache
+
+# Remove apps 
+sudo dnf remove -y alacritty gnome-terminal
 
 # Last update
 sudo dnf upgrade --refresh
