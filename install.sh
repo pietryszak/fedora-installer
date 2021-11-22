@@ -376,6 +376,7 @@ git clone https://github.com/pietryszak/dotfiles.git
 
 # Copy VirtualBox config to proper folder
 \cp -r ~/.gc/dotfiles/VirtualBox ~/.config
+sudo chmod +x update.sh
 
 # Copy Caprine config to proper folder
 \cp -r ~/.gc/dotfiles/Caprine ~/.config
