@@ -306,6 +306,9 @@ fc-cache -fv
 cd ~/.gc
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
+# i3-gaps
+sudo dnf install i3-gaps
+
 # Sensors
 sudo dnf install -y lm_sensors
 red=`tput setaf 1`
