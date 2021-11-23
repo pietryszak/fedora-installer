@@ -309,6 +309,12 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # i3-gaps
 sudo dnf install i3-gaps
 
+# Arandr -screen layout
+sudo dnf install -y arandr
+
+# Gnome-polkit - dispaly popupa fot password for sudo 
+sudo dnf install -y gnome-polkit
+
 # Sensors
 sudo dnf install -y lm_sensors
 red=`tput setaf 1`
