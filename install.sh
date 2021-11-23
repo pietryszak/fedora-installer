@@ -348,9 +348,9 @@ git clone https://github.com/pietryszak/dotfiles.git
 # Copy spotify-tui config to proper folder
 \cp -r ~/.gc/dotfiles/spotify-tui ~/.config
 
-# Copy VirtualBox config to proper folder
+# Copy VirtualBox config to proper folder 
 \cp -r ~/.gc/dotfiles/VirtualBox ~/.config
-sudo chmod +x ~/.config/VirtualBox/update.sh
+chmod +x ~/.config/VirtualBox/update.sh
 
 # Copy Caprine config to proper folder
 \cp -r ~/.gc/dotfiles/Caprine ~/.config
@@ -380,8 +380,13 @@ sudo \cp -r ~/.gc/dotfiles/bashrc/.bash_aliases /root
 sudo \cp -r ~/.gc/dotfiles/gedit/* /usr/share/gtksourceview-4/styles
 gsettings set org.gnome.gedit.preferences.editor scheme 'gruvbox-dark' 
 
-# Copy notorious .desktop file to to proper folder
-sudo \cp -r ~/.gc/dotfiles/gedit/* /usr/share/applications/
+# Copy i3-gaps config to to proper folder
+\cp -r ~/.gc/dotfiles/i3 ~/.config
+
+# Copy arandr config to to proper folder
+\cp -r ~/.gc/dotfiles/screenlayout/* ~/.screenlayout
+chmod +x ~/.screenlayout horizontal.sh
+chmod +x ~/.screenlayout vertical.sh
 
 # My FF profile public
 cd ~/.gc/dotfiles
