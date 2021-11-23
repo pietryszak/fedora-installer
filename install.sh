@@ -59,10 +59,6 @@ sudo dnf install -y ffmpeg
 sudo dnf install -y gnome-extensions-app 
 sudo dnf install -y gnome-tweaks
 
-########################DELETE
-# Wl-clipboard
-#sudo dnf install -y wl-clipboard
-
 # Neovim
 sudo dnf install -y neovim python3-neovim
 sudo dnf install -y powerline-fonts
@@ -85,12 +81,6 @@ sudo dnf install -y ripgrep
 
 # Most = man pager
 sudo dnf install -y most
-
-########################DELETE
-# Grimshot - sway screenshot tool
-sudo dnf install -y grimshot
-mkdir -p $HOME/Pictures/screenshots
-echo 'XDG_SCREENSHOTS_DIR="$HOME/Pictures/screenshots"' | sudo tee -a ~/.config/user-dirs.dirs
 
 # Neofetch
 sudo dnf install -y neofetch
@@ -129,16 +119,8 @@ sudo systemctl enable clamav-freshclam
 # Firewalld GUI
 sudo dnf install -y firewall-config
 
-########################DELETE
-# Sway
-sudo dnf install -y sway 
-
 # Install terminator
 sudo dnf install -y terminator
-
-########################DELETE
-# Install foot terminal
-sudo dnf install -y foot
 
 # Install transsmision
 sudo dnf install -y transmission
@@ -174,10 +156,6 @@ wget --user-agent="Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:94.0) Gecko/201001
 chmod a+x getworkstation-linux
 sudo ./getworkstation-linux  --console --required --eulas-agreed     
 
-#########################CHECK
-# xfce-polkit for Vmware pass authorisation
-sudo dnf install -y xfce-polkit
-
 # Install caprine
 sudo dnf copr enable -y  dusansimic/caprine 
 sudo dnf update -y
@@ -205,27 +183,19 @@ sudo dnf install -y rust cargo
 # Python pip
 sudo dnf install -y python3-pip
 
-########################DELETE
-# Sway info for windows classes
-pip install --user swaytools  
-
 # 7zip
 sudo dnf install -y p7zip p7zip-plugins
 
 # Spotify flatpak
 sudo flatpak install -y spotify 
  
- # Meson
+# Meson
 sudo dnf install -y meson
 
 # Cmake
 sudo dnf install -y cmake
 
-########################DELETE
-# Kanshi
- sudo dnf install -y kanshi 
- 
- # Zenkit
+# Zenkit
  cd ~/.gc
  wget https://static.zenkit.com/downloads/desktop-apps/base/zenkit-base-linux.rpm
 sudo rpm -i zenkit-base-linux.rpm 
@@ -234,7 +204,7 @@ sudo rpm -i zenkit-base-linux.rpm
 sudo dnf install -y gtk3-devel
 sudo dnf install -y gobject-introspection-devel 
  
- # Notorious
+# Notorious
 cd ~/.gc 
 git clone https://gitlab.gnome.org/GabMus/notorious
 cd notorious
@@ -249,10 +219,6 @@ cd
 
 # Dropbox for notorious sync
 sudo dnf install -y dropbox
-
-########################DELETE
-# Waybar
-sudo dnf install -y waybar
 
 # Ncspot
 red=`tput setaf 1`
@@ -379,9 +345,6 @@ git clone https://github.com/pietryszak/dotfiles.git
 # Copy spotify-tui config to proper folder
 \cp -r ~/.gc/dotfiles/spotify-tui ~/.config
 
-# Copy sway config to proper folder
-\cp -r ~/.gc/dotfiles/sway ~/.config
-
 # Copy VirtualBox config to proper folder
 \cp -r ~/.gc/dotfiles/VirtualBox ~/.config
 sudo chmod +x update.sh
@@ -417,13 +380,10 @@ gsettings set org.gnome.gedit.preferences.editor scheme 'gruvbox-dark'
 # Copy notorious .desktop file to to proper folder
 sudo \cp -r ~/.gc/dotfiles/gedit/* /usr/share/applications/
 
-# Copy foot terminal config to to proper folder
-\cp -r ~/.gc/dotfiles/foot ~/.config
-
 # My FF profile public
 cd ~/.gc/dotfiles
-wget wget https://sysoply.pl/download/Public/firefox-public.7z
-7z x  firefox-public.7z
+wget wget https://sysoply.pl/download/Public/firefox-profile-public.7z
+7z x  firefox-profile-public.7z
 \cp -r .mozilla ~/
 
 # My FF cache profile
@@ -434,8 +394,8 @@ wget wget https://sysoply.pl/download/Public/firefox-cache-public.7z
 
 # My Thunderbird profile public
 cd ~/.gc/dotfiles
-wget https://sysoply.pl/download/Public/thunderbird-public.7z
-7z x thunderbird-public.7z
+wget https://sysoply.pl/download/Public/thunderbird-profile-public.7z
+7z x thunderbird-profile-public.7z
 \cp -r .thunderbird ~/
 
 # My Thunderbird cache public
@@ -456,6 +416,52 @@ sudo dnf upgrade -y
 
 # Sudo timeout back to default
 sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        env_reset,timestamp_timeout=60/g' /etc/default/grub
+
+
+
+########################DELETE
+# Waybar
+sudo dnf install -y waybar
+
+########################DELETE
+# Kanshi
+ sudo dnf install -y kanshi 
+ 
+ ########################DELETE
+# Sway info for windows classes
+pip install --user swaytools  
+
+#########################CHECK
+# xfce-polkit for Vmware pass authorisation
+sudo dnf install -y xfce-polkit
+
+########################DELETE
+# Install foot terminal
+sudo dnf install -y foot
+
+########################DELETE
+# Sway
+sudo dnf install -y sway 
+
+########################DELETE
+# Wl-clipboard
+#sudo dnf install -y wl-clipboard
+
+########################DELETE
+# Grimshot - sway screenshot tool
+sudo dnf install -y grimshot
+mkdir -p $HOME/Pictures/screenshots
+echo 'XDG_SCREENSHOTS_DIR="$HOME/Pictures/screenshots"' | sudo tee -a ~/.config/user-dirs.dirs
+
+########################DELETE
+# Copy sway config to proper folder
+\cp -r ~/.gc/dotfiles/sway ~/.config
+
+########################DELETE
+# Copy foot terminal config to to proper folder
+\cp -r ~/.gc/dotfiles/foot ~/.config
+
+
 
 # Reboot
 sudo reboot
