@@ -382,14 +382,14 @@ sudo \cp -r ~/.gc/dotfiles/gedit/* /usr/share/applications/
 
 # My FF profile public
 cd ~/.gc/dotfiles
-wget https://sysoply.pl/download/public/firefox-profile-public.7z
-7z x firefox-profile-public.7z
+wget https://sysoply.pl/download/public/mozilla-profile-public.7z
+7z x mozilla-profile-public.7z
 \cp -r .mozilla ~/
 
 # My FF cache profile
 cd ~/.gc/dotfiles
-wget https://sysoply.pl/download/public/firefox-cache-public.7z
-7z x firefox-cache-public.7z
+wget https://sysoply.pl/download/public/mozilla-cache-public.7z
+7z x mozilla-cache-public.7z
 \cp -r mozilla ~/.cache
 
 # My Thunderbird profile public
@@ -405,7 +405,7 @@ wget https://sysoply.pl/download/public/thunderbird-cache-public.7z
 \cp -r thunderbird ~/.cache
 
 # Remove apps 
-sudo dnf remove -y alacritty gnome-terminal
+sudo dnf remove -y gnome-terminal
 
 # Last update
 sudo dnf upgrade --refresh
@@ -415,8 +415,7 @@ sudo dnf update -y
 sudo dnf upgrade -y
 
 # Sudo timeout back to default
-sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        env_reset,timestamp_timeout=60/g' /etc/default/grub
-
+sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        env_reset,timestamp_timeout=60/g' /etc/sudoers
 
 ########################DELETE
 # Waybar
