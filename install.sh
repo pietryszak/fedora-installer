@@ -325,6 +325,9 @@ meson -Ddocs=true -Dmans=true
 meson compile
 sudo meson install 
 
+# i3-wifi applet
+sudo dnf install -y network-manager-applet
+
 # Arandr -screen layout
 sudo dnf install -y arandr
 
