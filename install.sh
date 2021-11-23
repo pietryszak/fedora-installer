@@ -382,13 +382,13 @@ sudo \cp -r ~/.gc/dotfiles/gedit/* /usr/share/applications/
 
 # My FF profile public
 cd ~/.gc/dotfiles
-wget wget https://sysoply.pl/download/Public/firefox-profile-public.7z
+wget https://sysoply.pl/download/Public/firefox-profile-public.7z
 7z x  firefox-profile-public.7z
 \cp -r .mozilla ~/
 
 # My FF cache profile
 cd ~/.gc/dotfiles
-wget wget https://sysoply.pl/download/Public/firefox-cache-public.7z
+wget https://sysoply.pl/download/Public/firefox-cache-public.7z
 7z x firefox-cache-public.7z
 \cp -r mozilla ~/.cache
 
