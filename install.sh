@@ -417,48 +417,9 @@ sudo dnf upgrade -y
 # Sudo timeout back to default
 sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        env_reset,timestamp_timeout=60/g' /etc/sudoers
 
-########################DELETE
-# Waybar
-sudo dnf install -y waybar
-
-########################DELETE
-# Kanshi
- sudo dnf install -y kanshi 
- 
- ########################DELETE
-# Sway info for windows classes
-pip install --user swaytools  
-
 #########################CHECK
 # xfce-polkit for Vmware pass authorisation
 sudo dnf install -y xfce-polkit
-
-########################DELETE
-# Install foot terminal
-sudo dnf install -y foot
-
-########################DELETE
-# Sway
-sudo dnf install -y sway 
-
-########################DELETE
-# Wl-clipboard
-#sudo dnf install -y wl-clipboard
-
-########################DELETE
-# Grimshot - sway screenshot tool
-sudo dnf install -y grimshot
-mkdir -p $HOME/Pictures/screenshots
-echo 'XDG_SCREENSHOTS_DIR="$HOME/Pictures/screenshots"' | sudo tee -a ~/.config/user-dirs.dirs
-
-########################DELETE
-# Copy sway config to proper folder
-\cp -r ~/.gc/dotfiles/sway ~/.config
-
-########################DELETE
-# Copy foot terminal config to to proper folder
-\cp -r ~/.gc/dotfiles/foot ~/.config
-
 
 # Reboot
 sudo reboot
