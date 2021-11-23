@@ -382,25 +382,25 @@ sudo \cp -r ~/.gc/dotfiles/gedit/* /usr/share/applications/
 
 # My FF profile public
 cd ~/.gc/dotfiles
-wget https://sysoply.pl/download/Public/firefox-profile-public.7z
-7z x  firefox-profile-public.7z
+wget https://sysoply.pl/download/public/firefox-profile-public.7z
+7z x firefox-profile-public.7z
 \cp -r .mozilla ~/
 
 # My FF cache profile
 cd ~/.gc/dotfiles
-wget https://sysoply.pl/download/Public/firefox-cache-public.7z
+wget https://sysoply.pl/download/public/firefox-cache-public.7z
 7z x firefox-cache-public.7z
 \cp -r mozilla ~/.cache
 
 # My Thunderbird profile public
 cd ~/.gc/dotfiles
-wget https://sysoply.pl/download/Public/thunderbird-profile-public.7z
+wget https://sysoply.pl/download/public/thunderbird-profile-public.7z
 7z x thunderbird-profile-public.7z
 \cp -r .thunderbird ~/
 
 # My Thunderbird cache public
 cd ~/.gc/dotfiles
-wget https://sysoply.pl/download/Public/thunderbird-cache-public.7z
+wget https://sysoply.pl/download/public/thunderbird-cache-public.7z
 7z x thunderbird-cache-public.7z
 \cp -r thunderbird ~/.cache
 
@@ -416,7 +416,6 @@ sudo dnf upgrade -y
 
 # Sudo timeout back to default
 sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        env_reset,timestamp_timeout=60/g' /etc/default/grub
-
 
 
 ########################DELETE
@@ -460,7 +459,6 @@ echo 'XDG_SCREENSHOTS_DIR="$HOME/Pictures/screenshots"' | sudo tee -a ~/.config/
 ########################DELETE
 # Copy foot terminal config to to proper folder
 \cp -r ~/.gc/dotfiles/foot ~/.config
-
 
 
 # Reboot
