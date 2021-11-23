@@ -156,6 +156,12 @@ wget --user-agent="Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:94.0) Gecko/201001
 chmod a+x getworkstation-linux
 sudo ./getworkstation-linux  --console --required --eulas-agreed     
 
+# Install Virt-manager for KVM
+sudo dnf group install -y --with-optional virtualization
+sudo systemctl start libvirtd
+sudo systemctl enable libvirtd
+sudo usermod -a -G libvirt $USER 
+
 # Install caprine
 sudo dnf copr enable -y  dusansimic/caprine 
 sudo dnf update -y
