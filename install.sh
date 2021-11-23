@@ -196,8 +196,8 @@ sudo dnf install -y meson
 sudo dnf install -y cmake
 
 # Zenkit
- cd ~/.gc
- wget https://static.zenkit.com/downloads/desktop-apps/base/zenkit-base-linux.rpm
+cd ~/.gc
+wget https://static.zenkit.com/downloads/desktop-apps/base/zenkit-base-linux.rpm
 sudo rpm -i zenkit-base-linux.rpm 
 
 # Notorious dependiences
