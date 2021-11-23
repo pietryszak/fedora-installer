@@ -328,6 +328,9 @@ sudo meson install
 # i3-wifi applet
 sudo dnf install -y network-manager-applet
 
+# i3 screen saver extension for X 
+sudo dnf install -y xss-lock
+
 # Arandr -screen layout
 sudo dnf install -y arandr
 
