@@ -407,6 +407,9 @@ sudo \cp -r ~/.gc/dotfiles/bashrc/.bash_aliases /root
 # Copy qt5ct config to to proper folder
 \cp -r ~/.gc/dotfiles/qt5ct ~/.config
 
+# Copy gtk config to to proper folder
+\cp -r ~/.gc/dotfiles/gtk/* ~/
+
 # Copy gedit config to to proper folder
 sudo \cp -r ~/.gc/dotfiles/gedit/* /usr/share/gtksourceview-4/styles
 gsettings set org.gnome.gedit.preferences.editor scheme 'gruvbox-dark' 
