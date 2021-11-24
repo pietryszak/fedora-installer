@@ -416,6 +416,9 @@ gsettings set org.gnome.gedit.preferences.editor scheme 'gruvbox-dark'
 chmod +x ~/.screenlayout horizontal.sh
 chmod +x ~/.screenlayout vertical.sh
 
+# Copy shortcuts list to proper folder
+\cp -r ~/.gc/dotfiles/shortcuts ~/.config
+
 # My FF profile public
 cd ~/.gc/dotfiles
 wget https://sysoply.pl/download/public/mozilla-profile-public.7z
