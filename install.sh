@@ -334,6 +334,9 @@ sudo dnf install -y xss-lock
 # Arandr -screen layout
 sudo dnf install -y arandr
 
+# Polybar - i3 statusbar
+sudo dnf install -y polybar
+
 # Gnome-polkit - dispaly popupa fot password for sudo 
 sudo dnf install -y gnome-polkit
 
