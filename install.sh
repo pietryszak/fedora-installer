@@ -163,6 +163,12 @@ sudo systemctl start libvirtd
 sudo systemctl enable libvirtd
 sudo usermod -a -G libvirt $USER 
 
+# TeamViewer
+cd ~/.gc
+wget https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm
+sudo dnf -y install ./teamviewer.x86_64.rpm
+cd
+
 # Install caprine
 sudo dnf copr enable -y  dusansimic/caprine 
 sudo dnf update -y
@@ -398,6 +404,9 @@ chmod +x ~/.config/VirtualBox/update.sh
 # Copy terminator config to proper folder
 \cp -r ~/.gc/dotfiles/terminator/ ~/.config
 
+# Copy TeamViewer config to proper folder
+\cp -r ~/.gc/dotfiles/teamviewer/ ~/.config
+
 # Copy bash_aliases to user folder
 \cp -r ~/.gc/dotfiles/bashrc/.bash_aliases ~/ 
 
@@ -414,8 +423,7 @@ sudo \cp -r ~/.gc/dotfiles/bashrc/.bash_aliases /root
 sudo \cp -r ~/.gc/dotfiles/gedit/* /usr/share/gtksourceview-4/styles
 gsettings set org.gnome.gedit.preferences.editor scheme 'gruvbox-dark' 
 
-# Copy i3-gaps config to to proper folder
-\cp -r ~/.gc/dotfiles/i3 ~/.config
+sudo dnf -y install ./teamviewer.x86_64.rpm
 
 # Copy arandr config to to proper folder
 \cp -r ~/.gc/dotfiles/screenlayout/* ~/.screenlayout
