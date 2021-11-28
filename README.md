@@ -4,7 +4,7 @@ After installation of Fedora run script in teminal.
 mkdir ~/.gc && cd ~/.gc && git clone https://github.com/pietryszak/fedora-installer.git && cd fedora-installer && chmod +x install.sh && ./install.sh 
 ```
 
-If You intall inside VmWare use vm-vmware-install.sh after install.sh
+If You install inside VmWare use vm-vmware-install.sh after install.sh
 ```bash
 cd ~/.gc && cd fedora-installer && chmod +x vm-vmware-install.sh && ./vm-vmware-install.sh
 ```
