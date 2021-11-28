@@ -448,6 +448,10 @@ chmod +x ~/.screenlayout vertical.sh
 # Copy polybar config to to proper folder
 \cp -r ~/.gc/dotfiles/polybar ~/.config
 cd ~/.config/polybar/scripts
+chmod +x killbar.sh
+chmod +x launch.sh
+chmod +x setup.sh
+chmod +x tinybar.sh
 ./setup.sh
 cd
 
