@@ -459,6 +459,8 @@ chmod +x ~/.screenlayout vertical.sh
 
 # Copy polybar config to to proper folder
 \cp -r ~/.gc/dotfiles/polybar ~/.config
+chmod +x ~/.config/polybar/cuts/scripts/*
+chmod -x ~/.config/polybar/cuts/scripts/rofi
 
 # My FF profile public
 cd ~/.gc/dotfiles
