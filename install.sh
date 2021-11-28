@@ -438,7 +438,7 @@ chmod +x ~/.screenlayout vertical.sh
 # Copy i3 config to to proper folder
 \cp -r ~/.gc/dotfiles/i3 ~/.config
 
-# Copy i3 config to to proper folder
+# Copy polybar config to to proper folder
 \cp -r ~/.gc/dotfiles/polybar ~/.config
 
 # My FF profile public
