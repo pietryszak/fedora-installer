@@ -23,7 +23,7 @@ sudo sed -i 's/installonly_limit=3/installonly_limit=2/g' /etc/dnf/dnf.conf
 sudo dnf remove -y gnome-maps gnome-clocks rhythmbox gnome-weather gnome-contacts gnome-tour totem
 
 # Update system
-sudo dnf -y update
+sudo dnf -y upgrade
 
 # RPM Fusion - extra repo for apps not provided by Fedora or RH free and nonfree
 sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
@@ -171,13 +171,13 @@ cd
 
 # Install caprine
 sudo dnf copr enable -y  dusansimic/caprine 
-sudo dnf update -y
+sudo dnf upgrade -y
 sudo dnf install -y caprine
 
 # Install VSCode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-dnf check-update
+dnf check-upgrade
 sudo dnf install -y code
 
 # Install VSCode plugins
@@ -464,10 +464,8 @@ sudo dnf remove -y gnome-terminal
 
 # Last update
 sudo dnf upgrade --refresh
-sudo dnf check
-sudo dnf autoremove -y
-sudo dnf update -y
 sudo dnf upgrade -y
+sudo dnf autoremove -y
 
 # Sudo timeout back to default
 sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        env_reset,timestamp_timeout=60/g' /etc/sudoers
