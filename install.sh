@@ -345,13 +345,6 @@ sudo dnf install -y arandr
 # Polybar - i3 statusbar
 sudo dnf install -y polybar
 
-# Polybar themes
-cd ~/.gc
-git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
-cd polybar-themes
-cp -rf fonts/* ~/.local/share/fonts
-fc-cache -fv
-
 # Feh for i3 wallpapers
 sudo dnf install -y feh
 
@@ -364,6 +357,12 @@ sudo dnf install -y compton
 # Pywal - Generate and change color-schemes on the fly. For polybar
 pip3 install pywal
 
+# Polybar themes
+cd ~/.gc
+git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
+cd polybar-themes
+cp -rf fonts/* ~/.local/share/fonts
+fc-cache -fv
 
 # Gnome-polkit - dispaly popup fot password for sudo 
 sudo dnf install -y gnome-polkit
