@@ -230,8 +230,10 @@ ninja install
 sudo cp ~/.gc/notorious/build/testdir/bin/notorious /usr/bin
 cd
 
-# Dropbox for notorious sync
-sudo dnf install -y dropbox
+# Mega.nz for notorious sync
+cd ~/.gc
+wget -O megasync.rpm https://mega.nz/linux/MEGAsync/Fedora_35/x86_64/megasync-Fedora_35.x86_64.rpm
+sudo dnf install -y  megasync.rpm
 
 # Ncspot
 red=`tput setaf 1`
