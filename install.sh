@@ -345,6 +345,9 @@ sudo dnf install -y arandr
 # Polybar - i3 statusbar
 sudo dnf install -y polybar
 
+# Comptom for 13  compositor for X
+sudo dnf install -y compton
+
 # Gnome-polkit - dispaly popup fot password for sudo 
 sudo dnf install -y gnome-polkit
 
