@@ -348,6 +348,9 @@ sudo dnf install -y polybar
 # Polybar themes
 cd ~/.gc
 git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
+cd polybar-themes
+cp -rf fonts/* ~/.local/share/fonts
+fc-cache -fv
 
 # Comptom for 13  compositor for X
 sudo dnf install -y compton
@@ -447,13 +450,6 @@ chmod +x ~/.screenlayout vertical.sh
 
 # Copy polybar config to to proper folder
 \cp -r ~/.gc/dotfiles/polybar ~/.config
-cd ~/.config/polybar/scripts
-chmod +x killbar.sh
-chmod +x launch.sh
-chmod +x setup.sh
-chmod +x tinybar.sh
-./setup.sh
-cd
 
 # My FF profile public
 cd ~/.gc/dotfiles
