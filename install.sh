@@ -361,6 +361,10 @@ sudo dnf install -y rofi
 # Comptom for 13  compositor for X
 sudo dnf install -y compton
 
+# Pywal - Generate and change color-schemes on the fly. For polybar
+pip3 install pywal
+
+
 # Gnome-polkit - dispaly popup fot password for sudo 
 sudo dnf install -y gnome-polkit
 
