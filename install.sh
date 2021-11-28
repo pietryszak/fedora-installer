@@ -345,6 +345,10 @@ sudo dnf install -y arandr
 # Polybar - i3 statusbar
 sudo dnf install -y polybar
 
+# Polybar themes
+cd ~/.gc
+git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
+
 # Comptom for 13  compositor for X
 sudo dnf install -y compton
 
@@ -443,6 +447,9 @@ chmod +x ~/.screenlayout vertical.sh
 
 # Copy polybar config to to proper folder
 \cp -r ~/.gc/dotfiles/polybar ~/.config
+cd ~/.config/polybar/scripts
+./setup.sh
+cd
 
 # My FF profile public
 cd ~/.gc/dotfiles
