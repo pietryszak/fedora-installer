@@ -26,5 +26,5 @@ sed -i 's/KEY=""/KEY="YOUR_API_KEY_HERE"/g' ~/.config/polybar/scripts/openweathe
 
 * ###### If You need a succesor of i3-gaps - Sway atfer install.sh use install-sway.sh. At this moment Sway has problems with vmware/virtualbox, so I don't use it.
 ```bash
-cd ~/.gc && cd fedora-installer && chmod +x sway-install.sh && ./sway-install.sh 
+cd ~/.gc && cd fedora-installer && chmod +x install-sway.sh && ./install-sway.sh
 ```
