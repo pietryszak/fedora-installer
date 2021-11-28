@@ -419,7 +419,7 @@ sudo \cp -r ~/.gc/dotfiles/bashrc/.bash_aliases /root
 \cp -r ~/.gc/dotfiles/qt5ct ~/.config
 
 # Copy gtk config to to proper folder
-\cp -r ~/.gc/dotfiles/gtk/* ~/
+cp ~/.gc/dotfiles/gtk/.gtkrc-2.0 ~
 
 # Copy gedit config to to proper folder
 sudo \cp -r ~/.gc/dotfiles/gedit/* /usr/share/gtksourceview-4/styles
