@@ -435,6 +435,12 @@ chmod +x ~/.screenlayout vertical.sh
 # Copy shortcuts list to proper folder
 \cp -r ~/.gc/dotfiles/shortcuts ~/.config
 
+# Copy i3 config to to proper folder
+\cp -r ~/.gc/dotfiles/i3 ~/.config
+
+# Copy i3 config to to proper folder
+\cp -r ~/.gc/dotfiles/polybar ~/.config
+
 # My FF profile public
 cd ~/.gc/dotfiles
 wget https://sysoply.pl/download/public/mozilla-profile-public.7z
