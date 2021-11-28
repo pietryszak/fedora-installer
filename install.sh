@@ -345,7 +345,7 @@ sudo dnf install -y arandr
 # Polybar - i3 statusbar
 sudo dnf install -y polybar
 
-# Gnome-polkit - dispaly popupa fot password for sudo 
+# Gnome-polkit - dispaly popup fot password for sudo 
 sudo dnf install -y gnome-polkit
 
 # Sensors
@@ -469,10 +469,6 @@ sudo dnf autoremove -y
 
 # Sudo timeout back to default
 sudo sed -i 's/Defaults        env_reset,timestamp_timeout=60/#Defaults        env_reset,timestamp_timeout=60/g' /etc/sudoers
-
-#########################CHECK
-# xfce-polkit for Vmware pass authorisation
-sudo dnf install -y xfce-polkit
 
 # Reboot
 sudo reboot
