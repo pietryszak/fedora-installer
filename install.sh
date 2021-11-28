@@ -462,7 +462,7 @@ chmod +x ~/.screenlayout vertical.sh
 chmod +x ~/.config/polybar/cuts/launch.sh
 chmod +x ~/.config/polybar/cuts/preview.sh
 chmod +x ~/.config/polybar/cuts/scripts/*
-
+chmod +x ~/.config/polybar/scripts/*
 
 # My FF profile public
 cd ~/.gc/dotfiles
