@@ -352,6 +352,9 @@ cd polybar-themes
 cp -rf fonts/* ~/.local/share/fonts
 fc-cache -fv
 
+# Rofi menu for i3
+sudo dnf install -y rofi
+
 # Comptom for 13  compositor for X
 sudo dnf install -y compton
 
