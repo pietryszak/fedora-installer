@@ -352,6 +352,9 @@ cd polybar-themes
 cp -rf fonts/* ~/.local/share/fonts
 fc-cache -fv
 
+# Feh for i3 wallpapers
+sudo dnf install -y feh
+
 # Rofi menu for i3
 sudo dnf install -y rofi
 
