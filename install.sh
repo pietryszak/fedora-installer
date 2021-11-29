@@ -239,6 +239,9 @@ sudo dnf install -y  megasync.rpm
 sudo dnf -y install bluez bluez-tools
 bluetoothctl discoverable on
 
+# Blueman for bluetooth applet
+sudo dnf install -y blueman 
+
 # Ncspot
 red=`tput setaf 1`
 bold=`tput bold`
