@@ -257,7 +257,7 @@ sudo dnf install -y pulseaudio-libs-devel libxcb-devel openssl-devel ncurses-dev
 cd ~/.gc
 git clone https://github.com/hrkfdn/ncspot.git
 cd ncspot
-cargo install ncspot
+cargo build --release --features cover
  
 # Spotifyd deamon for spotfitui
 sudo dnf copr enable -y szpadel/spotifyd
