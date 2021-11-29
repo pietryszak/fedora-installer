@@ -235,6 +235,9 @@ cd ~/.gc
 wget -O megasync.rpm https://mega.nz/linux/MEGAsync/Fedora_35/x86_64/megasync-Fedora_35.x86_64.rpm
 sudo dnf install -y  megasync.rpm
 
+# Bluez for bluetooth 
+sudo dnf -y install bluez bluez-tools
+
 # Ncspot
 red=`tput setaf 1`
 bold=`tput bold`
