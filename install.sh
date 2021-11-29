@@ -378,7 +378,13 @@ cd polybar-themes
 cp -rf fonts/* ~/.local/share/fonts
 fc-cache -fv
 
-# Gnome-polkit - dispaly popup fot password for sudo 
+# Polybar weather module fonts
+cd ~/.gc
+https://github.com/erikflowers/weather-icons.git
+cp ~/.gc/weather-icons/font/weathericons-regular-webfont.ttf ~/.local/share/fonts
+fc-cache -fv
+
+/# Gnome-polkit - dispaly popup fot password for sudo 
 sudo dnf install -y gnome-polkit
 
 # Sensors
