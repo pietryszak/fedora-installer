@@ -368,6 +368,9 @@ sudo dnf install -y rofi
 # Comptom for 13  compositor for X
 sudo dnf install -y compton
 
+# Numlockx for i3 - numlock on at startup
+sudo dnf install -y numlockx
+
 # Pywal - Generate and change color-schemes on the fly. For polybar
 pip3 install pywal
 
