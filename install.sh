@@ -240,6 +240,11 @@ bluetoothctl discoverable on
 # Blueman for bluetooth applet
 sudo dnf install -y blueman 
 
+# Ueberzug for ncspot cover images
+sudo dnf copr enable -y tokariew/ueberzug
+sudo dnf upgrade -y  
+sudo dnf install -y ueberzug 
+
 # Ncspot
 red=`tput setaf 1`
 bold=`tput bold`
