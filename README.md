@@ -27,11 +27,11 @@ sed -i 's/KEY=""/KEY="YOUR_API_KEY_HERE"/g' ~/.config/polybar/scripts/openweathe
 
 In system is installed 3 version of Spotify. Spotify flatpak, ncspot and spotify-tui. First is standard version on Spotify, second and third is a cli version of Spotify with low ram usage.
 
-After first startup of ncspot, prompt ask for login and password to Spotify and open a new tab in Firefox for confirm Spotify credentials. I prefer a ncspot insted of spotify-tui because, spotify-tui is new project without few futures.
-
 <p>You can choose a spotify-tui and configure it with this tutorial:</p>
 
 Connecting to Spotify API [spotify-tui](https://github.com/Rigellute/spotify-tui#connecting-to-spotifys-api)
+
+You can choose a ncspot. After first startup of ncspot, prompt ask for login and password to Spotify and open a new tab in Firefox for confirm Spotify credentials. I prefer a spotify-tui insted of ncspot because, spotify-tui is new project written in fast rust programming language.
 
 
 * If You need a succesor of i3-gaps - Sway atfer install.sh use install-sway.sh. At this moment Sway has problems with vmware/virtualbox, so I don't use it.
