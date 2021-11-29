@@ -119,8 +119,11 @@ sudo systemctl enable clamav-freshclam
 # Firewalld GUI
 sudo dnf install -y firewall-config
 
-# Install terminator
+# Install terminator - terminal fo vm
 sudo dnf install -y terminator
+
+# Install kitty - terminal for pc
+sudo dnf install -y kitty
 
 # Install transsmision
 sudo dnf install -y transmission
@@ -334,7 +337,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # i3-gaps
 # sudo dnf install i3-gaps
 sudo dnf install -y libxcb-devel xcb-util-keysyms-devel xcb-util-devel xcb-util-wm-devel xcb-util-xrm-devel yajl-devel libXrandr-devel startup-notification-devel libev-devel xcb-util-cursor-devel libXinerama-devel libxkbcommon-devel libxkbcommon-x11-devel pcre-devel pango-devel git gcc automake asciidoc xmlto
-sudo dnf install -y i3status-config libconfuse perl-AnyEvent perl-AnyEvent-I3 perl-JSON-XS perl-Types-Serialiser perl-common-sense xorg-x11-fonts-misc dmenu i3lock i3status perl-Guard perl-Task-Weaken pulseaudio-utils rxvt-unicode
+sudo dnf install -y i3status-config libconfuse perl-AnyEvent perl-AnyEvent-I3 perl-JSON-XS perl-Types-Serialiser perl-common-sense xorg-x11-fonts-misc dmenu i3lock i3status perl-Guard perl-Task-Weaken pulseaudio-utils
 cd ~/.gc
 git clone https://www.github.com/Airblader/i3 i3-gaps
 cd i3-gaps
