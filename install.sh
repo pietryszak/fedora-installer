@@ -448,6 +448,9 @@ chmod +x ~/.config/VirtualBox/update.sh
 # Copy TeamViewer config to proper folder
 \cp -r ~/.gc/dotfiles/teamviewer/ ~/.config
 
+# Copy Notorious desktop file to proper folder
+sudo \cp -r ~/.gc/dotfiles/notorious/* /usr/share/applications/
+
 # Copy bash_aliases to user folder
 \cp -r ~/.gc/dotfiles/bashrc/.bash_aliases ~/ 
 
