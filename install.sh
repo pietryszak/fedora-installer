@@ -237,6 +237,7 @@ sudo dnf install -y  megasync.rpm
 
 # Bluez for bluetooth 
 sudo dnf -y install bluez bluez-tools
+bluetoothctl discoverable on
 
 # Ncspot
 red=`tput setaf 1`
