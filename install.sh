@@ -62,7 +62,8 @@ sudo dnf install -y gnome-tweaks
 # Neovim
 sudo dnf install -y neovim python3-neovim
 sudo dnf install -y powerline-fonts
-
+sudo bash -c 'echo "EDITOR=nvim" >> /etc/environment'
+y
 # Nodejs for neovim plugins
 sudo dnf install -y nodejs
 
