@@ -476,6 +476,7 @@ chmod +x ~/.screenlayout vertical.sh
 
 # Copy i3 config to to proper folder
 \cp -r ~/.gc/dotfiles/i3 ~/.config
+rm ~/.config/i3/scripts/vm-workspaces
 
 # Copy polybar config to to proper folder
 \cp -r ~/.gc/dotfiles/polybar ~/.config
