@@ -5,6 +5,7 @@ mkdir ~/.gc && cd ~/.gc && git clone https://github.com/pietryszak/fedora-instal
 ```
 
 ### If You install inside VmWare use vm-vmware-install.sh after script above
+It's a mandatory because vm mashines need another polybar config and use terminator terminal insted kitty, because kitty is not usable in vm.
 ```bash
 cd ~/.gc && cd fedora-installer && chmod +x vm-vmware-install.sh && ./vm-vmware-install.sh
 ```
