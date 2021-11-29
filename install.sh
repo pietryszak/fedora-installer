@@ -9,7 +9,7 @@
 # GTK theme
 gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 
-# Sudo timeout
+# Sudo timeouti3
 sudo bash -c 'echo "
 Defaults        env_reset,timestamp_timeout=60" >>  /etc/sudoers'
 
@@ -367,6 +367,9 @@ sudo dnf install -y rofi
 
 # Comptom for 13  compositor for X
 sudo dnf install -y compton
+
+# Dusnt i3 notifications
+sudo dnf install -y dunst 
 
 # Numlockx for i3 - numlock on at startup
 sudo dnf install -y numlockx
