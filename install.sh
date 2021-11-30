@@ -380,6 +380,11 @@ https://github.com/erikflowers/weather-icons.git
 cp ~/.gc/weather-icons/font/weathericons-regular-webfont.ttf ~/.local/share/fonts
 fc-cache -fv
 
+# Polybar Spotify 
+cd ~/.gc
+git clone https://github.com/Jvanrhijn/polybar-spotify.git
+cd
+
 /# Gnome-polkit - dispaly popup fot password for sudo 
 sudo dnf install -y gnome-polkit
 
@@ -477,10 +482,13 @@ rm ~/.config/i3/scripts/vm-workspaces
 
 # Copy polybar config to to proper folder
 \cp -r ~/.gc/dotfiles/polybar ~/.config
+cp ~/.gc/polybar-spotify/spotify_status.py ~/.config/polybar/scripts/
 chmod +x ~/.config/polybar/cuts/launch.sh
 chmod +x ~/.config/polybar/cuts/preview.sh
 chmod +x ~/.config/polybar/cuts/scripts/*
 chmod +x ~/.config/polybar/scripts/*
+sed -i -e '/play_pause/s/25B6/F909/' ~/.config/polybar/scripts/spotify_status.py 
+sed -i -e '/play_pause/s/23F8/F8E3/' ~/.config/polybar/scripts/spotify_status.py 
 
 # My FF profile public
 cd ~/.gc/dotfiles
