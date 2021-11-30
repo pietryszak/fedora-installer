@@ -244,22 +244,6 @@ bluetoothctl discoverable on
 # Blueman for bluetooth applet
 sudo dnf install -y blueman 
 
-# Ueberzug for ncspot cover images
-sudo dnf copr enable -y tokariew/ueberzug
-sudo dnf upgrade -y  
-sudo dnf install -y ueberzug 
-
-# Ncspot
-red=`tput setaf 1`
-bold=`tput bold`
-reset=`tput sgr0`
-echo "${red}${bold}INSTALLING NCSPOT. IT'S TAKE A TIME. PLEASE WAIT.${reset}"
-sudo dnf install -y pulseaudio-libs-devel libxcb-devel openssl-devel ncurses-devel dbus-devel
-cd ~/.gc
-git clone https://github.com/hrkfdn/ncspot.git
-cd ncspot
-cargo build --release --features cover
- 
 # Spotifyd deamon for spotfitui
 sudo dnf copr enable -y szpadel/spotifyd
 sudo dnf install -y spotifyd
@@ -413,9 +397,6 @@ git clone https://github.com/pietryszak/dotfiles.git
 
 # Copy htop config to proper folder 
 \cp -r ~/.gc/dotfiles/htop ~/.config
-
-# Copy ncspot config to proper folder
-\cp -r ~/.gc/dotfiles/ncspot ~/.config
 
 # Copy neofetch config to proper folder
 \cp -r ~/.gc/dotfiles/neofetch ~/.config
