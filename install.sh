@@ -105,6 +105,12 @@ sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore
 # Flathub
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+# Snap
+sudo dnf install -y snapd
+sudo ln -s /var/lib/snapd/snap /snap
+sudo snap install hello-world
+sudo snap install snap-store
+
 # Libreoffice draw
 sudo dnf install -y libreoffice-draw
 
@@ -203,8 +209,8 @@ sudo dnf install -y python3-pip
 # 7zip
 sudo dnf install -y p7zip p7zip-plugins
 
-# Spotify flatpak
-sudo flatpak install -y spotify 
+# Spotify snap
+sudo snap install spotify 
  
 # Meson
 sudo dnf install -y meson
