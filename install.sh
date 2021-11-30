@@ -9,7 +9,7 @@
 # GTK theme
 gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 
-# Sudo timeouti3
+# Sudo timeout
 sudo bash -c 'echo "
 Defaults        env_reset,timestamp_timeout=60" >>  /etc/sudoers'
 
@@ -134,6 +134,9 @@ sudo dnf install -y kitty
 
 # Install transsmision
 sudo dnf install -y transmission
+
+# Install redshift
+sudo dnf install -y redshift-gtk
 
 # Install kernel headers
 red=`tput setaf 1`
@@ -445,6 +448,9 @@ chmod +x ~/.config/VirtualBox/update.sh
 
 # Copy TeamViewer config to proper folder
 \cp -r ~/.gc/dotfiles/teamviewer/ ~/.config
+
+# Copy Redshitf config to proper folder
+\cp -r ~/.gc/dotfiles/redshift/ ~/.config
 
 # Copy Notorious desktop file to proper folder
 sudo \cp -r ~/.gc/dotfiles/notorious/* /usr/share/applications/
