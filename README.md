@@ -31,7 +31,7 @@ In system is installed 2 version of Spotify. Spotify snap and spotify-tui. First
 
 Connecting to Spotify API [spotify-tui](https://github.com/Rigellute/spotify-tui#connecting-to-spotifys-api)
 
-I prefer a spotify snap insted of spotify-tui because, spotify-tui is new project written in fast rust programming language without few features.
+I prefer a spotify snap insted of spotify-tui because, spotify-tui is new project without few features.
 
 
 * If You need a succesor of i3-gaps - Sway atfer install.sh use install-sway.sh. At this moment Sway has problems with vmware/virtualbox, so I don't use it.
