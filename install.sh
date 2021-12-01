@@ -89,6 +89,13 @@ sudo dnf install -y neofetch
 # Htop
 sudo dnf install -y htop
 
+# btop
+cd ~/.gc
+git clone https://github.com/aristocratos/btop.git
+cd btop
+make
+sudo make install
+
 # nnn
 sudo dnf install -y nnn 
 
