@@ -214,7 +214,12 @@ sudo dnf install -y p7zip p7zip-plugins
 
 # Spotify snap
 sudo snap install spotify 
- 
+
+# Ymuse - classic music player for mp3 etc.
+cd ~/.gc
+URL=$(curl -L -s https://api.github.com/repos/yktoo/ymuse/releases/latest | grep -o -E "https://(.*)ymuse_(.*)_linux_amd64.rpm") | wget $URL && mv ymuse*.rpm ymuse.rpm && sudo rpm -i --nodeps ymuse.rpm && rm ymuse.rpm
+cd
+
 # Meson
 sudo dnf install -y meson
 
