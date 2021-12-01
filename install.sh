@@ -209,6 +209,7 @@ code --install-extension redhat.vscode-yaml
 code --install-extension xadillax.viml
 code --install-extension jonathanharty.gruvbox-material-icon-theme
 code --install-extension jdinhlife.gruvbox
+code --install-extension naumovs.color-highlight
 
 # Rust 
 sudo dnf install -y rust cargo
