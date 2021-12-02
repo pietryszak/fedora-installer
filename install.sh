@@ -371,8 +371,8 @@ sudo dnf install -y feh
 # Rofi menu for i3
 sudo dnf install -y rofi
 
-# Comptom for 13  compositor for X
-sudo dnf install -y compton
+# Picom for 13  compositor for X
+sudo dnf install -y picom
 
 # Dusnt i3 notifications
 sudo dnf install -y dunst 
