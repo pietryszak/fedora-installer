@@ -470,6 +470,9 @@ mkdir ~/.vmware
 # Copy terminator config to proper folder
 \cp -r ~/.gc/dotfiles/terminator/ ~/.config
 
+# Copy kitty config to proper folder
+\cp -r ~/.gc/dotfiles/kitty/ ~/.config
+
 # Copy TeamViewer config to proper folder
 \cp -r ~/.gc/dotfiles/teamviewer/ ~/.config
 
