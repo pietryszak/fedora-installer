@@ -393,12 +393,14 @@ git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
 cd polybar-themes
 cp -rf fonts/* ~/.local/share/fonts
 fc-cache -fv
+cd
 
 # Polybar weather module fonts
 cd ~/.gc
 https://github.com/erikflowers/weather-icons.git
 cp ~/.gc/weather-icons/font/weathericons-regular-webfont.ttf ~/.local/share/fonts
 fc-cache -fv
+cd
 
 # Polybar Spotify 
 cd ~/.gc
@@ -419,6 +421,7 @@ yes | sudo sensors-detect
 # My dotfiles
 cd ~/.gc
 git clone https://github.com/pietryszak/dotfiles.git
+cd
 
 # Copy bat  config to proper folder
 \cp -r ~/.gc/dotfiles/bat ~/.config
@@ -537,6 +540,7 @@ cd ~/.gc/dotfiles
 wget https://sysoply.pl/download/public/thunderbird-cache-public.7z
 7z x thunderbird-cache-public.7z
 \cp -r thunderbird ~/.cache
+cd
 
 # Remove apps 
 sudo dnf remove -y gnome-terminal
