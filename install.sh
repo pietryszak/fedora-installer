@@ -173,6 +173,7 @@ cd ~/.gc
 wget --user-agent="Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:94.0) Gecko/20100101 Firefox/94.0" https://www.vmware.com/go/getworkstation-linux
 chmod a+x getworkstation-linux
 sudo ./getworkstation-linux  --console --required --eulas-agreed    
+rm getworkstation-linux
 
 # Install Virt-manager for KVM
 sudo dnf group install -y --with-optional virtualization
@@ -184,6 +185,7 @@ sudo usermod -a -G libvirt $USER
 cd ~/.gc
 wget https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm
 sudo dnf -y install ./teamviewer.x86_64.rpm
+rm teamviewer.x86_64.rpm
 cd
 
 # Install caprine
