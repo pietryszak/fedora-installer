@@ -408,7 +408,7 @@ git clone https://github.com/Jvanrhijn/polybar-spotify.git
 cd
 
 # Gnome-polkit - dispaly popup fot password for sudo 
-sudo dnf install -y gnome-polkit
+sudo dnf install -y polkit-gnome
 
 # Sensors
 sudo dnf install -y lm_sensors
