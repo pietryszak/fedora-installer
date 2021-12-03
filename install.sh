@@ -452,6 +452,7 @@ cd
 chmod +x ~/.config/VirtualBox/update.sh
 
 # Copy VmWare config to proper folder
+mkdir ~/.vmware
 \cp -r ~/.gc/dotfiles/vmware/preferences ~/.vmware
 
 # Copy Caprine config to proper folder
@@ -496,6 +497,7 @@ sudo \cp -r ~/.gc/dotfiles/gedit/* /usr/share/gtksourceview-4/styles
 gsettings set org.gnome.gedit.preferences.editor scheme 'gruvbox-dark' 
 
 # Copy arandr config to to proper folder
+mkdir ~/.screenlayout
 \cp -r ~/.gc/dotfiles/screenlayout/* ~/.screenlayout
 chmod +x ~/.screenlayout horizontal.sh
 chmod +x ~/.screenlayout vertical.sh
