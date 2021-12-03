@@ -131,7 +131,7 @@ sudo systemctl enable clamav-freshclam
 # Firewalld GUI
 sudo dnf install -y firewall-config
 
-# Install terminator - terminal fo vm
+# Install terminator - terminal for vm
 sudo dnf install -y terminator
 
 # Install kitty - terminal for pc
