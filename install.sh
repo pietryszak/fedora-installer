@@ -452,7 +452,7 @@ cd
 chmod +x ~/.config/VirtualBox/update.sh
 
 # Copy VmWare config to proper folder
-\cp -r ~/.gc/dotfiles/vmware/config ~/.vmware
+\cp -r ~/.gc/dotfiles/vmware/preferences ~/.vmware
 
 # Copy Caprine config to proper folder
 \cp -r ~/.gc/dotfiles/Caprine ~/.config
