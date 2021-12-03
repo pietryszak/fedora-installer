@@ -499,8 +499,7 @@ gsettings set org.gnome.gedit.preferences.editor scheme 'gruvbox-dark'
 # Copy arandr config to to proper folder
 mkdir ~/.screenlayout
 \cp -r ~/.gc/dotfiles/screenlayout/* ~/.screenlayout
-chmod +x ~/.screenlayout horizontal.sh
-chmod +x ~/.screenlayout vertical.sh
+chmod +x ~/.screenlayout/*
 
 # Copy shortcuts list to proper folder
 \cp -r ~/.gc/dotfiles/shortcuts ~/.config
