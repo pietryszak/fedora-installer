@@ -512,7 +512,6 @@ rm ~/.config/i3/scripts/vmware-workspaces
 \cp -r ~/.gc/dotfiles/polybar ~/.config
 cp ~/.gc/polybar-spotify/spotify_status.py ~/.config/polybar/scripts/
 chmod +x ~/.config/polybar/cuts/launch.sh
-chmod +x ~/.config/polybar/cuts/preview.sh
 chmod +x ~/.config/polybar/cuts/scripts/*
 chmod +x ~/.config/polybar/scripts/*
 sed -i -e '/play_pause/s/25B6/F909/' ~/.config/polybar/scripts/spotify_status.py 
