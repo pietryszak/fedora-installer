@@ -491,8 +491,6 @@ cp ~/.gc/dotfiles/gtk/settings.ini ~/.config/gtk-3.0/
 sudo \cp -r ~/.gc/dotfiles/gedit/* /usr/share/gtksourceview-4/styles
 gsettings set org.gnome.gedit.preferences.editor scheme 'gruvbox-dark' 
 
-sudo dnf -y install ./teamviewer.x86_64.rpm
-
 # Copy arandr config to to proper folder
 \cp -r ~/.gc/dotfiles/screenlayout/* ~/.screenlayout
 chmod +x ~/.screenlayout horizontal.sh
