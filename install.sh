@@ -239,6 +239,8 @@ sudo dnf install -y cmake
 cd ~/.gc
 wget https://static.zenkit.com/downloads/desktop-apps/base/zenkit-base-linux.rpm
 sudo rpm -i zenkit-base-linux.rpm 
+rm zenkit-base-linux.rpm
+cd
 
 # Notorious dependiences
 sudo dnf install -y gtk3-devel
