@@ -184,6 +184,7 @@ sudo usermod -a -G libvirt $USER
 cd ~/.gc
 wget https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm
 sudo dnf -y install ./teamviewer.x86_64.rpm
+sudo rpm --import https://linux.teamviewer.com/pubkey/currentkey.asc
 cd
 
 # Install caprine
