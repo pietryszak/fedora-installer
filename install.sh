@@ -355,6 +355,7 @@ mkdir -p build && cd build
 meson -Ddocs=true -Dmans=true
 meson compile
 sudo meson install 
+cd
 
 # i3-wifi applet
 sudo dnf install -y network-manager-applet
@@ -377,7 +378,7 @@ sudo dnf install -y rofi
 # Picom for 13  compositor for X
 sudo dnf install -y picom
 
-# Dusnt i3 notifications
+# Dunst i3 notifications
 sudo dnf install -y dunst 
 
 # Numlockx for i3 - numlock on at startup
