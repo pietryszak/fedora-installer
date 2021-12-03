@@ -115,8 +115,6 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 # Snap
 sudo dnf install -y snapd
 sudo ln -s /var/lib/snapd/snap /snap
-sudo snap install hello-world
-sudo snap install snap-store
 
 # Libreoffice draw
 sudo dnf install -y libreoffice-draw
@@ -221,6 +219,7 @@ sudo dnf install -y python3-pip
 sudo dnf install -y p7zip p7zip-plugins
 
 # Spotify snap
+sudo snap install snap-store
 sudo snap install spotify 
 
 # Ymuse - classic music player for mp3 etc.
