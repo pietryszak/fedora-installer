@@ -225,7 +225,8 @@ sudo snap install spotify
 
 # Ymuse - classic music player for mp3 etc.
 cd ~/.gc
-URL=$(curl -L -s https://api.github.com/repos/yktoo/ymuse/releases/latest | grep -o -E "https://(.*)ymuse_(.*)_linux_amd64.rpm") | wget $URL && mv ymuse*.rpm ymuse.rpm && sudo rpm -i --nodeps ymuse.rpm && rm ymuse.rpm
+sudo dnf -y install jq
+curl -fsSL https://api.github.com/repos/yktoo/ymuse/releases/latest | jq -r '.assets[] | select(.name | test("ymuse.*_linux_amd64\\.rpm")) | .browser_download_url' | xargs curl -fsSL -o /tmp/ymuse.rpm && sudo rpm -i --nodeps /tmp/ymuse.rpm && rm /tmp/ymuse.rpm
 cd
 
 # Meson
