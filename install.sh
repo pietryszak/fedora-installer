@@ -184,7 +184,6 @@ sudo usermod -a -G libvirt $USER
 cd ~/.gc
 wget https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm
 sudo dnf -y install ./teamviewer.x86_64.rpm
-sudo rpm --import https://linux.teamviewer.com/pubkey/currentkey.asc
 cd
 
 # Install caprine
@@ -195,7 +194,7 @@ sudo dnf install -y caprine
 # Install VSCode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-dnf check-upgrade
+sudo dnf -y check-upgrade
 sudo dnf install -y code
 
 # Install VSCode plugins
