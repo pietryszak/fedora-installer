@@ -360,6 +360,9 @@ cd
 # i3-wifi applet
 sudo dnf install -y network-manager-applet
 
+# i3-volume applet
+sudo dnf install -y volumeicon
+
 # i3 screen saver extension for X 
 sudo dnf install -y xss-lock
 
