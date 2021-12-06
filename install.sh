@@ -400,7 +400,6 @@ python setup.py build
 sudo python setup.py install
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas
 sudo rm  /usr/share/applications/caffeine-preferences.desktop  
-sudo sed -i 's/Exec=/usr/bin/caffeine/Exec-caffeine/g' /usr/share/applications/caffeine-preferences.desktop
 
 # Polybar themes
 cd ~/.gc
