@@ -390,6 +390,18 @@ sudo dnf install -y numlockx
 # Pywal - Generate and change color-schemes on the fly. For polybar
 pip3 install pywal
 
+# Caffeine-ng for temporarily inhibits the screensaver and sleep mode. 
+sudo dnf install -y python-click  python-setproctitle python-wheel python-pyxdg
+pip install ewmh
+cd ~/.gc
+git clone https://github.com/caffeine-ng/caffeine-ng.git
+cd caffeine-ng
+python setup.py build
+sudo python setup.py install
+sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+sudo rm  /usr/share/applications/caffeine-preferences.desktop  
+sudo sed -i 's/Exec=/usr/bin/caffeine/Exec-caffeine/g' /usr/share/applications/caffeine-preferences.desktop
+
 # Polybar themes
 cd ~/.gc
 git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
