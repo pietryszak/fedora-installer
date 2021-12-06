@@ -523,6 +523,9 @@ chmod +x ~/.config/polybar/scripts/*
 sed -i -e '/play_pause/s/25B6/F909/' ~/.config/polybar/scripts/spotify_status.py 
 sed -i -e '/play_pause/s/23F8/F8E3/' ~/.config/polybar/scripts/spotify_status.py 
 
+# Copy volumeicon config to to proper folder
+\cp -r ~/.gc/dotfiles/volumeicon/* ~/.config
+
 # My FF profile public
 cd ~/.gc/dotfiles
 wget https://sysoply.pl/download/public/mozilla-profile-public.7z
