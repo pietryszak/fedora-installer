@@ -13,6 +13,14 @@ gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 sudo bash -c 'echo "
 Defaults        env_reset,timestamp_timeout=60" >>  /etc/sudoers'
 
+# Polish time locale
+sudo bash -c 'echo "
+LC_NUMERIC=pl_PL.UTF-8
+LC_TIME=pl_PL.UTF-8
+LC_MONETARY=pl_PL.UTF-8
+LC_PAPER=pl_PL.UTF-8
+LC_MEASUREMENT=pl_PL.UTF-8" >> /etc/locale.conf'
+
 # DNF settings
 sudo bash -c 'echo "fastestmirror=True
 max_parallel_downloads=10
