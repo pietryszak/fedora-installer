@@ -13,6 +13,16 @@ cd ~/.gc && cd fedora-installer && chmod +x vm-vmware-install.sh && ./vm-vmware-
 ---
 
 ### After installation you can add extra futures:
+* Polish date and time format in system
+If you not need polish date and time format in system just use this script
+```bash
+sudo sed -i 's/LC_NUMERIC=pl_PL.UTF-8/#LC_NUMERIC=pl_PL.UTF-8/g' /etc/locale.conf
+sudo sed -i 's/LC_TIME=pl_PL.UTF-8/#LC_TIME=pl_PL.UTF-8/g' /etc/locale.conf
+sudo sed -i 's/LC_MONETARY=pl_PL.UTF-8/#LC_MONETARY=pl_PL.UTF-8/g' /etc/locale.conf
+sudo sed -i 's/LC_PAPER=pl_PL.UTF-8/#LC_PAPER=pl_PL.UTF-8/g' /etc/locale.conf
+sudo sed -i 's/LC_MEASUREMENT=pl_PL.UTF-8/#LC_MEASUREMENT=pl_PL.UTF-8/g' /etc/locale.conf
+```
+
 * Redshift - Blue light remover 
 
 [Redshift](https://github.com/jonls/redshift) adjusts the color temperature of your screen according to your surroundings. This may help your eyes hurt less if you are working in front of the screen at night. You can add your location to RedShift.
