@@ -9,7 +9,7 @@
 # GTK theme
 gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 
-# Sudo timeout
+# Sudo timeoutpolybar-scripts
 sudo bash -c 'echo "
 Defaults        env_reset,timestamp_timeout=60" >>  /etc/sudoers'
 
@@ -379,6 +379,9 @@ sudo dnf install -y arandr
 
 # Polybar - i3 statusbar
 sudo dnf install -y polybar
+
+# Yad for polybar calendar
+sudo dnf install -y yad
 
 # Feh for i3 wallpapers
 sudo dnf install -y feh
