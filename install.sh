@@ -96,12 +96,8 @@ sudo dnf install -y neofetch
 # Htop
 sudo dnf install -y htop
 
-# btop
-cd ~/.gc
-git clone https://github.com/aristocratos/btop.git
-cd btop
-make
-sudo make install
+# Bpytop
+sudo dnf install -y bpytop
 
 # nnn
 sudo dnf install -y nnn 
@@ -513,6 +509,9 @@ sed -i -e '/play_pause/s/23F8/F8E3/' ~/.config/polybar/scripts/spotify_status.py
 
 # Copy volumeicon config to to proper folder
 \cp -r ~/.gc/dotfiles/volumeicon/* ~/.config
+
+# Copy bpytop config to to proper folder
+\cp -r ~/.gc/dotfiles/bpytop/themes/ ~/.config
 
 # Copy update script to to proper folder
 mkdir ~/.scripts
