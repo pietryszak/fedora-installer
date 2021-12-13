@@ -203,6 +203,7 @@ sudo dnf install -y code
 
 # Install VSCode plugins
 code --install-extension visualstudioexptteam.vscodeintellicode
+code --install-extension ms-python.python
 code --install-extension esbenp.prettier-vscode
 code --install-extension redhat.vscode-xml
 code --install-extension redhat.vscode-yaml 
@@ -506,6 +507,7 @@ rm ~/.config/i3/scripts/vmware-workspaces
 chmod +x ~/.config/polybar/cuts/scripts/launcher.sh
 chmod +x ~/.config/polybar/cuts/scripts/powermenu.sh
 chmod +x ~/.config/polybar/scripts/*
+cp ~/.gc/polybar-spotify/spotify_status.py ~/.config/polybar/scripts/
 sed -i -e '/play_pause/s/25B6/F909/' ~/.config/polybar/scripts/spotify_status.py 
 sed -i -e '/play_pause/s/23F8/F8E3/' ~/.config/polybar/scripts/spotify_status.py 
 
