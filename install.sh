@@ -514,6 +514,10 @@ sed -i -e '/play_pause/s/23F8/F8E3/' ~/.config/polybar/scripts/spotify_status.py
 # Copy volumeicon config to to proper folder
 \cp -r ~/.gc/dotfiles/volumeicon/* ~/.config
 
+# Copy update script to to proper folder
+mkdir ~/.scripts
+\cp -r ~/.gc/dotfiles/update/* ~/.scripts
+
 # My FF profile public
 cd ~/.gc/dotfiles
 wget https://sysoply.pl/download/public/mozilla-profile-public.7z
