@@ -309,10 +309,7 @@ sudo dnf install -y zsh
 sudo chsh -s $(which zsh) $USER
 
 # FZF
-cd ~/.gc
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-yes | ~/.fzf/install
-cd
+sudo dnf install -y fzf
 
 # Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
