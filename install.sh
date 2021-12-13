@@ -28,7 +28,7 @@ defaultyes=True" >> /etc/dnf/dnf.conf'
 sudo sed -i 's/installonly_limit=3/installonly_limit=2/g' /etc/dnf/dnf.conf
 
 # Remove apps 
-sudo dnf remove -y gnome-maps gnome-clocks rhythmbox gnome-weather gnome-contacts gnome-tour totem
+sudo dnf remove -y gnome-maps gnome-clocks gnome-weather gnome-contacts gnome-tour totem
 
 # Update system
 sudo dnf -y upgrade
@@ -69,7 +69,6 @@ sudo dnf install -y gnome-tweaks
 
 # Neovim
 sudo dnf install -y neovim python3-neovim
-sudo dnf install -y powerline-fonts
 sudo bash -c 'echo "EDITOR=nvim" >> /etc/environment'
 
 # Nodejs for neovim plugins
@@ -113,16 +112,11 @@ sudo dnf install -y thunderbird
 # Gimp
 sudo dnf install -y gimp
 
-# Ms fonts 
-sudo dnf install -y cabextract xorg-x11-font-utils
-sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-
 # Flathub
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# Snap
-sudo dnf install -y snapd
-sudo ln -s /var/lib/snapd/snap /snap
+# Spotify
+flatpak install flathub com.spotify.Client
 
 # Libreoffice draw
 sudo dnf install -y libreoffice-draw
@@ -197,7 +191,7 @@ rm teamviewer.x86_64.rpm
 cd
 
 # Install caprine
-sudo dnf copr enable -y  dusansimic/caprine 
+sudo dnf copr enable -y dusansimic/caprine 
 sudo dnf upgrade -y
 sudo dnf install -y caprine
 
@@ -208,15 +202,18 @@ sudo dnf -y check-upgrade
 sudo dnf install -y code
 
 # Install VSCode plugins
+code --install-extension visualstudioexptteam.vscodeintellicode
 code --install-extension esbenp.prettier-vscode
 code --install-extension redhat.vscode-xml
-code --install-extension visualstudioexptteam.vscodeintellicode
-code --install-extension ms-azuretools.vscode-docker   
 code --install-extension redhat.vscode-yaml 
+code --install-extension ms-azuretools.vscode-docker   
 code --install-extension xadillax.viml
 code --install-extension jonathanharty.gruvbox-material-icon-theme
 code --install-extension jdinhlife.gruvbox
 code --install-extension naumovs.color-highlight
+code --install-extension nico-castell.linux-desktop-file
+code --install-extension xadillax.viml
+code --install-extension dlasagno.rasi
 
 # Github desktop
 cd ~/.gc
@@ -233,16 +230,6 @@ sudo dnf install -y python3-pip
 # 7zip
 sudo dnf install -y p7zip p7zip-plugins
 
-# Spotify snap
-sudo snap install snap-store
-sudo snap install spotify 
-
-# Ymuse - classic music player for mp3 etc.
-cd ~/.gc
-sudo dnf -y install jq
-curl -fsSL https://api.github.com/repos/yktoo/ymuse/releases/latest | jq -r '.assets[] | select(.name | test("ymuse.*_linux_amd64\\.rpm")) | .browser_download_url' | xargs curl -fsSL -o ymuse.rpm && sudo rpm -i --nodeps ymuse.rpm && rm ymuse.rpm
-cd
-
 # Meson
 sudo dnf install -y meson
 
@@ -256,22 +243,8 @@ sudo rpm -i zenkit-base-linux.rpm
 rm zenkit-base-linux.rpm
 cd
 
-# Notorious dependiences
-sudo dnf install -y gtk3-devel
-sudo dnf install -y gobject-introspection-devel 
- 
 # Notorious
-cd ~/.gc 
-git clone https://gitlab.gnome.org/GabMus/notorious
-cd notorious
-mkdir build
-cd build
-meson ..
-meson configure -Dprefix=$PWD/testdir
-ninja
-ninja install
-sudo cp ~/.gc/notorious/build/testdir/bin/notorious /usr/bin
-cd
+flatpak install flathub org.gabmus.notorious
 
 # Mega.nz for notorious sync
 sudo dnf install -y megasync
@@ -307,11 +280,15 @@ fi">> ~/.bashrc'
 
 # GTK Gruvbox theme
 cd ~/.gc
-git clone https://github.com/TheGreatMcPain/gruvbox-material-gtk.git
+git clone https://github.com/pietryszak/gruvbox-material-gtk.git
 cd gruvbox-material-gtk
 mkdir -p ~/.local/share/themes/
 cp -r themes/* ~/.local/share/themes/
+mkdir -p ~/.themes
+cp -r themes/* ~/.themes
 cd
+sudo flatpak override --filesystem=$HOME/.themes
+sudo flatpak override --env=GTK_THEME=Gruvbox-Material-Dark
 
 # QT5 apps theme
 sudo dnf install -y qt5ct
@@ -344,17 +321,22 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-# Powerlevel10k zsh
+
+# Fonts 
+sudo dnf install -y powerline-fonts
+sudo dnf install -y cabextract xorg-x11-font-utils
 cd ~/.gc
-mkdir fonts
+git clone https://github.com/pietryszak/fonts.git
 cd fonts
-wget https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Regular.ttf
-wget https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Bold.ttf
-wget https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Italic.ttf
-wget https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Bold%20Italic.ttf
-mkdir -p ~/.local/share/fonts/nerd
-cp MesloLGS* ~/.local/share/fonts/nerd
+sudo dnf install -y msttcore-fonts-installer-2.6-1.noarch.rpm
+cp feather.ttf ~/.local/share/fonts
+cp iosevka_nerd_font.ttf ~/.local/share/fonts
+cp MesloLGS* ~/.local/share/fonts/
+cp weathericons-regular-webfont.ttf ~/.local/share/fonts
 fc-cache -fv
+cd
+
+# Powerlevel10k zsh
 cd ~/.gc
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
@@ -405,9 +387,6 @@ sudo dnf install -y dunst
 # Numlockx for i3 - numlock on at startup
 sudo dnf install -y numlockx
 
-# Pywal - Generate and change color-schemes on the fly. For polybar
-pip3 install pywal
-
 # Caffeine-ng for temporarily inhibits the screensaver and sleep mode. 
 sudo dnf install -y python-click  python-setproctitle python-wheel python-pyxdg
 pip install ewmh
@@ -418,21 +397,6 @@ python setup.py build
 sudo python setup.py install
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas
 sudo rm  /usr/share/applications/caffeine-preferences.desktop  
-
-# Polybar themes
-cd ~/.gc
-git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
-cd polybar-themes
-cp -rf fonts/* ~/.local/share/fonts
-fc-cache -fv
-cd
-
-# Polybar weather module fonts
-cd ~/.gc
-https://github.com/erikflowers/weather-icons.git
-cp ~/.gc/weather-icons/font/weathericons-regular-webfont.ttf ~/.local/share/fonts
-fc-cache -fv
-cd
 
 # Polybar Spotify 
 cd ~/.gc
@@ -496,7 +460,7 @@ mkdir ~/.vmware
 # Copy zshrc config to proper folder
 \cp -r ~/.gc/dotfiles/zsh/.zshrc ~/
 
-# Copy zshrc config to proper folder
+# Copy powerlevel10k config to proper folder
 \cp -r ~/.gc/dotfiles/zsh/.p10k.zsh ~/
 
 # Copy terminator config to proper folder
@@ -510,9 +474,6 @@ mkdir ~/.vmware
 
 # Copy Redshitf config to proper folder
 \cp -r ~/.gc/dotfiles/redshift/ ~/.config
-
-# Copy Notorious desktop file to proper folder
-sudo \cp -r ~/.gc/dotfiles/notorious/* /usr/share/applications/
 
 # Copy bash_aliases to user folder
 \cp -r ~/.gc/dotfiles/bashrc/.bash_aliases ~/ 
@@ -545,9 +506,8 @@ rm ~/.config/i3/scripts/vmware-workspaces
 
 # Copy polybar config to to proper folder
 \cp -r ~/.gc/dotfiles/polybar ~/.config
-cp ~/.gc/polybar-spotify/spotify_status.py ~/.config/polybar/scripts/
-chmod +x ~/.config/polybar/cuts/launch.sh
-chmod +x ~/.config/polybar/cuts/scripts/*
+chmod +x ~/.config/polybar/cuts/scripts/launcher.sh
+chmod +x ~/.config/polybar/cuts/scripts/powermenu.sh
 chmod +x ~/.config/polybar/scripts/*
 sed -i -e '/play_pause/s/25B6/F909/' ~/.config/polybar/scripts/spotify_status.py 
 sed -i -e '/play_pause/s/23F8/F8E3/' ~/.config/polybar/scripts/spotify_status.py 
