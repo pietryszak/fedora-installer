@@ -218,6 +218,12 @@ code --install-extension jonathanharty.gruvbox-material-icon-theme
 code --install-extension jdinhlife.gruvbox
 code --install-extension naumovs.color-highlight
 
+# Github desktop
+cd ~/.gc
+sudo dnf install -y jq
+curl -fsSL https://api.github.com/repos/shiftkey/desktop/releases/latest | jq -r '.assets[] | select(.name | test("GitHubDesktop.*linux1\\.rpm")) | .browser_download_url' | xargs curl -fsSL -o GitHubDesktop.rpm && sudo dnf install -y GitHubDesktop.rpm && rm GitHubDesktop.rpm 
+cd
+
 # Rust 
 sudo dnf install -y rust cargo
 
@@ -234,7 +240,7 @@ sudo snap install spotify
 # Ymuse - classic music player for mp3 etc.
 cd ~/.gc
 sudo dnf -y install jq
-curl -fsSL https://api.github.com/repos/yktoo/ymuse/releases/latest | jq -r '.assets[] | select(.name | test("ymuse.*_linux_amd64\\.rpm")) | .browser_download_url' | xargs curl -fsSL -o /tmp/ymuse.rpm && sudo rpm -i --nodeps /tmp/ymuse.rpm && rm /tmp/ymuse.rpm
+curl -fsSL https://api.github.com/repos/yktoo/ymuse/releases/latest | jq -r '.assets[] | select(.name | test("ymuse.*_linux_amd64\\.rpm")) | .browser_download_url' | xargs curl -fsSL -o ymuse.rpm && sudo rpm -i --nodeps ymuse.rpm && rm ymuse.rpm
 cd
 
 # Meson
@@ -353,17 +359,18 @@ cd ~/.gc
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # i3-gaps
-# sudo dnf install i3-gaps
 sudo dnf install -y libxcb-devel xcb-util-keysyms-devel xcb-util-devel xcb-util-wm-devel xcb-util-xrm-devel yajl-devel libXrandr-devel startup-notification-devel libev-devel xcb-util-cursor-devel libXinerama-devel libxkbcommon-devel libxkbcommon-x11-devel pcre-devel pango-devel git gcc automake asciidoc xmlto
 sudo dnf install -y i3status-config libconfuse perl-AnyEvent perl-AnyEvent-I3 perl-JSON-XS perl-Types-Serialiser perl-common-sense xorg-x11-fonts-misc dmenu i3lock i3status perl-Guard perl-Task-Weaken pulseaudio-utils
-cd ~/.gc
-git clone https://www.github.com/Airblader/i3 i3-gaps
-cd i3-gaps
-mkdir -p build && cd build
-meson -Ddocs=true -Dmans=true
-meson compile
-sudo meson install 
-cd
+#cd ~/.gc
+#git clone https://www.github.com/Airblader/i3 i3-gaps
+#cd i3-gaps
+#mkdir -p build && cd build
+#meson -Ddocs=true -Dmans=true
+#meson compile
+#sudo meson install 
+#cd
+sudo dnf copr enable -y fuhrmann/i3-gaps
+sudo dnf install -y i3-gaps
 
 # i3-wifi applet
 sudo dnf install -y network-manager-applet
