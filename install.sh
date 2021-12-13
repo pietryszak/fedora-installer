@@ -517,6 +517,7 @@ sed -i -e '/play_pause/s/23F8/F8E3/' ~/.config/polybar/scripts/spotify_status.py
 # Copy update script to to proper folder
 mkdir ~/.scripts
 \cp -r ~/.gc/dotfiles/update/* ~/.scripts
+chmod +x ~/.scripts/update.sh
 
 # My FF profile public
 cd ~/.gc/dotfiles
