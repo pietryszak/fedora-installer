@@ -373,6 +373,13 @@ cd
 # Gnome-polkit - dispaly popup fot password for sudo 
 sudo dnf install -y polkit-gnome
 
+# Zenkit
+cd ~/.gc
+wget https://static.zenkit.com/downloads/desktop-apps/base/zenkit-base-linux.rpm
+sudo rpm -i zenkit-base-linux.rpm 
+rm zenkit-base-linux.rpm
+cd
+
 ############ FLATPKACKS #####################
 
 # Flathub
