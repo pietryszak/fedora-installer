@@ -60,7 +60,7 @@ sudo dnf install -y \*-firmware
 sudo dnf install -y intel-media-driver
 sudo dnf install -y libva-intel-driver 
 
-# Install codecs 
+# Codecs 
 sudo dnf install -y ffmpeg
 
 # Gnome extensions
@@ -99,7 +99,7 @@ sudo dnf install -y htop
 # Bpytop
 sudo dnf install -y bpytop
 
-# nnn
+# Nnn
 sudo dnf install -y nnn c
 
 # Thunderbird
@@ -123,19 +123,22 @@ sudo systemctl enable clamav-freshclam
 # Firewalld GUI
 sudo dnf install -y firewall-config
 
-# Install terminator - terminal for vm
+# Timeshift
+sudo dnf install -y timeshift
+
+# Terminator - terminal for vm
 sudo dnf install -y terminator
 
-# Install kitty - terminal for pc
+# Kitty - terminal for pc
 sudo dnf install -y kitty
 
-# Install transsmision
+# Transsmision
 sudo dnf install -y transmission
 
-# Install redshift
+# Redshift
 sudo dnf install -y redshift-gtk
 
-# Install kernel headers
+# Kernel headers
 red=`tput setaf 1`
 bold=`tput bold`
 reset=`tput sgr0`
@@ -167,7 +170,7 @@ chmod a+x getworkstation-linux
 sudo ./getworkstation-linux  --console --required --eulas-agreed    
 rm getworkstation-linux
 
-# Install Virt-manager for KVM
+# Virt-manager for KVM
 sudo dnf group install -y --with-optional virtualization
 sudo systemctl start libvirtd
 sudo systemctl enable libvirtd
@@ -180,18 +183,18 @@ sudo dnf -y install ./teamviewer.x86_64.rpm
 rm teamviewer.x86_64.rpm
 cd
 
-# Install caprine
+# Caprine - FB messenger
 sudo dnf copr enable -y dusansimic/caprine 
 sudo dnf upgrade -y
 sudo dnf install -y caprine
 
-# Install VSCode
+# VSCode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 sudo dnf -y check-upgrade
 sudo dnf install -y code
 
-# Install VSCode plugins
+# VSCode plugins
 code --install-extension visualstudioexptteam.vscodeintellicode
 code --install-extension ms-python.python
 code --install-extension esbenp.prettier-vscode
@@ -287,7 +290,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # Oh-my-zsh addons
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
 
 # Fonts 
 sudo dnf install -y powerline-fonts
