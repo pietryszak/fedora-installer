@@ -382,7 +382,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 flatpak install -y flathub com.spotify.Client
 
 # Github desktop
-flatpak install flathub io.github.shiftey.Desktop
+flatpak install -y flathub io.github.shiftey.Desktop
 
 # Joplin
 flatpak install -y flathub flathub net.cozic.joplin_desktop
