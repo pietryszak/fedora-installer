@@ -100,7 +100,7 @@ sudo dnf install -y htop
 sudo dnf install -y bpytop
 
 # nnn
-sudo dnf install -y nnn 
+sudo dnf install -y nnn c
 
 # Thunderbird
 sudo dnf install -y thunderbird
@@ -240,8 +240,8 @@ sudo rpm -i zenkit-base-linux.rpm
 rm zenkit-base-linux.rpm
 cd
 
-# Notorious
-flatpak install -y flathub org.gabmus.notorious
+# Joplin
+flatpak install -y flathub flathub net.cozic.joplin_desktop
 
 # Mega.nz for notorious sync
 sudo dnf install -y megasync
