@@ -508,7 +508,7 @@ sed -i -e '/play_pause/s/25B6/F909/' ~/.config/polybar/scripts/spotify_status.py
 sed -i -e '/play_pause/s/23F8/F8E3/' ~/.config/polybar/scripts/spotify_status.py 
 
 # Copy volumeicon config to to proper folder
-\cp -r ~/.gc/dotfiles/volumeicon/* ~/.config
+\cp -r ~/.gc/dotfiles/volumeicon/* ~/.config/volumeicon
 
 # Copy bpytop config to to proper folder
 \cp -r ~/.gc/dotfiles/bpytop/themes/ ~/.config
