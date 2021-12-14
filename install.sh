@@ -373,7 +373,7 @@ cd
 # Gnome-polkit - dispaly popup fot password for sudo 
 sudo dnf install -y polkit-gnome
 
-############ FLATPKACKS
+############ FLATPKACKS #####################
 
 # Flathub
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
