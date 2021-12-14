@@ -112,7 +112,7 @@ sudo dnf install -y gimp
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Spotify
-flatpak install flathub com.spotify.Client
+flatpak install -y flathub com.spotify.Client
 
 # Libreoffice draw
 sudo dnf install -y libreoffice-draw
@@ -241,7 +241,7 @@ rm zenkit-base-linux.rpm
 cd
 
 # Notorious
-flatpak install flathub org.gabmus.notorious
+flatpak install -y flathub org.gabmus.notorious
 
 # Mega.nz for notorious sync
 sudo dnf install -y megasync
