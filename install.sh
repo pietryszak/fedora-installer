@@ -518,6 +518,9 @@ mkdir ~/.scripts
 \cp -r ~/.gc/dotfiles/update/* ~/.scripts
 chmod +x ~/.scripts/update.sh
 
+# Copy caffeine-ng config to to proper folder
+\cp -r ~/.gc/dotfiles/caffeine/* ~/.config/caffeine
+
 # My FF profile public
 cd ~/.gc/dotfiles
 wget https://sysoply.pl/download/public/mozilla-profile-public.7z
