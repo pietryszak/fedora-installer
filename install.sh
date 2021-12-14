@@ -108,12 +108,6 @@ sudo dnf install -y thunderbird
 # Gimp
 sudo dnf install -y gimp
 
-# Flathub
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-# Spotify
-flatpak install -y flathub com.spotify.Client
-
 # Libreoffice draw
 sudo dnf install -y libreoffice-draw
 
@@ -212,12 +206,6 @@ code --install-extension nico-castell.linux-desktop-file
 code --install-extension xadillax.viml
 code --install-extension dlasagno.rasi
 
-# Github desktop
-cd ~/.gc
-sudo dnf install -y jq
-curl -fsSL https://api.github.com/repos/shiftkey/desktop/releases/latest | jq -r '.assets[] | select(.name | test("GitHubDesktop.*linux1\\.rpm")) | .browser_download_url' | xargs curl -fsSL -o GitHubDesktop.rpm && sudo dnf install -y GitHubDesktop.rpm && rm GitHubDesktop.rpm 
-cd
-
 # Rust 
 sudo dnf install -y rust cargo
 
@@ -238,16 +226,6 @@ cd ~/.gc
 wget https://static.zenkit.com/downloads/desktop-apps/base/zenkit-base-linux.rpm
 sudo rpm -i zenkit-base-linux.rpm 
 rm zenkit-base-linux.rpm
-cd
-
-# Joplin
-flatpak install -y flathub flathub net.cozic.joplin_desktop
-cd ~/.config/joplin-desktop/plugins
-git clone https://github.com/joplin/plugins/raw/master/plugins/ylc395.betterMarkdownViewer/plugin.jpl
-git clone https://github.com/joplin/plugins/raw/master/plugins/com.eliasvsimon.email-note/plugin.jpl
-git clone https://github.com/joplin/plugins/raw/master/plugins/com.lki.homenote/plugin.jpl
-git clone https://github.com/joplin/plugins/raw/master/plugins/joplin.plugin.note.tabs/plugin.jpl
-git clone https://github.com/joplin/plugins/raw/master/plugins/joplin.plugin.benji.persistentLayout/plugin.jpl
 cd
 
 # Dropbox
@@ -281,18 +259,6 @@ sudo bash -c 'echo "
 if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases
 fi">> ~/.bashrc'
-
-# GTK Gruvbox theme
-cd ~/.gc
-git clone https://github.com/pietryszak/gruvbox-material-gtk.git
-cd gruvbox-material-gtk
-mkdir -p ~/.local/share/themes/
-cp -r themes/* ~/.local/share/themes/
-mkdir -p ~/.themes
-cp -r themes/* ~/.themes
-cd
-sudo flatpak override --filesystem=$HOME/.themes
-sudo flatpak override --env=GTK_THEME=Gruvbox-Material-Dark
 
 # QT5 apps theme
 sudo dnf install -y qt5ct
@@ -406,6 +372,39 @@ cd
 
 # Gnome-polkit - dispaly popup fot password for sudo 
 sudo dnf install -y polkit-gnome
+
+############ FLATPKACKS
+
+# Flathub
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# Spotify
+flatpak install -y flathub com.spotify.Client
+
+# Github desktop
+flatpak install flathub io.github.shiftey.Desktop
+
+# Joplin
+flatpak install -y flathub flathub net.cozic.joplin_desktop
+cd ~/.config/joplin-desktop/plugins
+git clone https://github.com/joplin/plugins/raw/master/plugins/ylc395.betterMarkdownViewer/plugin.jpl
+git clone https://github.com/joplin/plugins/raw/master/plugins/com.eliasvsimon.email-note/plugin.jpl
+git clone https://github.com/joplin/plugins/raw/master/plugins/com.lki.homenote/plugin.jpl
+git clone https://github.com/joplin/plugins/raw/master/plugins/joplin.plugin.note.tabs/plugin.jpl
+git clone https://github.com/joplin/plugins/raw/master/plugins/joplin.plugin.benji.persistentLayout/plugin.jpl
+cd
+
+# GTK Gruvbox theme
+cd ~/.gc
+git clone https://github.com/pietryszak/gruvbox-material-gtk.git
+cd gruvbox-material-gtk
+mkdir -p ~/.local/share/themes/
+cp -r themes/* ~/.local/share/themes/
+mkdir -p ~/.themes
+cp -r themes/* ~/.themes
+cd
+sudo flatpak override --filesystem=$HOME/.themes
+sudo flatpak override --env=GTK_THEME=Gruvbox-Material-Dark
 
 # Sensors
 sudo dnf install -y lm_sensors
