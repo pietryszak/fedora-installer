@@ -15,7 +15,7 @@ cd ~/.gc && cd fedora-installer && chmod +x vm-vmware-install.sh && ./vm-vmware-
 ### After installation you can add extra futures:
 * Dropbox
 
-Just open Dropbox and automatic install configure it fot you
+Just open Dropbox and automatic install configure it for you
 
 * Polish date and time format in system
 
