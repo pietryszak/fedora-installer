@@ -243,8 +243,8 @@ cd
 # Joplin
 flatpak install -y flathub flathub net.cozic.joplin_desktop
 
-# Mega.nz for notorious sync
-sudo dnf install -y megasync
+# Dropbox
+sudo dnf isntall -y dropbox
 
 # Bluez for bluetooth 
 sudo dnf -y install bluez bluez-tools
