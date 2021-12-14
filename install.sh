@@ -242,6 +242,13 @@ cd
 
 # Joplin
 flatpak install -y flathub flathub net.cozic.joplin_desktop
+cd ~/.config/joplin-desktop/plugins
+git clone https://github.com/joplin/plugins/raw/master/plugins/ylc395.betterMarkdownViewer/plugin.jpl
+git clone https://github.com/joplin/plugins/raw/master/plugins/com.eliasvsimon.email-note/plugin.jpl
+git clone https://github.com/joplin/plugins/raw/master/plugins/com.lki.homenote/plugin.jpl
+git clone https://github.com/joplin/plugins/raw/master/plugins/joplin.plugin.note.tabs/plugin.jpl
+git clone https://github.com/joplin/plugins/raw/master/plugins/joplin.plugin.benji.persistentLayout/plugin.jpl
+cd
 
 # Dropbox
 sudo dnf isntall -y dropbox
