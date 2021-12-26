@@ -208,6 +208,7 @@ code --install-extension naumovs.color-highlight
 code --install-extension nico-castell.linux-desktop-file
 code --install-extension xadillax.viml
 code --install-extension dlasagno.rasi
+code --install-extension dcasella.i3
 
 # Rust 
 sudo dnf install -y rust cargo
