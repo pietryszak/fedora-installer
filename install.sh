@@ -583,6 +583,7 @@ chmod +x ~/.screenlayout/*
 # Copy i3 config to to proper folder
 \cp -r ~/.gc/dotfiles/i3 ~/.config
 rm ~/.config/i3/scripts/vmware-workspaces
+rm ~/.config/i3/scripts/virtualbox-workspaces
 
 # Copy polybar config to to proper folder
 \cp -r ~/.gc/dotfiles/polybar ~/.config
