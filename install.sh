@@ -328,7 +328,10 @@ sudo chsh -s $(which zsh) $USER
 
 # FZF
 echo "${green}${bold}INSTALLING FZF. COMMAND LINE FUZY FINDER ${reset}"
-sudo dnf install -y fzf
+cd .gc
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+yes | ~/.fzf/install
+cd
 
 # Oh-my-zsh
 echo "${green}${bold}INSTALLING OH MY ZSH. FRAMEWORK FOR ZSH${reset}"
