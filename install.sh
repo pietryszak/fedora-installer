@@ -260,10 +260,11 @@ sudo dnf install -y perl
 sudo dnf install -y rust cargo
 
 # Python pip, meson
-echo "${green}${bold}INSTALLING PHP PIP, MESON, CMAKE. BUILD SYSTEM FOR APPS${reset}"
+echo "${green}${bold}INSTALLING PHP PIP, MESON, CMAKE, JQ. BUILD SYSTEM FOR APPS${reset}"
 sudo dnf install -y python3-pip
 sudo dnf install -y meson
 sudo dnf install -y cmake
+sudo dnf install -y jq
 
 # 7zip
 echo "${green}${bold}INSTALLING 7ZIP. ARCHIVE APP${reset}"
