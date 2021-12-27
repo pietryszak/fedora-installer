@@ -21,9 +21,6 @@ sudo dnf install -y kanshi
 # Sway info for windows classes
 pip install --user swaytools  
 
-# Install foot terminal
-sudo dnf install -y foot
-
 # Grimshot - sway screenshot tool
 sudo dnf install -y grimshot
 mkdir -p $HOME/Pictures/screenshots
