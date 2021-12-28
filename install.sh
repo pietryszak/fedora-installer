@@ -83,8 +83,13 @@ sudo dnf install -y libva-intel-driver
 echo "${green}${bold}ADDING FFMPEG CODECS${reset}"
 sudo dnf install -y ffmpeg
 
+# Mpv
+# Codecs 
+echo "${green}${bold}INSTALLING MPV. VIDEO APP${reset}"
+sudo dnf install -y mpv
+
 # Gnome extensions
-echo "${green}${bold}ADDING GNOME TWEAKS${reset}"
+echo "${green}${bold}INSTALLING GNOME TWEAKS${reset}"
 sudo dnf install -y gnome-extensions-app 
 sudo dnf install -y gnome-tweaks
 
