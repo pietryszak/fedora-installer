@@ -39,7 +39,7 @@ sudo sed -i 's/installonly_limit=3/installonly_limit=2/g' /etc/dnf/dnf.conf
 
 # Remove apps 
 echo "${green}${bold}REMOVE UNNECESSARY GNOME APPS${reset}"
-sudo dnf remove -y gnome-maps gnome-clocks gnome-weather gnome-contacts gnome-tour totem
+sudo dnf remove -y gnome-maps gnome-clocks gnome-weather gnome-contacts gnome-tour totem gnome-screenshot 
 
 # Update system
 echo "${green}${bold}UPDATE SYSTEM. IT'S TAKE TIME. PLEASE WAIT!${reset}"
@@ -137,6 +137,10 @@ sudo dnf install -y thunderbird
 # Gimp
 echo "${green}${bold}INSTALLING GIMP. GRAPHICS APP${reset}"
 sudo dnf install -y gimp
+
+# Flameshot
+echo "${green}${bold}INSTALLING FLAMESHOT. SCREENSHOTS APP${reset}"
+sudo dnf install -y flameshot
 
 # Libreoffice draw
 echo "${green}${bold}INSTALLING LIBREOFFICE DRAW FOR PDF EDITING${reset}"
