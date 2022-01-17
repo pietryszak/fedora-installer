@@ -206,9 +206,10 @@ cd VirtualBox
 LatestVirtualBoxVersion=$(wget -qO - https://download.virtualbox.org/virtualbox/LATEST-STABLE.TXT) && wget "https://download.virtualbox.org/virtualbox/${LatestVirtualBoxVersion}/Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack"
 yes | sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack
 
-# Virtualbox NAT Network
+# Virtualbox NAT Network nad Host-only Network
 echo "${green}${bold}ADDING VIRTUALBOX NAT NETWORK${reset}"
 VBoxManage natnetwork add --netname NatNetwork --network "10.0.2.0/24" --enable
+VBoxManage hostonlyif create
 
 # Vmware Workstation
 echo "${green}${bold}INSTALLING VMWARE WORKSTATION. IT'S TAKE A TIME. PLEASE WAIT!${reset}"
