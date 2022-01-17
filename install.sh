@@ -207,7 +207,7 @@ LatestVirtualBoxVersion=$(wget -qO - https://download.virtualbox.org/virtualbox/
 yes | sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack
 
 # Virtualbox NAT Network nad Host-only Network
-echo "${green}${bold}ADDING VIRTUALBOX NAT NETWORK${reset}"
+echo "${green}${bold}ADDING VIRTUALBOX NAT AND HOST-ONLY NETWORKS${reset}"
 VBoxManage natnetwork add --netname NatNetwork --network "10.0.2.0/24" --enable
 VBoxManage hostonlyif create
 
