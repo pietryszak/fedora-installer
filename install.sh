@@ -196,7 +196,7 @@ sudo akmods
 sudo systemctl restart vboxdrv  
 lsmod  | grep -i vbox
 sudo usermod -a -G vboxusers $USER   
-sudo modprobe vboxdrv  
+sudo modprobe vboxdrv
 
 # Virtualbox extensions pack
 echo "${green}${bold}INSTALLING VIRTUALBOX EXTENSION PACK${reset}"
@@ -237,6 +237,7 @@ cd
 # Caprine - FB messenger
 echo "${green}${bold}INSTALLING CAPRINE. FACEBOOK MESSENGER APP${reset}"
 sudo dnf copr enable -y dusansimic/caprine 
+
 sudo dnf upgrade -y
 sudo dnf install -y caprine
 
