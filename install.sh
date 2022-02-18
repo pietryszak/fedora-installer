@@ -16,7 +16,7 @@ reset=`tput sgr0`
 echo "${green}${bold}SETTING DARK GTK THEME${reset}"
 gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 
-# Sudo timeoutpolybar-scripts
+# Sudo timeout
 echo "${green}${bold}SETTING SUDO TIMEOUT FOR 60 MINUTES FOR THE INSTALLATION PURPOSES${reset}"
 sudo bash -c 'echo "
 Defaults        env_reset,timestamp_timeout=60" >>  /etc/sudoers'
