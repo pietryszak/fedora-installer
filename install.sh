@@ -84,7 +84,6 @@ echo "${green}${bold}ADDING FFMPEG CODECS${reset}"
 sudo dnf install -y ffmpeg
 
 # Mpv
-# Codecs 
 echo "${green}${bold}INSTALLING MPV. VIDEO APP${reset}"
 sudo dnf install -y mpv
 
