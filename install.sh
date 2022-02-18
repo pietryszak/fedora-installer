@@ -457,7 +457,7 @@ cd
 
 # Dropbox
 echo "${green}${bold}INSTALLING DROPBOX${reset}"
-sudo dnf inStall -y dropbox
+sudo dnf install -y dropbox
 
 ############ FLATPKACKS #####################
 
@@ -608,6 +608,7 @@ sed -i -e '/play_pause/s/23F8/F8E3/' ~/.config/polybar/scripts/spotify_status.py
 \cp -r ~/.gc/dotfiles/volumeicon/* ~/.config/volumeicon
 
 # Copy bpytop config to to proper folder
+mkdir  ~/.config/bpytop/
 \cp -r ~/.gc/dotfiles/bpytop/* ~/.config/bpytop/
 
 # Copy update script to to proper folder
