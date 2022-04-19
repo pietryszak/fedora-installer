@@ -198,17 +198,17 @@ sudo usermod -a -G vboxusers $USER
 sudo modprobe vboxdrv
 
 # Virtualbox extensions pack
-echo "${green}${bold}INSTALLING VIRTUALBOX EXTENSION PACK${reset}"
-cd ~/.gc
-mkdir -p VirtualBox
-cd VirtualBox
-LatestVirtualBoxVersion=$(wget -qO - https://download.virtualbox.org/virtualbox/LATEST-STABLE.TXT) && wget "https://download.virtualbox.org/virtualbox/${LatestVirtualBoxVersion}/Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack"
-yes | sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack
+# echo "${green}${bold}INSTALLING VIRTUALBOX EXTENSION PACK${reset}"
+# cd ~/.gc
+# mkdir -p VirtualBox
+# cd VirtualBox
+# LatestVirtualBoxVersion=$(wget -qO - https://download.virtualbox.org/virtualbox/LATEST-STABLE.TXT) && wget "https://download.virtualbox.org/virtualbox/${LatestVirtualBoxVersion}/Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack"
+# yes | sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack
 
 # Virtualbox NAT Network nad Host-only Network
-echo "${green}${bold}ADDING VIRTUALBOX NAT AND HOST-ONLY NETWORKS${reset}"
-VBoxManage natnetwork add --netname NatNetwork --network "10.0.2.0/24" --enable
-VBoxManage hostonlyif create
+# echo "${green}${bold}ADDING VIRTUALBOX NAT AND HOST-ONLY NETWORKS${reset}"
+# VBoxManage natnetwork add --netname NatNetwork --network "10.0.2.0/24" --enable
+# VBoxManage hostonlyif create
 
 # Vmware Workstation
 echo "${green}${bold}INSTALLING VMWARE WORKSTATION. IT'S TAKE A TIME. PLEASE WAIT!${reset}"
@@ -519,8 +519,8 @@ cd
 \cp -r ~/.gc/dotfiles/spotify-tui ~/.config
 
 # Copy VirtualBox config to proper folder 
-\cp -r ~/.gc/dotfiles/VirtualBox ~/.config
-chmod +x ~/.config/VirtualBox/update.sh
+# \cp -r ~/.gc/dotfiles/VirtualBox ~/.config
+# chmod +x ~/.config/VirtualBox/update.sh
 
 # Copy VmWare config to proper folder
 mkdir ~/.vmware
