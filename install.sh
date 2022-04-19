@@ -598,7 +598,7 @@ mkdir vivaldi
 cd vivaldi
 wget https://sysoply.pl/download/public/vivaldi-profile-public.7z
 7z x vivaldi-profile-public.7z
-cp -r ~/.gc/dotfiles/vivaldi/Default ~/.config/vivaldi
+cp -r ~/.gc/dotfiles/vivaldi/Default ~/.config/vivaldi/
 
 # My Thunderbird profile public
 echo "${green}${bold}COPY THUNDERBIRD PROFILE WITH ADDONS AND THEME${reset}"
