@@ -289,18 +289,6 @@ bluetoothctl discoverable on
 echo "${green}${bold}INSTALLING BLUEMAN. BLUETOOTH APPLET${reset}"
 sudo dnf install -y blueman 
 
-# Spotifyd deamon for spotfitui
-echo "${green}${bold}INSTALLING SPOTIFYD. SPOTIFY DAEMON FOR SPOTIFY TUI${reset}"
-sudo dnf copr enable -y szpadel/spotifyd
-sudo dnf install -y spotifyd
-systemctl --user start spotifyd.service 
-systemctl --user enable spotifyd.service  
-
-# Spotify TUI
-echo "${green}${bold}INSTALLING SPOTIFY TUI. SPOTIFY IN TERMINAL${reset}"
-sudo dnf copr enable -y atim/spotify-tui
-sudo dnf install -y spotify-tui
-
 # Bash aliases for user
 echo "${green}${bold}ADING BASH ALIASES FOR USER${reset}"
 bash -c 'echo "
@@ -511,12 +499,6 @@ cd
 
 # Copy nvim config to proper folder
 \cp -r ~/.gc/dotfiles/nvim ~/.config
-
-# Copy spotifyd config to proper folder
-\cp -r ~/.gc/dotfiles/spotifyd ~/.config
-
-# Copy spotify-tui config to proper folder
-\cp -r ~/.gc/dotfiles/spotify-tui ~/.config
 
 # Copy VirtualBox config to proper folder 
 # \cp -r ~/.gc/dotfiles/VirtualBox ~/.config
