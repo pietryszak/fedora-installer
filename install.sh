@@ -591,8 +591,17 @@ mkdir ~/.scripts
 \cp -r ~/.gc/dotfiles/update/* ~/.scripts
 chmod +x ~/.scripts/update.sh
 
+# My Vivaldi browser profile public
+echo "${green}${bold}COPY VIVALDI PROFILE WITH ADDONS AND THEME${reset}"
+cd ~/.gc/dotfiles
+mkdir vivaldi
+cd vivaldi
+wget https://sysoply.pl/download/public/vivaldi-profile-public.7z
+7z x vivaldi-profile-public.7z
+\cp -r ~/.gc/dotfiles/vivaldi/Default ~/.config/vivaldi
+
 # My Thunderbird profile public
-echo "${green}${bold}COPY THUNDERBIRD PROFILE WITH ADDONS AN THEME${reset}"
+echo "${green}${bold}COPY THUNDERBIRD PROFILE WITH ADDONS AND THEME${reset}"
 cd ~/.gc/dotfiles
 wget https://sysoply.pl/download/public/thunderbird-profile-public.7z
 7z x thunderbird-profile-public.7z
