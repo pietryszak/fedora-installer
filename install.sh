@@ -491,87 +491,87 @@ git clone https://github.com/pietryszak/dotfiles.git
 cd
 
 # Copy bat  config to proper folder
-\cp -r ~/.gc/dotfiles/bat ~/.config
+cp -r ~/.gc/dotfiles/bat ~/.config
 
 # Copy Code config to proper folder
-\cp -r ~/.gc/dotfiles/Code/settings.json ~/.config/Code/User/
+cp -r ~/.gc/dotfiles/Code/settings.json ~/.config/Code/User/
 
 # Copy htop config to proper folder 
-\cp -r ~/.gc/dotfiles/htop ~/.config
+cp -r ~/.gc/dotfiles/htop ~/.config
 
 # Copy neofetch config to proper folder
-\cp -r ~/.gc/dotfiles/neofetch ~/.config
+cp -r ~/.gc/dotfiles/neofetch ~/.config
 
 # Copy nvim config to proper folder
-\cp -r ~/.gc/dotfiles/nvim ~/.config
+cp -r ~/.gc/dotfiles/nvim ~/.config
 
 # Copy VirtualBox config to proper folder 
-\cp -r ~/.gc/dotfiles/VirtualBox ~/.config
+cp -r ~/.gc/dotfiles/VirtualBox ~/.config
 chmod +x ~/.config/VirtualBox/update.sh
 
 # Copy VmWare config to proper folder
 mkdir ~/.vmware
-\cp -r ~/.gc/dotfiles/vmware/preferences ~/.vmware
+cp -r ~/.gc/dotfiles/vmware/preferences ~/.vmware
 
 # Copy Caprine config to proper folder
-\cp -r ~/.gc/dotfiles/Caprine ~/.config
+cp -r ~/.gc/dotfiles/Caprine ~/.config
 
 # Copy zsh sripts to proper folder
-\cp -r ~/.gc/dotfiles/zsh/scripts/* ~/.oh-my-zsh/custom
+cp -r ~/.gc/dotfiles/zsh/scripts/* ~/.oh-my-zsh/custom
 
 # Copy zshrc config to proper folder
-\cp -r ~/.gc/dotfiles/zsh/.zshrc ~/
+cp -r ~/.gc/dotfiles/zsh/.zshrc ~/
 
 # Copy powerlevel10k config to proper folder
-\cp -r ~/.gc/dotfiles/zsh/.p10k.zsh ~/
+cp -r ~/.gc/dotfiles/zsh/.p10k.zsh ~/
 
 # Copy terminator config to proper folder
-\cp -r ~/.gc/dotfiles/terminator/ ~/.config
+cp -r ~/.gc/dotfiles/terminator/ ~/.config
 
 # Copy kitty config to proper folder
-\cp -r ~/.gc/dotfiles/kitty/ ~/.config
+cp -r ~/.gc/dotfiles/kitty/ ~/.config
 
 # Copy TeamViewer config to proper folder
-\cp -r ~/.gc/dotfiles/teamviewer/ ~/.config
+cp -r ~/.gc/dotfiles/teamviewer/ ~/.config
 
 # Copy Redshift config to proper folder
-\cp -r ~/.gc/dotfiles/redshift/ ~/.config
+cp -r ~/.gc/dotfiles/redshift/ ~/.config
 
 # Copy Redshift config to proper folder
-\cp -r ~/.gc/dotfiles/joplin/* ~/.config/joplin-desktop
+cp -r ~/.gc/dotfiles/joplin/* ~/.config/joplin-desktop
 
 # Copy bash_aliases to user folder
-\cp -r ~/.gc/dotfiles/bashrc/.bash_aliases ~/ 
+cp -r ~/.gc/dotfiles/bashrc/.bash_aliases ~/ 
 
 # Copy bash_aliases to sudo/root folder
-sudo \cp -r ~/.gc/dotfiles/bashrc/.bash_aliases /root  
+sudo cp -r ~/.gc/dotfiles/bashrc/.bash_aliases /root  
 
 # Copy qt5ct config to to proper folder
-\cp -r ~/.gc/dotfiles/qt5ct ~/.config
+cp -r ~/.gc/dotfiles/qt5ct ~/.config
 
 # Copy gtk config to to proper folder
 cp ~/.gc/dotfiles/gtk/.gtkrc-2.0 ~
 cp ~/.gc/dotfiles/gtk/settings.ini ~/.config/gtk-3.0/
 
 # Copy gedit config to to proper folder
-sudo \cp -r ~/.gc/dotfiles/gedit/* /usr/share/gtksourceview-4/styles
+sudo cp -r ~/.gc/dotfiles/gedit/* /usr/share/gtksourceview-4/styles
 gsettings set org.gnome.gedit.preferences.editor scheme 'gruvbox-dark' 
 
 # Copy arandr config to to proper folder
 mkdir ~/.screenlayout
-\cp -r ~/.gc/dotfiles/screenlayout/* ~/.screenlayout
+cp -r ~/.gc/dotfiles/screenlayout/* ~/.screenlayout
 chmod +x ~/.screenlayout/*
 
 # Copy shortcuts list to proper folder
-\cp -r ~/.gc/dotfiles/shortcuts ~/.config
+cp -r ~/.gc/dotfiles/shortcuts ~/.config
 
 # Copy i3 config to to proper folder
-\cp -r ~/.gc/dotfiles/i3 ~/.config
+cp -r ~/.gc/dotfiles/i3 ~/.config
 rm ~/.config/i3/scripts/vmware-workspaces
 rm ~/.config/i3/scripts/virtualbox-workspaces
 
 # Copy polybar config to to proper folder
-\cp -r ~/.gc/dotfiles/polybar ~/.config
+cp -r ~/.gc/dotfiles/polybar ~/.config
 chmod +x ~/.config/polybar/cuts/scripts/launcher.sh
 chmod +x ~/.config/polybar/cuts/scripts/powermenu.sh
 chmod +x ~/.config/polybar/scripts/*
@@ -580,15 +580,15 @@ sed -i -e '/play_pause/s/25B6/F909/' ~/.config/polybar/scripts/spotify_status.py
 sed -i -e '/play_pause/s/23F8/F8E3/' ~/.config/polybar/scripts/spotify_status.py 
 
 # Copy volumeicon config to to proper folder
-\cp -r ~/.gc/dotfiles/volumeicon/* ~/.config/volumeicon
+cp -r ~/.gc/dotfiles/volumeicon/* ~/.config/volumeicon
 
 # Copy bpytop config to to proper folder
 mkdir  ~/.config/bpytop/
-\cp -r ~/.gc/dotfiles/bpytop/* ~/.config/bpytop/
+cp -r ~/.gc/dotfiles/bpytop/* ~/.config/bpytop/
 
 # Copy update script to to proper folder
 mkdir ~/.scripts
-\cp -r ~/.gc/dotfiles/update/* ~/.scripts
+cp -r ~/.gc/dotfiles/update/* ~/.scripts
 chmod +x ~/.scripts/update.sh
 
 # My Vivaldi browser profile public
@@ -598,20 +598,20 @@ mkdir vivaldi
 cd vivaldi
 wget https://sysoply.pl/download/public/vivaldi-profile-public.7z
 7z x vivaldi-profile-public.7z
-\cp -r ~/.gc/dotfiles/vivaldi/Default ~/.config/vivaldi
+cp -r ~/.gc/dotfiles/vivaldi/Default ~/.config/vivaldi
 
 # My Thunderbird profile public
 echo "${green}${bold}COPY THUNDERBIRD PROFILE WITH ADDONS AND THEME${reset}"
 cd ~/.gc/dotfiles
 wget https://sysoply.pl/download/public/thunderbird-profile-public.7z
 7z x thunderbird-profile-public.7z
-\cp -r .thunderbird ~/
+cp -r .thunderbird ~/
 
 # My Thunderbird cache public
 cd ~/.gc/dotfiles
 wget https://sysoply.pl/download/public/thunderbird-cache-public.7z
 7z x thunderbird-cache-public.7z
-\cp -r thunderbird ~/.cache
+cp -r thunderbird ~/.cache
 cd
 
 # Remove apps 
