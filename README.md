@@ -12,7 +12,7 @@ cd ~/.gc && cd fedora-installer && chmod +x vm-vmware-install.sh && ./vm-vmware-
 
 ---
 
-### After installation you can add extra futures:
+### After installation you can add/remove extra futures:
 * Dropbox
 
 Just open Dropbox and automatic install configure it for you
