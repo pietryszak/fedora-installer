@@ -51,14 +51,3 @@ Create an API key in [OpenWeatherMap](https://home.openweathermap.org)
 ```bash
 sed -i 's/KEY=""/KEY="YOUR_API_KEY_HERE"/g' ~/.config/polybar/scripts/openweathermap-fullfeatured.sh
 ```
-
-
-* Configure Spotify
-
-In system is installed 2 version of Spotify. Spotify snap and spotify-tui. First is standard version on Spotify, second is a cli version of Spotify with low ram usage.
-
-<p>You can choose a spotify-tui and configure it with this tutorial:</p>
-
-Connecting to Spotify API [spotify-tui](https://github.com/Rigellute/spotify-tui#connecting-to-spotifys-api)
-
-I prefer a spotify snap insted of spotify-tui because, spotify-tui is new project without few features.
