@@ -186,7 +186,8 @@ sudo dnf install -y redshift-gtk
 
 # Kernel headers
 echo "${green}${bold}INSTALLING KERNEL HEADERS. IT'S TAKE A TIME. PLEASE WAIT!${reset}"
-sudo dnf install -y kernel-devel kernel-headers    
+sudo dnf install -y "kernel-devel-$(uname -r)"
+sudo dnf install -y dkms
 
 # Virtualbox
 echo "${green}${bold}INSTALLING VIRTUALBOX${reset}"
@@ -198,17 +199,17 @@ sudo usermod -a -G vboxusers $USER
 sudo modprobe vboxdrv
 
 # Virtualbox extensions pack
-# echo "${green}${bold}INSTALLING VIRTUALBOX EXTENSION PACK${reset}"
-# cd ~/.gc
-# mkdir -p VirtualBox
-# cd VirtualBox
-# LatestVirtualBoxVersion=$(wget -qO - https://download.virtualbox.org/virtualbox/LATEST-STABLE.TXT) && wget "https://download.virtualbox.org/virtualbox/${LatestVirtualBoxVersion}/Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack"
-# yes | sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack
+echo "${green}${bold}INSTALLING VIRTUALBOX EXTENSION PACK${reset}"
+cd ~/.gc
+mkdir -p VirtualBox
+cd VirtualBox
+LatestVirtualBoxVersion=$(wget -qO - https://download.virtualbox.org/virtualbox/LATEST-STABLE.TXT) && wget "https://download.virtualbox.org/virtualbox/${LatestVirtualBoxVersion}/Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack"
+yes | sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack
 
 # Virtualbox NAT Network nad Host-only Network
-# echo "${green}${bold}ADDING VIRTUALBOX NAT AND HOST-ONLY NETWORKS${reset}"
-# VBoxManage natnetwork add --netname NatNetwork --network "10.0.2.0/24" --enable
-# VBoxManage hostonlyif create
+echo "${green}${bold}ADDING VIRTUALBOX NAT AND HOST-ONLY NETWORKS${reset}"
+VBoxManage natnetwork add --netname NatNetwork --network "10.0.2.0/24" --enable
+VBoxManage hostonlyif create
 
 # Vmware Workstation
 echo "${green}${bold}INSTALLING VMWARE WORKSTATION. IT'S TAKE A TIME. PLEASE WAIT!${reset}"
@@ -236,7 +237,6 @@ cd
 # Caprine - FB messenger
 echo "${green}${bold}INSTALLING CAPRINE. FACEBOOK MESSENGER APP${reset}"
 sudo dnf copr enable -y dusansimic/caprine 
-
 sudo dnf upgrade -y
 sudo dnf install -y caprine
 
@@ -256,13 +256,13 @@ code --install-extension redhat.vscode-xml
 code --install-extension redhat.vscode-yaml 
 code --install-extension ms-azuretools.vscode-docker   
 code --install-extension xadillax.viml
-code --install-extension jonathanharty.gruvbox-material-icon-theme
 code --install-extension jdinhlife.gruvbox
 code --install-extension naumovs.color-highlight
 code --install-extension nico-castell.linux-desktop-file
 code --install-extension xadillax.viml
 code --install-extension dlasagno.rasi
 code --install-extension dcasella.i3
+code --install-extension jonathanharty.gruvbox-material-icon-theme
 
 # Perl for fzf, Rust, Python pip
 echo "${green}${bold}INSTALLING PERL, RUST. POPULAR PROGRAMMING LANGUAGES IN LINUX. FOR APPS USED IN SYSTEM${reset}"
@@ -283,7 +283,7 @@ sudo dnf install -y p7zip p7zip-plugins
 # Bluez for bluetooth 
 echo "${green}${bold}INSTALLING BLUEZ. BLUETOOTH PROTOCOL STACK FOR LINUX${reset}"
 sudo dnf -y install bluez bluez-tools
-bluetoothctl discoverable on
+# bluetoothctl discoverable on
 
 # Blueman for bluetooth applet
 echo "${green}${bold}INSTALLING BLUEMAN. BLUETOOTH APPLET${reset}"
@@ -435,6 +435,10 @@ cd
 echo "${green}${bold}INSTALLING DROPBOX${reset}"
 sudo dnf install -y dropbox
 
+# Vivaldi browser
+sudo dnf config-manager --add-repo https://repo.vivaldi.com/archive/vivaldi-fedora.repo
+sudo dnf install -y vivaldi-stable
+
 ############ FLATPKACKS #####################
 
 # Flathub
@@ -501,8 +505,8 @@ cd
 \cp -r ~/.gc/dotfiles/nvim ~/.config
 
 # Copy VirtualBox config to proper folder 
-# \cp -r ~/.gc/dotfiles/VirtualBox ~/.config
-# chmod +x ~/.config/VirtualBox/update.sh
+\cp -r ~/.gc/dotfiles/VirtualBox ~/.config
+chmod +x ~/.config/VirtualBox/update.sh
 
 # Copy VmWare config to proper folder
 mkdir ~/.vmware
@@ -585,19 +589,6 @@ mkdir  ~/.config/bpytop/
 mkdir ~/.scripts
 \cp -r ~/.gc/dotfiles/update/* ~/.scripts
 chmod +x ~/.scripts/update.sh
-
-# My FF profile public
-echo "${green}${bold}COPY FIREFOX PROFILE WITH ADDONS AN THEME${reset}"
-cd ~/.gc/dotfiles
-wget https://sysoply.pl/download/public/mozilla-profile-public.7z
-7z x mozilla-profile-public.7z
-\cp -r .mozilla ~/
-
-# My FF cache profile
-cd ~/.gc/dotfiles
-wget https://sysoply.pl/download/public/mozilla-cache-public.7z
-7z x mozilla-cache-public.7z
-\cp -r mozilla ~/.cache
 
 # My Thunderbird profile public
 echo "${green}${bold}COPY THUNDERBIRD PROFILE WITH ADDONS AN THEME${reset}"
