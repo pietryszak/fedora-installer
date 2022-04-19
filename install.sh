@@ -218,6 +218,7 @@ wget --user-agent="Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:94.0) Gecko/201001
 chmod a+x getworkstation-linux
 sudo ./getworkstation-linux  --console --required --eulas-agreed    
 rm getworkstation-linux
+sudo CPATH=/usr/src/kernels/$(uname -r)/include/linux vmware-modconfig --console --install-all
 
 # Virt-manager for KVM
 echo "${green}${bold}INSTALLING VIRT MANAGER FOR KVM${reset}"
