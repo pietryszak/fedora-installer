@@ -91,7 +91,7 @@ sudo dnf install -y mpv
 echo "${green}${bold}INSTALLING GNOME TWEAKS${reset}"
 sudo dnf install -y gnome-extensions-app 
 sudo dnf install -y gnome-tweaks
-
+ 
 # Neovim
 echo "${green}${bold}INSTALLING NEOVIM${reset}"
 sudo dnf install -y neovim python3-neovim
@@ -425,18 +425,6 @@ sudo dnf install -y dunst
 echo "${green}${bold}INSTALLING NUMLOCKX. NUMLOCK ON AT STARTUP OF SYSTEM${reset}"
 sudo dnf install -y numlockx
 
-# Caffeine-ng for temporarily inhibits the screensaver and sleep mode. 
-#echo "${green}${bold}${reset}"
-#sudo dnf install -y python-click  python-setproctitle python-wheel python-pyxdg
-#pip install ewmh
-#cd ~/.gc
-#git clone https://github.com/caffeine-ng/caffeine-ng.git
-#cd caffeine-ng
-#python setup.py build
-#sudo python setup.py install
-#sudo glib-compile-schemas /usr/share/glib-2.0/schemas
-#sudo rm  /usr/share/applications/caffeine-preferences.desktop  
-
 # Polybar Spotify 
 echo "${green}${bold}INSTALLING POLYBAR SPOTIFY APPLET${reset}"
 cd ~/.gc
@@ -615,9 +603,6 @@ mkdir  ~/.config/bpytop/
 mkdir ~/.scripts
 \cp -r ~/.gc/dotfiles/update/* ~/.scripts
 chmod +x ~/.scripts/update.sh
-
-# Copy caffeine-ng config to to proper folder
-#\cp -r ~/.gc/dotfiles/caffeine/* ~/.config/caffeine
 
 # My FF profile public
 echo "${green}${bold}COPY FIREFOX PROFILE WITH ADDONS AN THEME${reset}"
