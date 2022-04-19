@@ -39,7 +39,7 @@ sudo sed -i 's/installonly_limit=3/installonly_limit=2/g' /etc/dnf/dnf.conf
 
 # Remove apps 
 echo "${green}${bold}REMOVE UNNECESSARY GNOME APPS${reset}"
-sudo dnf remove -y gnome-maps gnome-clocks gnome-weather gnome-contacts gnome-tour totem gnome-screenshot 
+sudo dnf remove -y gnome-maps gnome-clocks gnome-weather gnome-contacts gnome-tour totem gnome-screenshot firefox
 
 # Update system
 echo "${green}${bold}UPDATE SYSTEM. IT'S TAKE TIME. PLEASE WAIT!${reset}"
@@ -216,9 +216,9 @@ echo "${green}${bold}INSTALLING VMWARE WORKSTATION. IT'S TAKE A TIME. PLEASE WAI
 cd ~/.gc
 wget --user-agent="Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:94.0) Gecko/20100101 Firefox/94.0" https://www.vmware.com/go/getworkstation-linux
 chmod a+x getworkstation-linux
-sudo ./getworkstation-linux  --console --required --eulas-agreed    
-rm getworkstation-linux
+sudo ./getworkstation-linux  --console --required --eulas-agreed   
 sudo CPATH=/usr/src/kernels/$(uname -r)/include/linux vmware-modconfig --console --install-all
+rm getworkstation-linux
 
 # Virt-manager for KVM
 echo "${green}${bold}INSTALLING VIRT MANAGER FOR KVM${reset}"
@@ -598,6 +598,7 @@ mkdir vivaldi
 cd vivaldi
 wget https://sysoply.pl/download/public/vivaldi-profile-public.7z
 7z x vivaldi-profile-public.7z
+mkdir ~/.config/vivaldi/
 cp -r ~/.gc/dotfiles/vivaldi/Default ~/.config/vivaldi/
 
 # My Thunderbird profile public
@@ -616,7 +617,7 @@ cd
 
 # Remove apps 
 echo "${green}${bold}REMOVE UNNECESSARY APPS${reset}"
-sudo dnf remove -y gnome-terminal
+sudo dnf remove -y gnome-terminal 
 
 # Last update
 echo "${green}${bold}UPDATE SYSTEM BEFORE RESTART${reset}"
