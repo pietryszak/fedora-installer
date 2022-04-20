@@ -323,7 +323,7 @@ cd
 # ZSH 
 echo "${green}${bold}INSTALLING ZSH. UNIX SHELL WITH NEW FUTURES${reset}"
 sudo dnf install -yq util-linux-user >> ~/.gc/fedora-installer/install-log
-sudo dnf install -yq zsh >> ~/.gc/fedora-installer/install-log
+sudo dnf install -yq sqlite zsh >> ~/.gc/fedora-installer/install-log
 sudo chsh -s $(which zsh) $USER >> ~/.gc/fedora-installer/install-log
 
 # FZF
@@ -448,15 +448,15 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 # Spotify
 echo "${green}${bold}INSTALLING SPOTIFY${reset}"
-flatpak install -y --noninteractive flathub com.spotify.Client
+flatpak install -y --noninteractive flathub com.spotify.Client >> ~/.gc/fedora-installer/install-log
 
 # Github desktop
 echo "${green}${bold}INSTALLING GITHUB DESKTOP APP${reset}"
-flatpak install -y --noninteractive flathub io.github.shiftey.Desktop
+flatpak install -y --noninteractive flathub io.github.shiftey.Desktop >> ~/.gc/fedora-installer/install-log
 
 # Joplin
 echo "${green}${bold}INSTALLING JOPLIN. NOTING APP${reset}"
-flatpak install -y --noninteractive flathub net.cozic.joplin_desktop
+flatpak install -y --noninteractive flathub net.cozic.joplin_desktop >> ~/.gc/fedora-installer/install-log
 mkdir -p ~/.config/joplin-desktop/plugins
 cd ~/.config/joplin-desktop/plugins
 wget -q https://github.com/joplin/plugins/raw/master/plugins/ylc395.betterMarkdownViewer/plugin.jpl -O ylc395.betterMarkdownViewer.jpl 
