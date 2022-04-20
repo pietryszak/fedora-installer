@@ -5,6 +5,7 @@
 # Fedora i3-gaps installer sysoply.pl Paweł Pietryszak 2021
 
 ############################################################################################################################################
+touch ~/.gc/fedora-installer/install-log
 
 # Echo colors
 magenta=`tput setaf 5`
@@ -14,7 +15,7 @@ reset=`tput sgr0`
 
 # GTK theme
 echo "${green}${bold}SETTING DARK GTK THEME${reset}"
-gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark" 
 
 # Sudo timeout
 echo "${green}${bold}SETTING SUDO TIMEOUT FOR 60 MINUTES FOR THE INSTALLATION PURPOSES${reset}"
@@ -39,159 +40,159 @@ sudo sed -i 's/installonly_limit=3/installonly_limit=2/g' /etc/dnf/dnf.conf
 
 # Remove apps 
 echo "${green}${bold}REMOVE UNNECESSARY GNOME APPS${reset}"
-sudo dnf remove -y gnome-maps gnome-clocks gnome-weather gnome-contacts gnome-tour totem gnome-screenshot firefox
+sudo dnf remove -y gnome-maps gnome-clocks gnome-weather gnome-contacts gnome-tour totem gnome-screenshot firefox >> ~/.gc/fedora-installer/install-log
 
 # Update system
 echo "${green}${bold}UPDATE SYSTEM. IT'S TAKE TIME. PLEASE WAIT!${reset}"
-sudo dnf -y upgrade
+sudo dnf -y upgrade >> ~/.gc/fedora-installer/install-log
 
 # RPM Fusion - extra repo for apps not provided by Fedora or RH free and nonfree
 echo "${green}${bold}ADDING RPM FUSION REPOSITORIUM FOR APPS NOT PROVIDED BY FEDORA${reset}"
-sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm >> ~/.gc/fedora-installer/install-log
 
 # Add RPM Fusion to Gnome Software
 echo "${green}${bold}ADDING RPM FUSION REPOSITORIUM TO SOFTWARE SHOP${reset}"
-sudo dnf groupupdate -y core
+sudo dnf groupupdate -y core >> ~/.gc/fedora-installer/install-log
 
 # Add multimedia codecs
 echo "${green}${bold}ADDING MULTIMEDIA CODECS${reset}"
-sudo dnf groupupdate -y multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-sudo dnf groupupdate -y  sound-and-video
+sudo dnf groupupdate -y multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin >> ~/.gc/fedora-installer/install-log
+sudo dnf groupupdate -y  sound-and-video >> ~/.gc/fedora-installer/install-log
 
 # Audio and Video plugins
 echo "${green}${bold}ADDING AUDIO AND VIDEO PLUGINS${reset}"
-sudo dnf install -y gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
-sudo dnf install -y lame\* --exclude=lame-devel
-sudo dnf group upgrade -y --with-optional Multimedia
+sudo dnf install -y gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel >> ~/.gc/fedora-installer/install-log
+sudo dnf install -y lame\* --exclude=lame-devel >> ~/.gc/fedora-installer/install-log
+sudo dnf group upgrade -y --with-optional Multimedia >> ~/.gc/fedora-installer/install-log
 
 # DVD codecs
 echo "${green}${bold}ADDING DVD CODECS${reset}"
-sudo dnf install -y rpmfusion-free-release-tainted
-sudo dnf install -y libdvdcss
+sudo dnf install -y rpmfusion-free-release-tainted >> ~/.gc/fedora-installer/install-log
+sudo dnf install -y libdvdcss >> ~/.gc/fedora-installer/install-log
 
 # Nonfree firmawre 
 echo "${green}${bold}ADDING NONFREE FIRMWARE${reset}"
-sudo dnf install -y rpmfusion-nonfree-release-tainted
-sudo dnf install -y \*-firmware
+sudo dnf install -y rpmfusion-nonfree-release-tainted >> ~/.gc/fedora-installer/install-log
+sudo dnf install -y \*-firmware >> ~/.gc/fedora-installer/install-log
 
 # Intel multimedia codecs
 echo "${green}${bold}ADDING INTEL VIDEO ACCELERATION API${reset}"
-sudo dnf install -y intel-media-driver
-sudo dnf install -y libva-intel-driver 
+sudo dnf install -y intel-media-driver >> ~/.gc/fedora-installer/install-log
+sudo dnf install -y libva-intel-driver >> ~/.gc/fedora-installer/install-log
 
 # Codecs 
 echo "${green}${bold}ADDING FFMPEG CODECS${reset}"
-sudo dnf install -y ffmpeg
+sudo dnf install -y ffmpeg >> ~/.gc/fedora-installer/install-log
 
 # Mpv
 echo "${green}${bold}INSTALLING MPV. VIDEO APP${reset}"
-sudo dnf install -y mpv
+sudo dnf install -y mpv >> ~/.gc/fedora-installer/install-log
 
 # Gnome extensions
 echo "${green}${bold}INSTALLING GNOME TWEAKS${reset}"
-sudo dnf install -y gnome-extensions-app 
-sudo dnf install -y gnome-tweaks
+sudo dnf install -y gnome-extensions-app >> ~/.gc/fedora-installer/install-log
+sudo dnf install -y gnome-tweaks >> ~/.gc/fedora-installer/install-log
  
 # Neovim
 echo "${green}${bold}INSTALLING NEOVIM${reset}"
-sudo dnf install -y neovim python3-neovim
+sudo dnf install -y neovim python3-neovim >> ~/.gc/fedora-installer/install-log
 sudo bash -c 'echo "EDITOR=nvim" >> /etc/environment'
 
 # Nodejs for neovim plugins
 echo "${green}${bold}INSTALLING NODEJS FOR VIM PLUGINS${reset}"
-sudo dnf install -y nodejs
+sudo dnf install -y nodejs >> ~/.gc/fedora-installer/install-log
 
 # Vim-plug
 echo "${green}${bold}INSTALLING VIM-PLUG. VIM PLUGINS INSTALLER${reset}"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' >> ~/.gc/fedora-installer/install-log
 
 # Bat - new cat ;)
 echo "${green}${bold}INSTALLING BAT. BETTER CAT COMMAND${reset}"
-sudo dnf install -y bat
+sudo dnf install -y bat >> ~/.gc/fedora-installer/install-log
 
 # Ripgrep
 echo "${green}${bold}INSTALLING RIPGREP. NEW REPLECMENT FOR GREP${reset}"
-sudo dnf install -y ripgrep
+sudo dnf install -y ripgrep >> ~/.gc/fedora-installer/install-log
 
 # Most = man pager
 echo "${green}${bold}INSTALLING MOST. BETTER MAN HIGHLIGHTING${reset}"
-sudo dnf install -y most
+sudo dnf install -y most >> ~/.gc/fedora-installer/install-log
 
 # Neofetch
 echo "${green}${bold}INSTALLING NEOFETCH. SYSTEM INFO IN TERMINAL ${reset}"
-sudo dnf install -y neofetch
+sudo dnf install -y neofetch >> ~/.gc/fedora-installer/install-log
 
 # Htop
 echo "${green}${bold}INSTALLING HTOP. BETTER TOP COMMAND${reset}"
-sudo dnf install -y htop
+sudo dnf install -y htop >> ~/.gc/fedora-installer/install-log
 
 # Bpytop
 echo "${green}${bold}INSTALLING BTOP. TOP WITH MOUSE SUPPORT${reset}"
-sudo dnf install -y bpytop
+sudo dnf install -y bpytop >> ~/.gc/fedora-installer/install-log
 
 # Nnn
 echo "${green}${bold}INSTALLING NNN. FILE MANAGER IN TERMINAL${reset}"
-sudo dnf install -y nnn
+sudo dnf install -y nnn >> ~/.gc/fedora-installer/install-log
 
 # Thunderbird
 echo "${green}${bold}INSTALLING THUNDERBIRD. MAIL CLIENT${reset}"
-sudo dnf install -y thunderbird
+sudo dnf install -y thunderbird >> ~/.gc/fedora-installer/install-log
 
 # Gimp
 echo "${green}${bold}INSTALLING GIMP. GRAPHICS APP${reset}"
-sudo dnf install -y gimp
+sudo dnf install -y gimp >> ~/.gc/fedora-installer/install-log
 
 # Flameshot
 echo "${green}${bold}INSTALLING FLAMESHOT. SCREENSHOTS APP${reset}"
-sudo dnf install -y flameshot
+sudo dnf install -y flameshot >> ~/.gc/fedora-installer/install-log
 
 # Libreoffice draw
 echo "${green}${bold}INSTALLING LIBREOFFICE DRAW FOR PDF EDITING${reset}"
-sudo dnf install -y libreoffice-draw
+sudo dnf install -y libreoffice-draw >> ~/.gc/fedora-installer/install-log
 
 # ClamAV
 echo "${green}${bold}INSTALLING CLAMAV. BEST LINUX ANTIVIRUS${reset}"
-sudo dnf install -y clamav clamd clamav-update clamtk
+sudo dnf install -y clamav clamd clamav-update clamtk >> ~/.gc/fedora-installer/install-log
 sudo setsebool -P antivirus_can_scan_system 1
 sudo systemctl stop clamav-freshclam
-sudo freshclam
-sudo freshclam
+sudo freshclam >> ~/.gc/fedora-installer/install-log
+sudo freshclam >> ~/.gc/fedora-installer/install-log
 sudo systemctl start clamav-freshclam
 sudo systemctl enable clamav-freshclam
 
 # Firewalld GUI
 echo "${green}${bold}INSTALLING FIREWALL GUI${reset}"
-sudo dnf install -y firewall-config
+sudo dnf install -y firewall-config >> ~/.gc/fedora-installer/install-log
 
 # Timeshift
 echo "${green}${bold}INSTALLING TIMESHIFT. BACKUP TOOL${reset}"
-sudo dnf install -y timeshift
+sudo dnf install -y timeshift >> ~/.gc/fedora-installer/install-log
 
 # Terminator - terminal for vm
 echo "${green}${bold}INSTALLING TERMINATOR. TERMINAL FOR VIRTUALMASHINE${reset}"
-sudo dnf install -y terminator
+sudo dnf install -y terminator >> ~/.gc/fedora-installer/install-log
 
 # Kitty - terminal for pc
 echo "${green}${bold}INSTALLING KITTY. TERMINAL FOR PC${reset}"
-sudo dnf install -y kitty
+sudo dnf install -y kitty >> ~/.gc/fedora-installer/install-log
 
 # Transsmision
 echo "${green}${bold}INSTALLING TRANSMISSION. TORRENT APP${reset}"
-sudo dnf install -y transmission
+sudo dnf install -y transmission >> ~/.gc/fedora-installer/install-log
 
 # Redshift
 echo "${green}${bold}INSTALLING REDSHIFT. ADJUST THE COLOR TEMPERATURE OF SCREEN${reset}"
-sudo dnf install -y redshift-gtk
+sudo dnf install -y redshift-gtk >> ~/.gc/fedora-installer/install-log
 
 # Kernel headers
 echo "${green}${bold}INSTALLING KERNEL HEADERS. IT'S TAKE A TIME. PLEASE WAIT!${reset}"
-sudo dnf install -y "kernel-devel-$(uname -r)"
-sudo dnf install -y dkms
+sudo dnf install -y "kernel-devel-$(uname -r)" >> ~/.gc/fedora-installer/install-log
+sudo dnf install -y dkms >> ~/.gc/fedora-installer/install-log
 
 # Virtualbox
 echo "${green}${bold}INSTALLING VIRTUALBOX${reset}"
-sudo dnf install -y VirtualBox akmod-VirtualBox
+sudo dnf install -y VirtualBox akmod-VirtualBox >> ~/.gc/fedora-installer/install-log
 sudo akmods   
 sudo systemctl restart vboxdrv  
 lsmod  | grep -i vbox
@@ -238,15 +239,15 @@ cd
 # Caprine - FB messenger
 echo "${green}${bold}INSTALLING CAPRINE. FACEBOOK MESSENGER APP${reset}"
 sudo dnf copr enable -y dusansimic/caprine 
-sudo dnf upgrade -y
-sudo dnf install -y caprine
+sudo dnf upgrade -y >> ~/.gc/fedora-installer/install-log
+sudo dnf install -y caprine >> ~/.gc/fedora-installer/install-log
 
 # VSCode
 echo "${green}${bold}INSTALLING VSCODE. CODING APP FROM MICROSOFT${reset}"
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 sudo dnf -y check-upgrade
-sudo dnf install -y code
+sudo dnf install -y code >> ~/.gc/fedora-installer/install-log
 
 # VSCode plugins
 echo "${green}${bold}INSTALLING VSCODE PLUGINS${reset}"
@@ -267,28 +268,28 @@ code --install-extension jonathanharty.gruvbox-material-icon-theme
 
 # Perl for fzf, Rust, Python pip
 echo "${green}${bold}INSTALLING PERL, RUST. POPULAR PROGRAMMING LANGUAGES IN LINUX. FOR APPS USED IN SYSTEM${reset}"
-sudo dnf install -y perl
-sudo dnf install -y rust cargo
+sudo dnf install -y perl >> ~/.gc/fedora-installer/install-log
+sudo dnf install -y rust cargo >> ~/.gc/fedora-installer/install-log
 
 # Python pip, meson
 echo "${green}${bold}INSTALLING PHP PIP, MESON, CMAKE, JQ. BUILD SYSTEM FOR APPS${reset}"
-sudo dnf install -y python3-pip
-sudo dnf install -y meson
-sudo dnf install -y cmake
-sudo dnf install -y jq
+sudo dnf install -y python3-pip >> ~/.gc/fedora-installer/install-log
+sudo dnf install -y meson >> ~/.gc/fedora-installer/install-log
+sudo dnf install -y cmake >> ~/.gc/fedora-installer/install-log
+sudo dnf install -y jq >> ~/.gc/fedora-installer/install-log
 
 # 7zip
 echo "${green}${bold}INSTALLING 7ZIP. ARCHIVE APP${reset}"
-sudo dnf install -y p7zip p7zip-plugins
+sudo dnf install -y p7zip p7zip-plugins >> ~/.gc/fedora-installer/install-log
 
 # Bluez for bluetooth 
 echo "${green}${bold}INSTALLING BLUEZ. BLUETOOTH PROTOCOL STACK FOR LINUX${reset}"
-sudo dnf -y install bluez bluez-tools
+sudo dnf -y install bluez bluez-tools >> ~/.gc/fedora-installer/install-log
 # bluetoothctl discoverable on
 
 # Blueman for bluetooth applet
 echo "${green}${bold}INSTALLING BLUEMAN. BLUETOOTH APPLET${reset}"
-sudo dnf install -y blueman 
+sudo dnf install -y blueman >> ~/.gc/fedora-installer/install-log
 
 # Bash aliases for user
 echo "${green}${bold}ADING BASH ALIASES FOR USER${reset}"
@@ -306,7 +307,7 @@ fi">> ~/.bashrc'
 
 # QT5 apps theme
 echo "${green}${bold}SET QT5 APPS THEME${reset}"
-sudo dnf install -y qt5ct
+sudo dnf install -y qt5ct >> ~/.gc/fedora-installer/install-log
 sudo bash -c 'echo "QT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment'
 
 # Papirus gtk icons for gruvbox 
@@ -322,8 +323,8 @@ cd
 
 # ZSH 
 echo "${green}${bold}INSTALLING ZSH. UNIX SHELL WITH NEW FUTURES${reset}"
-sudo dnf install -y util-linux-user
-sudo dnf install -y zsh
+sudo dnf install -y util-linux-user >> ~/.gc/fedora-installer/install-log
+sudo dnf install -y zsh >> ~/.gc/fedora-installer/install-log
 sudo chsh -s $(which zsh) $USER
 
 # FZF
@@ -344,12 +345,12 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 # Fonts 
 echo "${green}${bold}ADDING FONTS TO SYSTEM ${reset}"
-sudo dnf install -y powerline-fonts
-sudo dnf install -y cabextract xorg-x11-font-utils
+sudo dnf install -y powerline-fonts >> ~/.gc/fedora-installer/install-log
+sudo dnf install -y cabextract xorg-x11-font-utils >> ~/.gc/fedora-installer/install-log
 cd ~/.gc
 git clone https://github.com/pietryszak/fonts.git
 cd fonts
-sudo dnf install -y msttcore-fonts-installer-2.6-1.noarch.rpm
+sudo dnf install -y msttcore-fonts-installer-2.6-1.noarch.rpm >> ~/.gc/fedora-installer/install-log
 mkdir -p ~/.local/share/fonts
 cp feather.ttf ~/.local/share/fonts
 cp iosevka_nerd_font.ttf ~/.local/share/fonts
@@ -365,54 +366,54 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 # i3-gaps
 echo "${green}${bold}INSTALLING I3-GAPS${reset}"
-sudo dnf install -y libxcb-devel xcb-util-keysyms-devel xcb-util-devel xcb-util-wm-devel xcb-util-xrm-devel yajl-devel libXrandr-devel startup-notification-devel libev-devel xcb-util-cursor-devel libXinerama-devel libxkbcommon-devel libxkbcommon-x11-devel pcre-devel pango-devel git gcc automake asciidoc xmlto
-sudo dnf install -y i3status-config libconfuse perl-AnyEvent perl-AnyEvent-I3 perl-JSON-XS perl-Types-Serialiser perl-common-sense xorg-x11-fonts-misc dmenu i3lock i3status perl-Guard perl-Task-Weaken pulseaudio-utils
+sudo dnf install -y libxcb-devel xcb-util-keysyms-devel xcb-util-devel xcb-util-wm-devel xcb-util-xrm-devel yajl-devel libXrandr-devel startup-notification-devel libev-devel xcb-util-cursor-devel libXinerama-devel libxkbcommon-devel libxkbcommon-x11-devel pcre-devel pango-devel git gcc automake asciidoc xmlto >> ~/.gc/fedora-installer/install-log
+sudo dnf install -y i3status-config libconfuse perl-AnyEvent perl-AnyEvent-I3 perl-JSON-XS perl-Types-Serialiser perl-common-sense xorg-x11-fonts-misc dmenu i3lock i3status perl-Guard perl-Task-Weaken pulseaudio-utils >> ~/.gc/fedora-installer/install-log
 sudo dnf copr enable -y fuhrmann/i3-gaps
-sudo dnf install -y i3-gaps
+sudo dnf install -y i3-gaps >> ~/.gc/fedora-installer/install-log
 
 # i3-wifi applet
 echo "${green}${bold}INSTALLING I3 WIFI APPLET${reset}"
-sudo dnf install -y network-manager-applet
+sudo dnf install -y network-manager-applet >> ~/.gc/fedora-installer/install-log
 
 # i3-volume applet
 echo "${green}${bold}INSTALLING I3 VOLUME APPLET${reset}"
-sudo dnf install -y volumeicon
+sudo dnf install -y volumeicon >> ~/.gc/fedora-installer/install-log
 
 # i3 screen saver extension for X 
 echo "${green}${bold}INSTALLING I3 SCREEN SAVER${reset}"
-sudo dnf install -y xss-lock
+sudo dnf install -y xss-lock >> ~/.gc/fedora-installer/install-log
 
 # Arandr -screen layout
 echo "${green}${bold}INSTALLING ARANDR. XRANDR GUI${reset}"
-sudo dnf install -y arandr
+sudo dnf install -y arandr >> ~/.gc/fedora-installer/install-log
 
 # Polybar - i3 statusbar
 echo "${green}${bold}INSTALLING POLYBAR. I3 BAR${reset}"
-sudo dnf install -y polybar
+sudo dnf install -y polybar >> ~/.gc/fedora-installer/install-log
 
 # Yad for polybar calendar
 echo "${green}${bold}INSTALLING I3 CALENDAR APPLET${reset}"
-sudo dnf install -y yad
+sudo dnf install -y yad >> ~/.gc/fedora-installer/install-log
 
 # Feh for i3 wallpapers
 echo "${green}${bold}INSTALLING I3 WALLPAPER APP${reset}"
-sudo dnf install -y feh
+sudo dnf install -y feh >> ~/.gc/fedora-installer/install-log
 
 # Rofi menu for i3
 echo "${green}${bold}INSTALLING ROFI. I3 MENU${reset}"
-sudo dnf install -y rofi
+sudo dnf install -y rofi >> ~/.gc/fedora-installer/install-log
 
 # Picom for 13  compositor for X
 echo "${green}${bold}INSTALLING PICOM. I3 WINDOWS COMPOSITOR${reset}"
-sudo dnf install -y picom
+sudo dnf install -y picom >> ~/.gc/fedora-installer/install-log
 
 # Dunst i3 notifications
 echo "${green}${bold}INSTALLING DUNST. I3 NOTIFICATIONS${reset}"
-sudo dnf install -y dunst 
+sudo dnf install -y dunst >> ~/.gc/fedora-installer/install-log
 
 # Numlockx for i3 - numlock on at startup
 echo "${green}${bold}INSTALLING NUMLOCKX. NUMLOCK ON AT STARTUP OF SYSTEM${reset}"
-sudo dnf install -y numlockx
+sudo dnf install -y numlockx >> ~/.gc/fedora-installer/install-log
 
 # Polybar Spotify 
 echo "${green}${bold}INSTALLING POLYBAR SPOTIFY APPLET${reset}"
@@ -422,7 +423,7 @@ cd
 
 # Gnome-polkit - dispaly popup fot password for sudo 
 echo "${green}${bold}INSTALLING GNOME POLKIT. POPUP WITH PASSWORD OF SUDO${reset}"
-sudo dnf install -y polkit-gnome
+sudo dnf install -y polkit-gnome >> ~/.gc/fedora-installer/install-log
 
 # Zenkit
 echo "${green}${bold}INSTALLING ZENKIT. KANBAN APP${reset}"
@@ -434,11 +435,11 @@ cd
 
 # Dropbox
 echo "${green}${bold}INSTALLING DROPBOX${reset}"
-sudo dnf install -y dropbox
+sudo dnf install -y dropbox >> ~/.gc/fedora-installer/install-log
 
 # Vivaldi browser
 sudo dnf config-manager --add-repo https://repo.vivaldi.com/archive/vivaldi-fedora.repo
-sudo dnf install -y vivaldi-stable
+sudo dnf install -y vivaldi-stable >> ~/.gc/fedora-installer/install-log
 
 ############ FLATPKACKS #####################
 
@@ -481,7 +482,7 @@ sudo flatpak override --env=GTK_THEME=Gruvbox-Material-Dark
 
 # Sensors
 echo "${green}${bold}INSTALLING SENSORS APP AND FINDING ALL SENSORS IN SYSEM. IT'S TAKE A TIME. PLEASE WAIT!${reset}"
-sudo dnf install -y lm_sensors
+sudo dnf install -y lm_sensors >> ~/.gc/fedora-installer/install-log
 yes | sudo sensors-detect
 
 # My dotfiles
