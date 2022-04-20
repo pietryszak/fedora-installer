@@ -209,7 +209,7 @@ LatestVirtualBoxVersion=$(wget -qO - https://download.virtualbox.org/virtualbox/
 # Virtualbox NAT Network nad Host-only Network
 echo "${green}${bold}ADDING VIRTUALBOX NAT AND HOST-ONLY NETWORKS${reset}"
 VBoxManage natnetwork add --netname NatNetwork --network "10.0.2.0/24" --enable >> ~/.gc/fedora-installer/install-log
-VBoxManage hostonlyif create
+VBoxManage hostonlyif create >> ~/.gc/fedora-installer/install-log
 
 # Vmware Workstation
 echo "${green}${bold}INSTALLING VMWARE WORKSTATION. IT'S TAKE A TIME. PLEASE WAIT!${reset}"
@@ -250,20 +250,20 @@ sudo dnf install -yq code >> ~/.gc/fedora-installer/install-log
 
 # VSCode plugins
 echo "${green}${bold}INSTALLING VSCODE PLUGINS${reset}"
-code --install-extension visualstudioexptteam.vscodeintellicode >> ~/.gc/fedora-installer/install-log
-code --install-extension ms-python.python >> ~/.gc/fedora-installer/install-log
-code --install-extension esbenp.prettier-vscode >> ~/.gc/fedora-installer/install-log
-code --install-extension redhat.vscode-xml >> ~/.gc/fedora-installer/install-log
-code --install-extension redhat.vscode-yaml >> ~/.gc/fedora-installer/install-log
-code --install-extension ms-azuretools.vscode-docker >> ~/.gc/fedora-installer/install-log 
-code --install-extension xadillax.viml >> ~/.gc/fedora-installer/install-log
-code --install-extension jdinhlife.gruvbox >> ~/.gc/fedora-installer/install-log
-code --install-extension naumovs.color-highlight >> ~/.gc/fedora-installer/install-log 
-code --install-extension nico-castell.linux-desktop-file >> ~/.gc/fedora-installer/install-log
-code --install-extension xadillax.viml >> ~/.gc/fedora-installer/install-log
-code --install-extension dlasagno.rasi >> ~/.gc/fedora-installer/install-log 
-code --install-extension dcasella.i3 >> ~/.gc/fedora-installer/install-log
-code --install-extension jonathanharty.gruvbox-material-icon-theme >> ~/.gc/fedora-installer/install-log
+code --install-extension visualstudioexptteam.vscodeintellicode &>> ~/.gc/fedora-installer/install-log
+code --install-extension ms-python.python &>> ~/.gc/fedora-installer/install-log
+code --install-extension esbenp.prettier-vscode &>> ~/.gc/fedora-installer/install-log
+code --install-extension redhat.vscode-xml &>> ~/.gc/fedora-installer/install-log
+code --install-extension redhat.vscode-yaml &>> ~/.gc/fedora-installer/install-log
+code --install-extension ms-azuretools.vscode-docker &>> ~/.gc/fedora-installer/install-log 
+code --install-extension xadillax.viml &>> ~/.gc/fedora-installer/install-log
+code --install-extension jdinhlife.gruvbox &>> ~/.gc/fedora-installer/install-log
+code --install-extension naumovs.color-highlight &>> ~/.gc/fedora-installer/install-log 
+code --install-extension nico-castell.linux-desktop-file &>> ~/.gc/fedora-installer/install-log
+code --install-extension xadillax.viml &>> ~/.gc/fedora-installer/install-log
+code --install-extension dlasagno.rasi &>> ~/.gc/fedora-installer/install-log 
+code --install-extension dcasella.i3 &>> ~/.gc/fedora-installer/install-log
+code --install-extension jonathanharty.gruvbox-material-icon-theme &>> ~/.gc/fedora-installer/install-log
 
 # Perl for fzf, Rust, Python pip
 echo "${green}${bold}INSTALLING PERL, RUST. POPULAR PROGRAMMING LANGUAGES IN LINUX. FOR APPS USED IN SYSTEM${reset}"
@@ -437,6 +437,7 @@ echo "${green}${bold}INSTALLING DROPBOX${reset}"
 sudo dnf install -yq dropbox >> ~/.gc/fedora-installer/install-log
 
 # Vivaldi browser
+echo "${green}${bold}INSTALLING VIVALDI BROWSER${reset}"
 sudo dnf config-manager --add-repo https://repo.vivaldi.com/archive/vivaldi-fedora.repo 
 sudo dnf install -yq vivaldi-stable >> ~/.gc/fedora-installer/install-log
 
