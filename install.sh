@@ -444,7 +444,7 @@ sudo dnf install -yq vivaldi-stable >> ~/.gc/fedora-installer/install-log 2>> ~/
 ############ FLATPKACKS #####################
 
 # Flathub
-echo "${green}${bold}iNSTALLING FLATHUB. FLATPAK SOFTWARE SHOP${reset}"
+echo "${green}${bold}INSTALLING FLATHUB. FLATPAK SOFTWARE SHOP${reset}"
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
 
 # Spotify
