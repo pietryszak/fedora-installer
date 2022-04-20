@@ -250,20 +250,20 @@ sudo dnf install -yq code >> ~/.gc/fedora-installer/install-log
 
 # VSCode plugins
 echo "${green}${bold}INSTALLING VSCODE PLUGINS${reset}"
-code --install-extension visualstudioexptteam.vscodeintellicode &>> ~/.gc/fedora-installer/install-log
-code --install-extension ms-python.python &>> ~/.gc/fedora-installer/install-log
-code --install-extension esbenp.prettier-vscode &>> ~/.gc/fedora-installer/install-log
-code --install-extension redhat.vscode-xml &>> ~/.gc/fedora-installer/install-log
-code --install-extension redhat.vscode-yaml &>> ~/.gc/fedora-installer/install-log
-code --install-extension ms-azuretools.vscode-docker &>> ~/.gc/fedora-installer/install-log 
-code --install-extension xadillax.viml &>> ~/.gc/fedora-installer/install-log
-code --install-extension jdinhlife.gruvbox &>> ~/.gc/fedora-installer/install-log
-code --install-extension naumovs.color-highlight &>> ~/.gc/fedora-installer/install-log 
-code --install-extension nico-castell.linux-desktop-file &>> ~/.gc/fedora-installer/install-log
-code --install-extension xadillax.viml &>> ~/.gc/fedora-installer/install-log
-code --install-extension dlasagno.rasi &>> ~/.gc/fedora-installer/install-log 
-code --install-extension dcasella.i3 &>> ~/.gc/fedora-installer/install-log
-code --install-extension jonathanharty.gruvbox-material-icon-theme &>> ~/.gc/fedora-installer/install-log
+code --install-extension visualstudioexptteam.vscodeintellicode >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
+code --install-extension ms-python.python >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
+code --install-extension esbenp.prettier-vscode >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
+code --install-extension redhat.vscode-xml >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
+code --install-extension redhat.vscode-yaml >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
+code --install-extension ms-azuretools.vscode-docker >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
+code --install-extension xadillax.viml >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
+code --install-extension jdinhlife.gruvbox >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
+code --install-extension naumovs.color-highlight >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
+code --install-extension nico-castell.linux-desktop-file >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
+code --install-extension xadillax.viml >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
+code --install-extension dlasagno.rasi >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
+code --install-extension dcasella.i3 >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
+code --install-extension jonathanharty.gruvbox-material-icon-theme >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
 
 # Perl for fzf, Rust, Python pip
 echo "${green}${bold}INSTALLING PERL, RUST. POPULAR PROGRAMMING LANGUAGES IN LINUX. FOR APPS USED IN SYSTEM${reset}"
