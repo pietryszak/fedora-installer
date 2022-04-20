@@ -32,7 +32,7 @@ LC_PAPER=pl_PL.UTF-8
 LC_MEASUREMENT=pl_PL.UTF-8" >> /etc/locale.conf'
 
 # DNF settings
-echo "${green}${bold}SETTING DNF BEST SETTINGS${reset}"
+echo "${green}${bold}SETTING DNF FOR FASTER DOWNLOAD PACKETS${reset}"
 sudo bash -c 'echo "fastestmirror=True
 max_parallel_downloads=10
 defaultyes=True" >> /etc/dnf/dnf.conf'
@@ -159,7 +159,7 @@ sudo systemctl stop clamav-freshclam
 sudo freshclam >> ~/.gc/fedora-installer/install-log
 sudo freshclam >> ~/.gc/fedora-installer/install-log
 sudo systemctl start clamav-freshclam
-sudo systemctl enable clamav-freshclam
+sudo systemctl enable clamav-freshclam >> ~/.gc/fedora-installer/install-log
 
 # Firewalld GUI
 echo "${green}${bold}INSTALLING FIREWALL GUI${reset}"
@@ -195,7 +195,7 @@ echo "${green}${bold}INSTALLING VIRTUALBOX${reset}"
 sudo dnf install -y VirtualBox akmod-VirtualBox >> ~/.gc/fedora-installer/install-log
 sudo akmods   
 sudo systemctl restart vboxdrv  
-lsmod  | grep -i vbox
+lsmod  | grep -i vbox >> ~/.gc/fedora-installer/install-log
 sudo usermod -a -G vboxusers $USER   
 sudo modprobe vboxdrv
 
@@ -204,8 +204,8 @@ echo "${green}${bold}INSTALLING VIRTUALBOX EXTENSION PACK${reset}"
 cd ~/.gc
 mkdir -p VirtualBox
 cd VirtualBox
-LatestVirtualBoxVersion=$(wget -qO - https://download.virtualbox.org/virtualbox/LATEST-STABLE.TXT) && wget "https://download.virtualbox.org/virtualbox/${LatestVirtualBoxVersion}/Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack"
-yes | sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack
+LatestVirtualBoxVersion=$(wget -qO - https://download.virtualbox.org/virtualbox/LATEST-STABLE.TXT) && wget "https://download.virtualbox.org/virtualbox/${LatestVirtualBoxVersion}/Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack" >> ~/.gc/fedora-installer/install-log
+yes | sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack >> ~/.gc/fedora-installer/install-log
 
 # Virtualbox NAT Network nad Host-only Network
 echo "${green}${bold}ADDING VIRTUALBOX NAT AND HOST-ONLY NETWORKS${reset}"
@@ -215,56 +215,56 @@ VBoxManage hostonlyif create
 # Vmware Workstation
 echo "${green}${bold}INSTALLING VMWARE WORKSTATION. IT'S TAKE A TIME. PLEASE WAIT!${reset}"
 cd ~/.gc
-wget --user-agent="Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:94.0) Gecko/20100101 Firefox/94.0" https://www.vmware.com/go/getworkstation-linux
+wget --user-agent="Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:94.0) Gecko/20100101 Firefox/94.0" https://www.vmware.com/go/getworkstation-linux >> ~/.gc/fedora-installer/install-log
 chmod a+x getworkstation-linux
 sudo ./getworkstation-linux  --console --required --eulas-agreed   
-sudo CPATH=/usr/src/kernels/$(uname -r)/include/linux vmware-modconfig --console --install-all
+sudo CPATH=/usr/src/kernels/$(uname -r)/include/linux vmware-modconfig --console --install-all >> ~/.gc/fedora-installer/install-log
 rm getworkstation-linux
 
 # Virt-manager for KVM
 echo "${green}${bold}INSTALLING VIRT MANAGER FOR KVM${reset}"
-sudo dnf group install -y --with-optional virtualization
+sudo dnf group install -y --with-optional virtualization >> ~/.gc/fedora-installer/install-log
 sudo systemctl start libvirtd
-sudo systemctl enable libvirtd
+sudo systemctl enable libvirtd >> ~/.gc/fedora-installer/install-log
 sudo usermod -a -G libvirt $USER 
 
 # TeamViewer
 echo "${green}${bold}INSTALLING TEAMVIEWER${reset}"
 cd ~/.gc
-wget https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm
-sudo dnf -y install ./teamviewer.x86_64.rpm
+wget https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm >> ~/.gc/fedora-installer/install-log
+sudo dnf -y install ./teamviewer.x86_64.rpm >> ~/.gc/fedora-installer/install-log
 rm teamviewer.x86_64.rpm
 cd
 
 # Caprine - FB messenger
 echo "${green}${bold}INSTALLING CAPRINE. FACEBOOK MESSENGER APP${reset}"
-sudo dnf copr enable -y dusansimic/caprine 
-sudo dnf upgrade -y >> ~/.gc/fedora-installer/install-log
+sudo dnf copr enable -y dusansimic/caprine >> ~/.gc/fedora-installer/install-log
+sudo dnf upgrade -y >> ~/.gc/fedora-installer/install-log 
 sudo dnf install -y caprine >> ~/.gc/fedora-installer/install-log
 
 # VSCode
 echo "${green}${bold}INSTALLING VSCODE. CODING APP FROM MICROSOFT${reset}"
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-sudo dnf -y check-upgrade
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc >> ~/.gc/fedora-installer/install-log
+sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo' >> ~/.gc/fedora-installer/install-log
+sudo dnf -y check-upgrade >> ~/.gc/fedora-installer/install-log
 sudo dnf install -y code >> ~/.gc/fedora-installer/install-log
 
 # VSCode plugins
 echo "${green}${bold}INSTALLING VSCODE PLUGINS${reset}"
-code --install-extension visualstudioexptteam.vscodeintellicode
-code --install-extension ms-python.python
-code --install-extension esbenp.prettier-vscode
-code --install-extension redhat.vscode-xml
-code --install-extension redhat.vscode-yaml 
-code --install-extension ms-azuretools.vscode-docker   
-code --install-extension xadillax.viml
-code --install-extension jdinhlife.gruvbox
-code --install-extension naumovs.color-highlight
-code --install-extension nico-castell.linux-desktop-file
-code --install-extension xadillax.viml
-code --install-extension dlasagno.rasi
-code --install-extension dcasella.i3
-code --install-extension jonathanharty.gruvbox-material-icon-theme
+code --install-extension visualstudioexptteam.vscodeintellicode >> ~/.gc/fedora-installer/install-log
+code --install-extension ms-python.python >> ~/.gc/fedora-installer/install-log
+code --install-extension esbenp.prettier-vscode >> ~/.gc/fedora-installer/install-log
+code --install-extension redhat.vscode-xml >> ~/.gc/fedora-installer/install-log
+code --install-extension redhat.vscode-yaml >> ~/.gc/fedora-installer/install-log
+code --install-extension ms-azuretools.vscode-docker >> ~/.gc/fedora-installer/install-log 
+code --install-extension xadillax.viml >> ~/.gc/fedora-installer/install-log
+code --install-extension jdinhlife.gruvbox >> ~/.gc/fedora-installer/install-log
+code --install-extension naumovs.color-highlight >> ~/.gc/fedora-installer/install-log 
+code --install-extension nico-castell.linux-desktop-file >> ~/.gc/fedora-installer/install-log
+code --install-extension xadillax.viml >> ~/.gc/fedora-installer/install-log
+code --install-extension dlasagno.rasi >> ~/.gc/fedora-installer/install-log 
+code --install-extension dcasella.i3 >> ~/.gc/fedora-installer/install-log
+code --install-extension jonathanharty.gruvbox-material-icon-theme >> ~/.gc/fedora-installer/install-log
 
 # Perl for fzf, Rust, Python pip
 echo "${green}${bold}INSTALLING PERL, RUST. POPULAR PROGRAMMING LANGUAGES IN LINUX. FOR APPS USED IN SYSTEM${reset}"
@@ -313,11 +313,11 @@ sudo bash -c 'echo "QT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment'
 # Papirus gtk icons for gruvbox 
 echo "${green}${bold}SET GTK ICONS${reset}"
 cd ~/.gc
-sudo wget -qO- https://git.io/papirus-icon-theme-install | sh
+sudo wget -qO- https://git.io/papirus-icon-theme-install | sh >> ~/.gc/fedora-installer/install-log
 
 # Papirus folders
 echo "${green}${bold}SET FOLDERS COLORS${reset}"
-wget -qO- https://git.io/papirus-folders-install | sh
+wget -qO- https://git.io/papirus-folders-install | sh >> ~/.gc/fedora-installer/install-log
 papirus-folders -C brown --theme Papirus-Dark
 cd
 
@@ -325,30 +325,30 @@ cd
 echo "${green}${bold}INSTALLING ZSH. UNIX SHELL WITH NEW FUTURES${reset}"
 sudo dnf install -y util-linux-user >> ~/.gc/fedora-installer/install-log
 sudo dnf install -y zsh >> ~/.gc/fedora-installer/install-log
-sudo chsh -s $(which zsh) $USER
+sudo chsh -s $(which zsh) $USER >> ~/.gc/fedora-installer/install-log
 
 # FZF
 echo "${green}${bold}INSTALLING FZF. COMMAND LINE FUZY FINDER ${reset}"
 cd .gc
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-yes | ~/.fzf/install
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf >> ~/.gc/fedora-installer/install-log
+yes | ~/.fzf/install >> ~/.gc/fedora-installer/install-log
 cd
 
 # Oh-my-zsh
 echo "${green}${bold}INSTALLING OH MY ZSH. FRAMEWORK FOR ZSH${reset}"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended >> ~/.gc/fedora-installer/install-log
 
 # Oh-my-zsh plugins
 echo "${green}${bold}ADDING ZSH PLUGINS${reset}"
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting >> ~/.gc/fedora-installer/install-log
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions >> ~/.gc/fedora-installer/install-log
 
 # Fonts 
 echo "${green}${bold}ADDING FONTS TO SYSTEM ${reset}"
 sudo dnf install -y powerline-fonts >> ~/.gc/fedora-installer/install-log
 sudo dnf install -y cabextract xorg-x11-font-utils >> ~/.gc/fedora-installer/install-log
 cd ~/.gc
-git clone https://github.com/pietryszak/fonts.git
+git clone https://github.com/pietryszak/fonts.git >> ~/.gc/fedora-installer/install-log
 cd fonts
 sudo dnf install -y msttcore-fonts-installer-2.6-1.noarch.rpm >> ~/.gc/fedora-installer/install-log
 mkdir -p ~/.local/share/fonts
@@ -362,13 +362,13 @@ cd
 # Powerlevel10k zsh
 echo "${green}${bold}INSTALLING POWERLEVEL10K. ZSH THEME${reset}"
 cd ~/.gc
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k >> ~/.gc/fedora-installer/install-log
 
 # i3-gaps
 echo "${green}${bold}INSTALLING I3-GAPS${reset}"
 sudo dnf install -y libxcb-devel xcb-util-keysyms-devel xcb-util-devel xcb-util-wm-devel xcb-util-xrm-devel yajl-devel libXrandr-devel startup-notification-devel libev-devel xcb-util-cursor-devel libXinerama-devel libxkbcommon-devel libxkbcommon-x11-devel pcre-devel pango-devel git gcc automake asciidoc xmlto >> ~/.gc/fedora-installer/install-log
 sudo dnf install -y i3status-config libconfuse perl-AnyEvent perl-AnyEvent-I3 perl-JSON-XS perl-Types-Serialiser perl-common-sense xorg-x11-fonts-misc dmenu i3lock i3status perl-Guard perl-Task-Weaken pulseaudio-utils >> ~/.gc/fedora-installer/install-log
-sudo dnf copr enable -y fuhrmann/i3-gaps
+sudo dnf copr enable -y fuhrmann/i3-gaps >> ~/.gc/fedora-installer/install-log
 sudo dnf install -y i3-gaps >> ~/.gc/fedora-installer/install-log
 
 # i3-wifi applet
@@ -618,13 +618,13 @@ cd
 
 # Remove apps 
 echo "${green}${bold}REMOVE UNNECESSARY APPS${reset}"
-sudo dnf remove -y gnome-terminal 
+sudo dnf remove -y gnome-terminal >> ~/.gc/fedora-installer/install-log
 
 # Last update
 echo "${green}${bold}UPDATE SYSTEM BEFORE RESTART${reset}"
-sudo dnf upgrade --refresh
-sudo dnf upgrade -y
-sudo dnf autoremove -y
+sudo dnf upgrade --refresh >> ~/.gc/fedora-installer/install-log
+sudo dnf upgrade -y >> ~/.gc/fedora-installer/install-log
+sudo dnf autoremove -y >> ~/.gc/fedora-installer/install-log
 
 # Sudo timeout back to default
 echo "${green}${bold}SET SUDO TIMEOUT TO DEFAULT${reset}"
