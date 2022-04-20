@@ -105,7 +105,7 @@ sudo dnf install -y nodejs >> ~/.gc/fedora-installer/install-log
 # Vim-plug
 echo "${green}${bold}INSTALLING VIM-PLUG. VIM PLUGINS INSTALLER${reset}"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' >> ~/.gc/fedora-installer/install-log
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Bat - new cat ;)
 echo "${green}${bold}INSTALLING BAT. BETTER CAT COMMAND${reset}"
@@ -158,7 +158,7 @@ sudo setsebool -P antivirus_can_scan_system 1
 sudo systemctl stop clamav-freshclam
 sudo freshclam >> ~/.gc/fedora-installer/install-log
 sudo freshclam >> ~/.gc/fedora-installer/install-log
-sudo systemctl start clamav-freshclam
+sudo systemctl start clamav-freshclam >> ~/.gc/fedora-installer/install-log
 sudo systemctl enable clamav-freshclam >> ~/.gc/fedora-installer/install-log
 
 # Firewalld GUI
@@ -204,8 +204,7 @@ echo "${green}${bold}INSTALLING VIRTUALBOX EXTENSION PACK${reset}"
 cd ~/.gc
 mkdir -p VirtualBox
 cd VirtualBox
-LatestVirtualBoxVersion=$(wget -qO - https://download.virtualbox.org/virtualbox/LATEST-STABLE.TXT) && wget "https://download.virtualbox.org/virtualbox/${LatestVirtualBoxVersion}/Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack" >> ~/.gc/fedora-installer/install-log
-yes | sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack >> ~/.gc/fedora-installer/install-log
+LatestVirtualBoxVersion=$(wget -qO - https://download.virtualbox.org/virtualbox/LATEST-STABLE.TXT) && wget -q "https://download.virtualbox.org/virtualbox/${LatestVirtualBoxVersion}/Oracle_VM_VirtualBox_Extension_Pack-${LatestVirtualBoxVersion}.vbox-extpack"
 
 # Virtualbox NAT Network nad Host-only Network
 echo "${green}${bold}ADDING VIRTUALBOX NAT AND HOST-ONLY NETWORKS${reset}"
@@ -215,9 +214,9 @@ VBoxManage hostonlyif create
 # Vmware Workstation
 echo "${green}${bold}INSTALLING VMWARE WORKSTATION. IT'S TAKE A TIME. PLEASE WAIT!${reset}"
 cd ~/.gc
-wget --user-agent="Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:94.0) Gecko/20100101 Firefox/94.0" https://www.vmware.com/go/getworkstation-linux >> ~/.gc/fedora-installer/install-log
+wget -q --user-agent="Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:94.0) Gecko/20100101 Firefox/94.0" https://www.vmware.com/go/getworkstation-linux
 chmod a+x getworkstation-linux
-sudo ./getworkstation-linux  --console --required --eulas-agreed   
+sudo ./getworkstation-linux  --console --required --eulas-agreed >> ~/.gc/fedora-installer/install-log  
 sudo CPATH=/usr/src/kernels/$(uname -r)/include/linux vmware-modconfig --console --install-all >> ~/.gc/fedora-installer/install-log
 rm getworkstation-linux
 
@@ -231,7 +230,7 @@ sudo usermod -a -G libvirt $USER
 # TeamViewer
 echo "${green}${bold}INSTALLING TEAMVIEWER${reset}"
 cd ~/.gc
-wget https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm >> ~/.gc/fedora-installer/install-log
+wget -q https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm 
 sudo dnf -y install ./teamviewer.x86_64.rpm >> ~/.gc/fedora-installer/install-log
 rm teamviewer.x86_64.rpm
 cd
@@ -330,7 +329,7 @@ sudo chsh -s $(which zsh) $USER >> ~/.gc/fedora-installer/install-log
 # FZF
 echo "${green}${bold}INSTALLING FZF. COMMAND LINE FUZY FINDER ${reset}"
 cd .gc
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf >> ~/.gc/fedora-installer/install-log
+git clone --quiet --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 yes | ~/.fzf/install >> ~/.gc/fedora-installer/install-log
 cd
 
@@ -340,15 +339,15 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # Oh-my-zsh plugins
 echo "${green}${bold}ADDING ZSH PLUGINS${reset}"
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting >> ~/.gc/fedora-installer/install-log
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions >> ~/.gc/fedora-installer/install-log
+git clone --quiet https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone --quiet https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # Fonts 
 echo "${green}${bold}ADDING FONTS TO SYSTEM ${reset}"
 sudo dnf install -y powerline-fonts >> ~/.gc/fedora-installer/install-log
 sudo dnf install -y cabextract xorg-x11-font-utils >> ~/.gc/fedora-installer/install-log
 cd ~/.gc
-git clone https://github.com/pietryszak/fonts.git >> ~/.gc/fedora-installer/install-log
+git clone --quiet https://github.com/pietryszak/fonts.git
 cd fonts
 sudo dnf install -y msttcore-fonts-installer-2.6-1.noarch.rpm >> ~/.gc/fedora-installer/install-log
 mkdir -p ~/.local/share/fonts
@@ -356,13 +355,13 @@ cp feather.ttf ~/.local/share/fonts
 cp iosevka_nerd_font.ttf ~/.local/share/fonts
 cp MesloLGS* ~/.local/share/fonts/
 cp weathericons-regular-webfont.ttf ~/.local/share/fonts
-fc-cache -fv
+fc-cache -fv >> ~/.gc/fedora-installer/install-log
 cd
 
 # Powerlevel10k zsh
 echo "${green}${bold}INSTALLING POWERLEVEL10K. ZSH THEME${reset}"
 cd ~/.gc
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k >> ~/.gc/fedora-installer/install-log
+git clone --quiet --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # i3-gaps
 echo "${green}${bold}INSTALLING I3-GAPS${reset}"
@@ -418,7 +417,7 @@ sudo dnf install -y numlockx >> ~/.gc/fedora-installer/install-log
 # Polybar Spotify 
 echo "${green}${bold}INSTALLING POLYBAR SPOTIFY APPLET${reset}"
 cd ~/.gc
-git clone https://github.com/Jvanrhijn/polybar-spotify.git
+git clone --quiet https://github.com/Jvanrhijn/polybar-spotify.git
 cd
 
 # Gnome-polkit - dispaly popup fot password for sudo 
@@ -428,7 +427,7 @@ sudo dnf install -y polkit-gnome >> ~/.gc/fedora-installer/install-log
 # Zenkit
 echo "${green}${bold}INSTALLING ZENKIT. KANBAN APP${reset}"
 cd ~/.gc
-wget https://static.zenkit.com/downloads/desktop-apps/base/zenkit-base-linux.rpm
+wget -q https://static.zenkit.com/downloads/desktop-apps/base/zenkit-base-linux.rpm
 sudo rpm -i zenkit-base-linux.rpm 
 rm zenkit-base-linux.rpm
 cd
@@ -460,17 +459,17 @@ echo "${green}${bold}INSTALLING JOPLIN. NOTING APP${reset}"
 flatpak install -y flathub net.cozic.joplin_desktop
 mkdir -p ~/.config/joplin-desktop/plugins
 cd ~/.config/joplin-desktop/plugins
-wget https://github.com/joplin/plugins/raw/master/plugins/ylc395.betterMarkdownViewer/plugin.jpl -O ylc395.betterMarkdownViewer.jpl >> ~/.gc/fedora-installer/install-log
-wget https://github.com/joplin/plugins/raw/master/plugins/com.eliasvsimon.email-note/plugin.jpl -O com.eliasvsimon.email-note.jpl >> ~/.gc/fedora-installer/install-log
-wget https://github.com/joplin/plugins/raw/master/plugins/com.lki.homenote/plugin.jpl -O com.lki.homenote.jpl >> ~/.gc/fedora-installer/install-log
-wget https://github.com/joplin/plugins/raw/master/plugins/joplin.plugin.note.tabs/plugin.jpl -O joplin.plugin.note.tabs.jpl >> ~/.gc/fedora-installer/install-log
-wget https://github.com/joplin/plugins/raw/master/plugins/joplin.plugin.benji.persistentLayout/plugin.jpl -O joplin.plugin.benji.persistentLayout.jpl >> ~/.gc/fedora-installer/install-log
+wget -q https://github.com/joplin/plugins/raw/master/plugins/ylc395.betterMarkdownViewer/plugin.jpl -O ylc395.betterMarkdownViewer.jpl 
+wget -q https://github.com/joplin/plugins/raw/master/plugins/com.eliasvsimon.email-note/plugin.jpl -O com.eliasvsimon.email-note.jpl 
+wget -q https://github.com/joplin/plugins/raw/master/plugins/com.lki.homenote/plugin.jpl -O com.lki.homenote.jpl 
+wget -q https://github.com/joplin/plugins/raw/master/plugins/joplin.plugin.note.tabs/plugin.jpl -O joplin.plugin.note.tabs.jpl 
+wget -q https://github.com/joplin/plugins/raw/master/plugins/joplin.plugin.benji.persistentLayout/plugin.jpl -O joplin.plugin.benji.persistentLayout.jpl 
 cd
 
 # GTK Gruvbox theme
 echo "${green}${bold}INSTALLING GRUVBOX THEME${reset}"
 cd ~/.gc
-git clone https://github.com/pietryszak/gruvbox-material-gtk.git
+git clone --quiet https://github.com/pietryszak/gruvbox-material-gtk.git
 cd gruvbox-material-gtk
 mkdir -p ~/.local/share/themes/
 cp -r themes/* ~/.local/share/themes/
@@ -488,7 +487,7 @@ yes | sudo sensors-detect >> ~/.gc/fedora-installer/install-log
 # My dotfiles
 echo "${green}${bold}COPY ALL MY DOTFILES TO PROPER FOLDERS${reset}"
 cd ~/.gc
-git clone https://github.com/pietryszak/dotfiles.git >> ~/.gc/fedora-installer/install-log
+git clone --quiet https://github.com/pietryszak/dotfiles.git
 cd
 
 # Copy bat  config to proper folder
@@ -597,7 +596,7 @@ echo "${green}${bold}COPY VIVALDI PROFILE WITH ADDONS AND THEME${reset}"
 cd ~/.gc/dotfiles
 mkdir vivaldi
 cd vivaldi
-wget https://sysoply.pl/download/public/vivaldi-profile-public.7z >> ~/.gc/fedora-installer/install-log
+wget -q https://sysoply.pl/download/public/vivaldi-profile-public.7z
 7z x vivaldi-profile-public.7z
 mkdir ~/.config/vivaldi/
 cp -r ~/.gc/dotfiles/vivaldi/Default ~/.config/vivaldi/
@@ -605,13 +604,12 @@ cp -r ~/.gc/dotfiles/vivaldi/Default ~/.config/vivaldi/
 # My Thunderbird profile public
 echo "${green}${bold}COPY THUNDERBIRD PROFILE WITH ADDONS AND THEME${reset}"
 cd ~/.gc/dotfiles
-wget https://sysoply.pl/download/public/thunderbird-profile-public.7z >> ~/.gc/fedora-installer/install-log
-7z x thunderbird-profile-public.7z
+wget -q https://sysoply.pl/download/public/thunderbird-profile-public.7z
 cp -r .thunderbird ~/
 
 # My Thunderbird cache public
 cd ~/.gc/dotfiles
-wget https://sysoply.pl/download/public/thunderbird-cache-public.7z >> ~/.gc/fedora-installer/install-log
+wget -q https://sysoply.pl/download/public/thunderbird-cache-public.7z
 7z x thunderbird-cache-public.7z
 cp -r thunderbird ~/.cache
 cd
