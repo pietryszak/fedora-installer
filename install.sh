@@ -438,7 +438,7 @@ echo "${green}${bold}INSTALLING DROPBOX${reset}"
 sudo dnf install -y dropbox >> ~/.gc/fedora-installer/install-log
 
 # Vivaldi browser
-sudo dnf config-manager --add-repo https://repo.vivaldi.com/archive/vivaldi-fedora.repo
+sudo dnf config-manager --add-repo https://repo.vivaldi.com/archive/vivaldi-fedora.repo 
 sudo dnf install -y vivaldi-stable >> ~/.gc/fedora-installer/install-log
 
 ############ FLATPKACKS #####################
@@ -460,11 +460,11 @@ echo "${green}${bold}INSTALLING JOPLIN. NOTING APP${reset}"
 flatpak install -y flathub net.cozic.joplin_desktop
 mkdir -p ~/.config/joplin-desktop/plugins
 cd ~/.config/joplin-desktop/plugins
-wget https://github.com/joplin/plugins/raw/master/plugins/ylc395.betterMarkdownViewer/plugin.jpl -O ylc395.betterMarkdownViewer.jpl
-wget https://github.com/joplin/plugins/raw/master/plugins/com.eliasvsimon.email-note/plugin.jpl -O com.eliasvsimon.email-note.jpl
-wget https://github.com/joplin/plugins/raw/master/plugins/com.lki.homenote/plugin.jpl -O com.lki.homenote.jpl
-wget https://github.com/joplin/plugins/raw/master/plugins/joplin.plugin.note.tabs/plugin.jpl -O joplin.plugin.note.tabs.jpl
-wget https://github.com/joplin/plugins/raw/master/plugins/joplin.plugin.benji.persistentLayout/plugin.jpl -O joplin.plugin.benji.persistentLayout.jpl
+wget https://github.com/joplin/plugins/raw/master/plugins/ylc395.betterMarkdownViewer/plugin.jpl -O ylc395.betterMarkdownViewer.jpl >> ~/.gc/fedora-installer/install-log
+wget https://github.com/joplin/plugins/raw/master/plugins/com.eliasvsimon.email-note/plugin.jpl -O com.eliasvsimon.email-note.jpl >> ~/.gc/fedora-installer/install-log
+wget https://github.com/joplin/plugins/raw/master/plugins/com.lki.homenote/plugin.jpl -O com.lki.homenote.jpl >> ~/.gc/fedora-installer/install-log
+wget https://github.com/joplin/plugins/raw/master/plugins/joplin.plugin.note.tabs/plugin.jpl -O joplin.plugin.note.tabs.jpl >> ~/.gc/fedora-installer/install-log
+wget https://github.com/joplin/plugins/raw/master/plugins/joplin.plugin.benji.persistentLayout/plugin.jpl -O joplin.plugin.benji.persistentLayout.jpl >> ~/.gc/fedora-installer/install-log
 cd
 
 # GTK Gruvbox theme
@@ -483,12 +483,12 @@ sudo flatpak override --env=GTK_THEME=Gruvbox-Material-Dark
 # Sensors
 echo "${green}${bold}INSTALLING SENSORS APP AND FINDING ALL SENSORS IN SYSEM. IT'S TAKE A TIME. PLEASE WAIT!${reset}"
 sudo dnf install -y lm_sensors >> ~/.gc/fedora-installer/install-log
-yes | sudo sensors-detect
+yes | sudo sensors-detect >> ~/.gc/fedora-installer/install-log
 
 # My dotfiles
 echo "${green}${bold}COPY ALL MY DOTFILES TO PROPER FOLDERS${reset}"
 cd ~/.gc
-git clone https://github.com/pietryszak/dotfiles.git
+git clone https://github.com/pietryszak/dotfiles.git >> ~/.gc/fedora-installer/install-log
 cd
 
 # Copy bat  config to proper folder
@@ -597,7 +597,7 @@ echo "${green}${bold}COPY VIVALDI PROFILE WITH ADDONS AND THEME${reset}"
 cd ~/.gc/dotfiles
 mkdir vivaldi
 cd vivaldi
-wget https://sysoply.pl/download/public/vivaldi-profile-public.7z
+wget https://sysoply.pl/download/public/vivaldi-profile-public.7z >> ~/.gc/fedora-installer/install-log
 7z x vivaldi-profile-public.7z
 mkdir ~/.config/vivaldi/
 cp -r ~/.gc/dotfiles/vivaldi/Default ~/.config/vivaldi/
@@ -605,13 +605,13 @@ cp -r ~/.gc/dotfiles/vivaldi/Default ~/.config/vivaldi/
 # My Thunderbird profile public
 echo "${green}${bold}COPY THUNDERBIRD PROFILE WITH ADDONS AND THEME${reset}"
 cd ~/.gc/dotfiles
-wget https://sysoply.pl/download/public/thunderbird-profile-public.7z
+wget https://sysoply.pl/download/public/thunderbird-profile-public.7z >> ~/.gc/fedora-installer/install-log
 7z x thunderbird-profile-public.7z
 cp -r .thunderbird ~/
 
 # My Thunderbird cache public
 cd ~/.gc/dotfiles
-wget https://sysoply.pl/download/public/thunderbird-cache-public.7z
+wget https://sysoply.pl/download/public/thunderbird-cache-public.7z >> ~/.gc/fedora-installer/install-log
 7z x thunderbird-cache-public.7z
 cp -r thunderbird ~/.cache
 cd
