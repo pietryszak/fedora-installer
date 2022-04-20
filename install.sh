@@ -317,7 +317,7 @@ sudo wget -qO- https://git.io/papirus-icon-theme-install | sh >> ~/.gc/fedora-in
 # Papirus folders
 echo "${green}${bold}SET FOLDERS COLORS${reset}"
 wget -qO- https://git.io/papirus-folders-install | sh >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
-papirus-folders -C brown --theme Papirus-Dark
+papirus-folders -C brown --theme Papirus-Dark >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
 cd
 
 # ZSH 
@@ -598,7 +598,7 @@ cd ~/.gc/dotfiles
 mkdir vivaldi
 cd vivaldi
 wget -q https://sysoply.pl/download/public/vivaldi-profile-public.7z >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
-7z x vivaldi-profile-public.7z
+7z x vivaldi-profile-public.7z >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
 mkdir ~/.config/vivaldi/
 cp -r ~/.gc/dotfiles/vivaldi/Default ~/.config/vivaldi/
 
@@ -606,12 +606,13 @@ cp -r ~/.gc/dotfiles/vivaldi/Default ~/.config/vivaldi/
 echo "${green}${bold}COPY THUNDERBIRD PROFILE WITH ADDONS AND THEME${reset}"
 cd ~/.gc/dotfiles
 wget -q https://sysoply.pl/download/public/thunderbird-profile-public.7z >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
+7z x thunderbird-profile-public.7z >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
 cp -r .thunderbird ~/
 
 # My Thunderbird cache public
 cd ~/.gc/dotfiles
 wget -q https://sysoply.pl/download/public/thunderbird-cache-public.7z >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
-7z x thunderbird-cache-public.7z
+7z x thunderbird-cache-public.7z >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
 cp -r thunderbird ~/.cache
 cd
 
