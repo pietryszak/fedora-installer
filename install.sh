@@ -104,7 +104,7 @@ sudo dnf install -yq nodejs >> ~/.gc/fedora-installer/install-log
 
 # Vim-plug
 echo "${green}${bold}INSTALLING VIM-PLUG. VIM PLUGINS INSTALLER${reset}"
-sh -c 'curl -fLosS "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+sh -c 'curl -sSfLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Bat - new cat ;)
@@ -193,7 +193,7 @@ sudo dnf install -yq dkms >> ~/.gc/fedora-installer/install-log
 # Virtualbox
 echo "${green}${bold}INSTALLING VIRTUALBOX${reset}"
 sudo dnf install -yq VirtualBox akmod-VirtualBox >> ~/.gc/fedora-installer/install-log
-sudo akmods   
+sudo akmods >> ~/.gc/fedora-installer/install-log
 sudo systemctl restart vboxdrv  
 lsmod  | grep -i vbox >> ~/.gc/fedora-installer/install-log
 sudo usermod -a -G vboxusers $USER   
@@ -208,7 +208,7 @@ LatestVirtualBoxVersion=$(wget -qO - https://download.virtualbox.org/virtualbox/
 
 # Virtualbox NAT Network nad Host-only Network
 echo "${green}${bold}ADDING VIRTUALBOX NAT AND HOST-ONLY NETWORKS${reset}"
-VBoxManage natnetwork add --netname NatNetwork --network "10.0.2.0/24" --enable
+VBoxManage natnetwork add --netname NatNetwork --network "10.0.2.0/24" --enable >> ~/.gc/fedora-installer/install-log
 VBoxManage hostonlyif create
 
 # Vmware Workstation
@@ -448,15 +448,15 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 # Spotify
 echo "${green}${bold}INSTALLING SPOTIFY${reset}"
-flatpak install -yq flathub com.spotify.Client
+flatpak install -y --noninteractive flathub com.spotify.Client
 
 # Github desktop
 echo "${green}${bold}INSTALLING GITHUB DESKTOP APP${reset}"
-flatpak install -yq flathub io.github.shiftey.Desktop
+flatpak install -y --noninteractive flathub io.github.shiftey.Desktop
 
 # Joplin
 echo "${green}${bold}INSTALLING JOPLIN. NOTING APP${reset}"
-flatpak install -yq flathub net.cozic.joplin_desktop
+flatpak install -y --noninteractive flathub net.cozic.joplin_desktop
 mkdir -p ~/.config/joplin-desktop/plugins
 cd ~/.config/joplin-desktop/plugins
 wget -q https://github.com/joplin/plugins/raw/master/plugins/ylc395.betterMarkdownViewer/plugin.jpl -O ylc395.betterMarkdownViewer.jpl 
