@@ -42,7 +42,7 @@ sudo sed -i 's/installonly_limit=3/installonly_limit=2/g' /etc/dnf/dnf.conf
 
 # Remove apps 
 echo "${green}${bold}REMOVE UNNECESSARY GNOME APPS${reset}"
-sudo dnf remove -yq gnome-maps gnome-clocks gnome-weather gnome-contacts gnome-tour totem rhytmbox firefox >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
+sudo dnf remove -yq gnome-maps gnome-clocks gnome-weather gnome-contacts gnome-tour totem rhythmbox firefox >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
 
 # Update system
 echo "${green}${bold}UPDATE SYSTEM. IT'S TAKE TIME. PLEASE WAIT!${reset}"
