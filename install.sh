@@ -6,6 +6,7 @@
 
 ############################################################################################################################################
 touch ~/.gc/fedora-installer/install-log
+touch ~/.gc/fedora-installer/warnings-log
 
 # Echo colors
 magenta=`tput setaf 5`
@@ -15,7 +16,7 @@ reset=`tput sgr0`
 
 # GTK theme
 echo "${green}${bold}SETTING DARK GTK THEME${reset}"
-gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 # Sudo timeout
 echo "${green}${bold}SETTING SUDO TIMEOUT FOR 60 MINUTES FOR THE INSTALLATION PURPOSES${reset}"
@@ -34,13 +35,14 @@ LC_MEASUREMENT=pl_PL.UTF-8" >> /etc/locale.conf'
 # DNF settings
 echo "${green}${bold}SETTING DNF FOR FASTER DOWNLOAD PACKETS${reset}"
 sudo bash -c 'echo "fastestmirror=True
+deltarpm=True
 max_parallel_downloads=10
 defaultyes=True" >> /etc/dnf/dnf.conf'
 sudo sed -i 's/installonly_limit=3/installonly_limit=2/g' /etc/dnf/dnf.conf
 
 # Remove apps 
 echo "${green}${bold}REMOVE UNNECESSARY GNOME APPS${reset}"
-sudo dnf remove -yq gnome-maps gnome-clocks gnome-weather gnome-contacts gnome-tour totem gnome-screenshot firefox >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
+sudo dnf remove -yq gnome-maps gnome-clocks gnome-weather gnome-contacts gnome-tour totem rhytmbox firefox >> ~/.gc/fedora-installer/install-log 2>> ~/.gc/fedora-installer/warnings-log
 
 # Update system
 echo "${green}${bold}UPDATE SYSTEM. IT'S TAKE TIME. PLEASE WAIT!${reset}"
@@ -553,10 +555,6 @@ cp -r ~/.gc/dotfiles/qt5ct ~/.config
 # Copy gtk config to to proper folder
 cp ~/.gc/dotfiles/gtk/.gtkrc-2.0 ~
 cp ~/.gc/dotfiles/gtk/settings.ini ~/.config/gtk-3.0/
-
-# Copy gedit config to to proper folder
-sudo cp -r ~/.gc/dotfiles/gedit/* /usr/share/gtksourceview-4/styles
-gsettings set org.gnome.gedit.preferences.editor scheme 'gruvbox-dark' 
 
 # Copy arandr config to to proper folder
 mkdir ~/.screenlayout
