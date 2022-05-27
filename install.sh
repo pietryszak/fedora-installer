@@ -17,6 +17,7 @@ reset=`tput sgr0`
 # GTK theme
 echo "${green}${bold}SETTING DARK GTK THEME${reset}"
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 
 # Sudo timeout
 echo "${green}${bold}SETTING SUDO TIMEOUT FOR 60 MINUTES FOR THE INSTALLATION PURPOSES${reset}"
