@@ -494,6 +494,9 @@ cd ~/.gc
 git clone --quiet https://github.com/pietryszak/dotfiles.git 
 cd
 
+# Copy libreoffice config to to proper folde
+cp -r ~/.gc/dotfiles/libreoffice/* ~/.config/libreoffice/4/user/
+
 # Copy bat  config to proper folder
 cp -r ~/.gc/dotfiles/bat ~/.config
 
