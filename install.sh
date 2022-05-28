@@ -43,67 +43,67 @@ sudo sed -i 's/installonly_limit=3/installonly_limit=2/g' /etc/dnf/dnf.conf
 
 # Remove apps 
 echo "${green}${bold}REMOVE UNNECESSARY GNOME APPS${reset}"
-sudo dnf remove -yq gnome-maps gnome-clocks gnome-weather gnome-contacts gnome-tour totem rhythmbox firefox 
+sudo dnf remove -y gnome-maps gnome-clocks gnome-weather gnome-contacts gnome-tour totem rhythmbox firefox 
 
 # Update system
 echo "${green}${bold}UPDATE SYSTEM. IT'S TAKE TIME. PLEASE WAIT!${reset}"
-sudo dnf -yq upgrade 
+sudo dnf -y upgrade 
 
 # RPM Fusion - extra repo for apps not provided by Fedora or RH free and nonfree
 echo "${green}${bold}ADDING RPM FUSION REPOSITORIUM FOR APPS NOT PROVIDED BY FEDORA${reset}"
-sudo dnf install -yq https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm 
+sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm 
 
 # Add RPM Fusion to Gnome Software
 echo "${green}${bold}ADDING RPM FUSION REPOSITORIUM TO SOFTWARE SHOP${reset}"
-sudo dnf groupupdate -yq core 
+sudo dnf groupupdate -y core 
 
 # Add multimedia codecs
 echo "${green}${bold}ADDING MULTIMEDIA CODECS${reset}"
-sudo dnf groupupdate -yq multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin 
-sudo dnf groupupdate -yq  sound-and-video 
+sudo dnf groupupdate -y multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin 
+sudo dnf groupupdate -y  sound-and-video 
 
 # Audio and Video plugins
 echo "${green}${bold}ADDING AUDIO AND VIDEO PLUGINS${reset}"
-sudo dnf install -yq gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel 
-sudo dnf install -yq lame\* --exclude=lame-devel 
-sudo dnf group upgrade -yq --with-optional Multimedia 
+sudo dnf install -y gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel 
+sudo dnf install -y lame\* --exclude=lame-devel 
+sudo dnf group upgrade -y --with-optional Multimedia 
 
 # DVD codecs
 echo "${green}${bold}ADDING DVD CODECS${reset}"
-sudo dnf install -yq rpmfusion-free-release-tainted 
-sudo dnf install -yq libdvdcss 
+sudo dnf install -y rpmfusion-free-release-tainted 
+sudo dnf install -y libdvdcss 
 
 # Nonfree firmawre 
 echo "${green}${bold}ADDING NONFREE FIRMWARE${reset}"
-sudo dnf install -yq rpmfusion-nonfree-release-tainted 
-sudo dnf install -yq \*-firmware 
+sudo dnf install -y rpmfusion-nonfree-release-tainted 
+sudo dnf install -y \*-firmware 
 
 # Intel multimedia codecs
 echo "${green}${bold}ADDING INTEL VIDEO ACCELERATION API${reset}"
-sudo dnf install -yq intel-media-driver 
-sudo dnf install -yq libva-intel-driver 
+sudo dnf install -y intel-media-driver 
+sudo dnf install -y libva-intel-driver 
 
 # Codecs 
 echo "${green}${bold}ADDING FFMPEG CODECS${reset}"
-sudo dnf install -yq ffmpeg 
+sudo dnf install -y ffmpeg 
 
 # Mpv
 echo "${green}${bold}INSTALLING MPV. VIDEO APP${reset}"
-sudo dnf install -yq mpv 
+sudo dnf install -y mpv 
 
 # Gnome extensions
 echo "${green}${bold}INSTALLING GNOME TWEAKS${reset}"
-sudo dnf install -yq gnome-extensions-app 
-sudo dnf install -yq gnome-tweaks 
+sudo dnf install -y gnome-extensions-app 
+sudo dnf install -y gnome-tweaks 
  
 # Neovim
 echo "${green}${bold}INSTALLING NEOVIM${reset}"
-sudo dnf install -yq neovim python3-neovim 
+sudo dnf install -y neovim python3-neovim 
 sudo bash -c 'echo "EDITOR=nvim" >> /etc/environment'
 
 # Nodejs for neovim plugins
 echo "${green}${bold}INSTALLING NODEJS FOR VIM PLUGINS${reset}"
-sudo dnf install -yq nodejs 
+sudo dnf install -y nodejs 
 
 # Vim-plug
 echo "${green}${bold}INSTALLING VIM-PLUG. VIM PLUGINS INSTALLER${reset}"
@@ -112,51 +112,51 @@ sh -c 'curl -sSfLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plu
 
 # Bat - new cat ;)
 echo "${green}${bold}INSTALLING BAT. BETTER CAT COMMAND${reset}"
-sudo dnf install -yq bat 
+sudo dnf install -y bat 
 
 # Ripgrep
 echo "${green}${bold}INSTALLING RIPGREP. NEW REPLECMENT FOR GREP${reset}"
-sudo dnf install -yq ripgrep 
+sudo dnf install -y ripgrep 
 
 # Most = man pager
 echo "${green}${bold}INSTALLING MOST. BETTER MAN HIGHLIGHTING${reset}"
-sudo dnf install -yq most 
+sudo dnf install -y most 
 
 # Neofetch
 echo "${green}${bold}INSTALLING NEOFETCH. SYSTEM INFO IN TERMINAL ${reset}"
-sudo dnf install -yq neofetch 
+sudo dnf install -y neofetch 
 
 # Htop
 echo "${green}${bold}INSTALLING HTOP. BETTER TOP COMMAND${reset}"
-sudo dnf install -yq htop 
+sudo dnf install -y htop 
 
 # Bpytop
 echo "${green}${bold}INSTALLING BTOP. TOP WITH MOUSE SUPPORT${reset}"
-sudo dnf install -yq bpytop 
+sudo dnf install -y bpytop 
 
 # Nnn
 echo "${green}${bold}INSTALLING NNN. FILE MANAGER IN TERMINAL${reset}"
-sudo dnf install -yq nnn 
+sudo dnf install -y nnn 
 
 # Thunderbird
 echo "${green}${bold}INSTALLING THUNDERBIRD. MAIL CLIENT${reset}"
-sudo dnf install -yq thunderbird 
+sudo dnf install -y thunderbird 
 
 # Gimp
 echo "${green}${bold}INSTALLING GIMP. GRAPHICS APP${reset}"
-sudo dnf install -yq gimp 
+sudo dnf install -y gimp 
 
 # Flameshot
 echo "${green}${bold}INSTALLING FLAMESHOT. SCREENSHOTS APP${reset}"
-sudo dnf install -yq flameshot 
+sudo dnf install -y flameshot 
 
 # Libreoffice draw
 echo "${green}${bold}INSTALLING LIBREOFFICE DRAW FOR PDF EDITING${reset}"
-sudo dnf install -yq libreoffice-draw 
+sudo dnf install -y libreoffice-draw 
 
 # ClamAV
 echo "${green}${bold}INSTALLING CLAMAV. BEST LINUX ANTIVIRUS${reset}"
-sudo dnf install -yq clamav clamd clamav-update clamtk 
+sudo dnf install -y clamav clamd clamav-update clamtk 
 sudo setsebool -P antivirus_can_scan_system 1
 sudo systemctl stop clamav-freshclam
 sudo freshclam 
@@ -166,36 +166,36 @@ sudo systemctl enable clamav-freshclam
 
 # Firewalld GUI
 echo "${green}${bold}INSTALLING FIREWALL GUI${reset}"
-sudo dnf install -yq firewall-config 
+sudo dnf install -y firewall-config 
 
 # Timeshift
 echo "${green}${bold}INSTALLING TIMESHIFT. BACKUP TOOL${reset}"
-sudo dnf install -yq timeshift 
+sudo dnf install -y timeshift 
 
 # Terminator - terminal for vm
 echo "${green}${bold}INSTALLING TERMINATOR. TERMINAL FOR VIRTUALMASHINE${reset}"
-sudo dnf install -yq terminator 
+sudo dnf install -y terminator 
 
 # Kitty - terminal for pc
 echo "${green}${bold}INSTALLING KITTY. TERMINAL FOR PC${reset}"
-sudo dnf install -yq kitty 
+sudo dnf install -y kitty 
 
 # Transsmision
 echo "${green}${bold}INSTALLING TRANSMISSION. TORRENT APP${reset}"
-sudo dnf install -yq transmission 
+sudo dnf install -y transmission 
 
 # Redshift
 echo "${green}${bold}INSTALLING REDSHIFT. ADJUST THE COLOR TEMPERATURE OF SCREEN${reset}"
-sudo dnf install -yq redshift-gtk 
+sudo dnf install -y redshift-gtk 
 
 # Kernel headers
 echo "${green}${bold}INSTALLING KERNEL HEADERS. IT'S TAKE A TIME. PLEASE WAIT!${reset}"
-sudo dnf install -yq "kernel-devel-$(uname -r)" 
-sudo dnf install -yq dkms 
+sudo dnf install -y "kernel-devel-$(uname -r)" 
+sudo dnf install -y dkms 
 
 # Virtualbox
 echo "${green}${bold}INSTALLING VIRTUALBOX${reset}"
-sudo dnf install -yq VirtualBox akmod-VirtualBox 
+sudo dnf install -y VirtualBox akmod-VirtualBox 
 sudo akmods 
 sudo systemctl restart vboxdrv  
 lsmod  | grep -i vbox 
@@ -224,7 +224,7 @@ rm getworkstation-linux
 
 # Virt-manager for KVM
 echo "${green}${bold}INSTALLING VIRT MANAGER FOR KVM${reset}"
-sudo dnf group install -yq --with-optional virtualization 
+sudo dnf group install -y --with-optional virtualization 
 sudo systemctl start libvirtd
 sudo systemctl enable libvirtd 
 sudo usermod -a -G libvirt $USER 
@@ -233,22 +233,22 @@ sudo usermod -a -G libvirt $USER
 echo "${green}${bold}INSTALLING TEAMVIEWER${reset}"
 cd ~/.gc
 wget -q https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm 
-sudo dnf -yq install ./teamviewer.x86_64.rpm 
+sudo dnf -y install ./teamviewer.x86_64.rpm 
 rm teamviewer.x86_64.rpm
 cd
 
 # Caprine - FB messenger
 echo "${green}${bold}INSTALLING CAPRINE. FACEBOOK MESSENGER APP${reset}"
-sudo dnf copr enable -yq dusansimic/caprine 
-sudo dnf upgrade -yq  
-sudo dnf install -yq caprine 
+sudo dnf copr enable -y dusansimic/caprine 
+sudo dnf upgrade -y  
+sudo dnf install -y caprine 
 
 # VSCode
 echo "${green}${bold}INSTALLING VSCODE. CODING APP FROM MICROSOFT${reset}"
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc 
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo' 
-sudo dnf -yq check-upgrade 
-sudo dnf install -yq code 
+sudo dnf -y check-upgrade 
+sudo dnf install -y code 
 
 # VSCode plugins
 echo "${green}${bold}INSTALLING VSCODE PLUGINS${reset}"
@@ -269,28 +269,28 @@ code --install-extension jonathanharty.gruvbox-material-icon-theme
 
 # Perl for fzf, Rust, Python pip
 echo "${green}${bold}INSTALLING PERL, RUST. POPULAR PROGRAMMING LANGUAGES IN LINUX. FOR APPS USED IN SYSTEM${reset}"
-sudo dnf install -yq perl 
-sudo dnf install -yq rust cargo 
+sudo dnf install -y perl 
+sudo dnf install -y rust cargo 
 
 # Python pip, meson
 echo "${green}${bold}INSTALLING PHP PIP, MESON, CMAKE, JQ. BUILD SYSTEM FOR APPS${reset}"
-sudo dnf install -yq python3-pip 
-sudo dnf install -yq meson 
-sudo dnf install -yq cmake 
-sudo dnf install -yq jq 
+sudo dnf install -y python3-pip 
+sudo dnf install -y meson 
+sudo dnf install -y cmake 
+sudo dnf install -y jq 
 
 # 7zip
 echo "${green}${bold}INSTALLING 7ZIP. ARCHIVE APP${reset}"
-sudo dnf install -yq p7zip p7zip-plugins 
+sudo dnf install -y p7zip p7zip-plugins 
 
 # Bluez for bluetooth 
 echo "${green}${bold}INSTALLING BLUEZ. BLUETOOTH PROTOCOL STACK FOR LINUX${reset}"
-sudo dnf -yq install bluez bluez-tools 
+sudo dnf -y install bluez bluez-tools 
 # bluetoothctl discoverable on 
 
 # Blueman for bluetooth applet
 echo "${green}${bold}INSTALLING BLUEMAN. BLUETOOTH APPLET${reset}"
-sudo dnf install -yq blueman 
+sudo dnf install -y blueman 
 
 # Bash aliases for user
 echo "${green}${bold}ADING BASH ALIASES FOR USER${reset}"
@@ -308,7 +308,7 @@ fi">> ~/.bashrc'
 
 # QT5 apps theme
 echo "${green}${bold}SET QT5 APPS THEME${reset}"
-sudo dnf install -yq qt5ct 
+sudo dnf install -y qt5ct 
 sudo bash -c 'echo "QT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment'
 
 # Papirus gtk icons for gruvbox 
@@ -324,8 +324,8 @@ cd
 
 # ZSH 
 echo "${green}${bold}INSTALLING ZSH. UNIX SHELL WITH NEW FUTURES${reset}"
-sudo dnf install -yq util-linux-user 
-sudo dnf install -yq sqlite zsh 
+sudo dnf install -y util-linux-user 
+sudo dnf install -y sqlite zsh 
 sudo chsh -s $(which zsh) $USER 
 
 # FZF
@@ -346,12 +346,12 @@ git clone --quiet https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:
 
 # Fonts 
 echo "${green}${bold}ADDING FONTS TO SYSTEM ${reset}"
-sudo dnf install -yq powerline-fonts 
-sudo dnf install -yq cabextract xorg-x11-font-utils 
+sudo dnf install -y powerline-fonts 
+sudo dnf install -y cabextract xorg-x11-font-utils 
 cd ~/.gc
 git clone --quiet https://github.com/pietryszak/fonts.git 
 cd fonts
-sudo dnf install -yq msttcore-fonts-installer-2.6-1.noarch.rpm 
+sudo dnf install -y msttcore-fonts-installer-2.6-1.noarch.rpm 
 mkdir -p ~/.local/share/fonts
 cp feather.ttf ~/.local/share/fonts
 cp iosevka_nerd_font.ttf ~/.local/share/fonts
@@ -367,54 +367,54 @@ git clone --quiet --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_C
 
 # i3-gaps
 echo "${green}${bold}INSTALLING I3-GAPS${reset}"
-sudo dnf install -yq libxcb-devel xcb-util-keysyms-devel xcb-util-devel xcb-util-wm-devel xcb-util-xrm-devel yajl-devel libXrandr-devel startup-notification-devel libev-devel xcb-util-cursor-devel libXinerama-devel libxkbcommon-devel libxkbcommon-x11-devel pcre-devel pango-devel git gcc automake asciidoc xmlto 
-sudo dnf install -yq i3status-config libconfuse perl-AnyEvent perl-AnyEvent-I3 perl-JSON-XS perl-Types-Serialiser perl-common-sense xorg-x11-fonts-misc dmenu i3lock i3status perl-Guard perl-Task-Weaken pulseaudio-utils 
-sudo dnf copr enable -yq fuhrmann/i3-gaps 
-sudo dnf install -yq i3-gaps 
+sudo dnf install -y libxcb-devel xcb-util-keysyms-devel xcb-util-devel xcb-util-wm-devel xcb-util-xrm-devel yajl-devel libXrandr-devel startup-notification-devel libev-devel xcb-util-cursor-devel libXinerama-devel libxkbcommon-devel libxkbcommon-x11-devel pcre-devel pango-devel git gcc automake asciidoc xmlto 
+sudo dnf install -y i3status-config libconfuse perl-AnyEvent perl-AnyEvent-I3 perl-JSON-XS perl-Types-Serialiser perl-common-sense xorg-x11-fonts-misc dmenu i3lock i3status perl-Guard perl-Task-Weaken pulseaudio-utils 
+sudo dnf copr enable -y fuhrmann/i3-gaps 
+sudo dnf install -y i3-gaps 
 
 # i3-wifi applet
 echo "${green}${bold}INSTALLING I3 WIFI APPLET${reset}"
-sudo dnf install -yq network-manager-applet 
+sudo dnf install -y network-manager-applet 
 
 # i3-volume applet
 echo "${green}${bold}INSTALLING I3 VOLUME APPLET${reset}"
-sudo dnf install -yq volumeicon 
+sudo dnf install -y volumeicon 
 
 # i3 screen saver extension for X 
 echo "${green}${bold}INSTALLING I3 SCREEN SAVER${reset}"
-sudo dnf install -yq xss-lock 
+sudo dnf install -y xss-lock 
 
 # Arandr -screen layout
 echo "${green}${bold}INSTALLING ARANDR. XRANDR GUI${reset}"
-sudo dnf install -yq arandr 
+sudo dnf install -y arandr 
 
 # Polybar - i3 statusbar
 echo "${green}${bold}INSTALLING POLYBAR. I3 BAR${reset}"
-sudo dnf install -yq polybar 
+sudo dnf install -y polybar 
 
 # Yad for polybar calendar
 echo "${green}${bold}INSTALLING I3 CALENDAR APPLET${reset}"
-sudo dnf install -yq yad 
+sudo dnf install -y yad 
 
 # Feh for i3 wallpapers
 echo "${green}${bold}INSTALLING I3 WALLPAPER APP${reset}"
-sudo dnf install -yq feh 
+sudo dnf install -y feh 
 
 # Rofi menu for i3
 echo "${green}${bold}INSTALLING ROFI. I3 MENU${reset}"
-sudo dnf install -yq rofi 
+sudo dnf install -y rofi 
 
 # Picom for 13  compositor for X
 echo "${green}${bold}INSTALLING PICOM. I3 WINDOWS COMPOSITOR${reset}"
-sudo dnf install -yq picom 
+sudo dnf install -y picom 
 
 # Dunst i3 notifications
 echo "${green}${bold}INSTALLING DUNST. I3 NOTIFICATIONS${reset}"
-sudo dnf install -yq dunst 
+sudo dnf install -y dunst 
 
 # Numlockx for i3 - numlock on at startup
 echo "${green}${bold}INSTALLING NUMLOCKX. NUMLOCK ON AT STARTUP OF SYSTEM${reset}"
-sudo dnf install -yq numlockx 
+sudo dnf install -y numlockx 
 
 # Polybar Spotify 
 echo "${green}${bold}INSTALLING POLYBAR SPOTIFY APPLET${reset}"
@@ -424,7 +424,7 @@ cd
 
 # Gnome-polkit - dispaly popup fot password for sudo 
 echo "${green}${bold}INSTALLING GNOME POLKIT. POPUP WITH PASSWORD OF SUDO${reset}"
-sudo dnf install -yq polkit-gnome 
+sudo dnf install -y polkit-gnome 
 
 # Zenkit
 echo "${green}${bold}INSTALLING ZENKIT. KANBAN APP${reset}"
@@ -436,18 +436,18 @@ cd
 
 # Dropbox
 echo "${green}${bold}INSTALLING DROPBOX${reset}"
-sudo dnf install -yq dropbox 
+sudo dnf install -y dropbox 
 
 # Vivaldi browser
 echo "${green}${bold}INSTALLING VIVALDI BROWSER${reset}"
 sudo dnf config-manager --add-repo https://repo.vivaldi.com/archive/vivaldi-fedora.repo  
-sudo dnf install -yq vivaldi-stable 
+sudo dnf install -y vivaldi-stable 
 
 ############ FLATPKACKS #####################
 
 # Flathub
 echo "${green}${bold}INSTALLING FLATHUB. FLATPAK SOFTWARE SHOP${reset}"
-sudo dnf install -yq flatpak
+sudo dnf install -y flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo 
 
 # Spotify
@@ -485,7 +485,7 @@ sudo flatpak override --env=GTK_THEME=Gruvbox-Material-Dark
 
 # Sensors
 echo "${green}${bold}INSTALLING SENSORS APP AND FINDING ALL SENSORS IN SYSEM. IT'S TAKE A TIME. PLEASE WAIT!${reset}"
-sudo dnf install -yq lm_sensors 
+sudo dnf install -y lm_sensors 
 yes | sudo sensors-detect 
 
 # My dotfiles
@@ -617,13 +617,13 @@ cd
 
 # Remove apps 
 echo "${green}${bold}REMOVE UNNECESSARY APPS${reset}"
-sudo dnf remove -yq gnome-terminal 
+sudo dnf remove -y gnome-terminal 
 
 # Last update
 echo "${green}${bold}UPDATE SYSTEM BEFORE RESTART${reset}"
 sudo dnf upgrade --refresh 
-sudo dnf upgrade -yq 
-sudo dnf autoremove -yq 
+sudo dnf upgrade -y 
+sudo dnf autoremove -y 
 
 # Sudo timeout back to default
 echo "${green}${bold}SET SUDO TIMEOUT TO DEFAULT${reset}"
