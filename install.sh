@@ -619,7 +619,7 @@ cd
 
 # Remove apps 
 echo "${green}${bold}REMOVE UNNECESSARY APPS${reset}"
-sudo dnf remove -y gnome-terminal 
+sudo dnf remove -y azote 
 
 # Last update
 echo "${green}${bold}UPDATE SYSTEM BEFORE RESTART${reset}"
