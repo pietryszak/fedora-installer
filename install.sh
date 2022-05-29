@@ -36,10 +36,6 @@ max_parallel_downloads=10
 defaultyes=True" >> /etc/dnf/dnf.conf'
 sudo sed -i 's/installonly_limit=3/installonly_limit=2/g' /etc/dnf/dnf.conf
 
-# Remove apps 
-echo "${green}${bold}REMOVE UNNECESSARY GNOME APPS${reset}"
-sudo dnf remove -y gnome-maps gnome-clocks gnome-weather gnome-contacts gnome-tour totem rhythmbox firefox 
-
 # Update system
 echo "${green}${bold}UPDATE SYSTEM. IT'S TAKE TIME. PLEASE WAIT!${reset}"
 sudo dnf -y upgrade 
@@ -323,6 +319,11 @@ echo "${green}${bold}ADDING ZSH PLUGINS${reset}"
 git clone --quiet https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting 
 git clone --quiet https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions 
 
+# Powerlevel10k zsh
+echo "${green}${bold}INSTALLING POWERLEVEL10K. ZSH THEME${reset}"
+cd ~/.gc
+git clone --quiet --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k 
+
 # Fonts 
 echo "${green}${bold}ADDING FONTS TO SYSTEM ${reset}"
 sudo dnf install -y powerline-fonts 
@@ -338,11 +339,6 @@ cp MesloLGS* ~/.local/share/fonts/
 cp weathericons-regular-webfont.ttf ~/.local/share/fonts
 fc-cache -fv >> ~/.gc/fedora-installer/install-log
 cd
-
-# Powerlevel10k zsh
-echo "${green}${bold}INSTALLING POWERLEVEL10K. ZSH THEME${reset}"
-cd ~/.gc
-git clone --quiet --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k 
 
 # i3-gaps
 echo "${green}${bold}INSTALLING I3-GAPS${reset}"
