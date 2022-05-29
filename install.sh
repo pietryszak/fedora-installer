@@ -14,11 +14,6 @@ green=`tput setaf 2`
 bold=`tput bold`
 reset=`tput sgr0`
 
-# GTK theme
-echo "${green}${bold}SETTING DARK GTK THEME${reset}"
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
-
 # Sudo timeout
 echo "${green}${bold}SETTING SUDO TIMEOUT FOR 60 MINUTES FOR THE INSTALLATION PURPOSES${reset}"
 sudo bash -c 'echo "
@@ -306,22 +301,6 @@ if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases
 fi">> ~/.bashrc'
 
-# QT5 apps theme
-echo "${green}${bold}SET QT5 APPS THEME${reset}"
-sudo dnf install -y qt5ct 
-sudo bash -c 'echo "QT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment'
-
-# Papirus gtk icons for gruvbox 
-echo "${green}${bold}SET GTK ICONS${reset}"
-cd ~/.gc
-sudo wget -qO- https://git.io/papirus-icon-theme-install | sh 
-
-# Papirus folders
-echo "${green}${bold}SET FOLDERS COLORS${reset}"
-wget -qO- https://git.io/papirus-folders-install | sh 
-papirus-folders -C brown --theme Papirus-Dark 
-cd
-
 # ZSH 
 echo "${green}${bold}INSTALLING ZSH. UNIX SHELL WITH NEW FUTURES${reset}"
 sudo dnf install -y util-linux-user 
@@ -482,6 +461,30 @@ cp -r themes/* ~/.themes
 cd
 sudo flatpak override --filesystem=$HOME/.themes
 sudo flatpak override --env=GTK_THEME=Gruvbox-Material-Dark
+
+# QT5 apps theme
+echo "${green}${bold}SET QT5 APPS THEME${reset}"
+sudo dnf install -y qt5ct 
+sudo bash -c 'echo "QT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment'
+sudo dnf install qt5-qtstyleplugins 
+echo "export QT_QPA_PLATFORMTHEME=gtk2" >> ~/.profile
+
+# Papirus gtk icons for gruvbox 
+echo "${green}${bold}SET GTK ICONS${reset}"
+cd ~/.gc
+sudo wget -qO- https://git.io/papirus-icon-theme-install | sh 
+
+# Papirus folders
+echo "${green}${bold}SET FOLDERS COLORS${reset}"
+wget -qO- https://git.io/papirus-folders-install | sh 
+papirus-folders -C brown --theme Papirus-Dark 
+cd
+
+# GTK theme
+echo "${green}${bold}SETTING DARK GTK THEME${reset}"
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.desktop.interface gtk-theme "Gruvbox-Material-Dark"
+
 
 # Sensors
 echo "${green}${bold}INSTALLING SENSORS APP AND FINDING ALL SENSORS IN SYSEM. IT'S TAKE A TIME. PLEASE WAIT!${reset}"
