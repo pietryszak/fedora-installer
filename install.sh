@@ -450,6 +450,7 @@ mkdir -p ~/.local/share/themes/
 cp -r themes/* ~/.local/share/themes/
 mkdir -p ~/.themes
 cp -r themes/* ~/.themes
+sudo cp -r themes/* /usr/share/themes/
 cd
 sudo flatpak override --filesystem=$HOME/.themes
 sudo flatpak override --env=GTK_THEME=Gruvbox-Material-Dark
@@ -589,9 +590,13 @@ mkdir ~/.scripts
 cp -r ~/.gc/dotfiles/update/* ~/.scripts
 chmod +x ~/.scripts/update.sh
 
+# Copy lightdm script to to proper folder
+sudo cp -r ~/.gc/dotfiles/lightdm/* /etc/lightdm/
+
 # Add Wallpapers
 cd ~/Pictures
 git clone https://github.com/pietryszak/wallpapers
+sudo cp ~/Pictures/wallpapers/caffe-gruvbox.png /usr/share/pixmaps/
 
 # My Vivaldi browser profile public
 echo "${green}${bold}COPY VIVALDI PROFILE WITH ADDONS AND THEME${reset}"
