@@ -423,15 +423,15 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 # Spotify
 echo "${green}${bold}INSTALLING SPOTIFY${reset}"
-flatpak install -y --noninteractive flathub com.spotify.Client 
+sudo sudo flatpak install -y --noninteractive flathub com.spotify.Client 
 
 # Github desktop
 echo "${green}${bold}INSTALLING GITHUB DESKTOP APP${reset}"
-flatpak install -y --noninteractive flathub io.github.shiftey.Desktop 
+sudo flatpak install -y --noninteractive flathub io.github.shiftey.Desktop 
 
 # Joplin
 echo "${green}${bold}INSTALLING JOPLIN. NOTING APP${reset}"
-flatpak install -y --noninteractive flathub net.cozic.joplin_desktop 
+sudo flatpak install -y --noninteractive flathub net.cozic.joplin_desktop 
 mkdir -p ~/.config/joplin-desktop/plugins
 cd ~/.config/joplin-desktop/plugins
 wget -q https://github.com/joplin/plugins/raw/master/plugins/ylc395.betterMarkdownViewer/plugin.jpl -O ylc395.betterMarkdownViewer.jpl  
