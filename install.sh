@@ -82,11 +82,6 @@ sudo dnf install -y ffmpeg
 echo "${green}${bold}INSTALLING MPV. VIDEO APP${reset}"
 sudo dnf install -y mpv 
 
-# Gnome extensions
-echo "${green}${bold}INSTALLING GNOME TWEAKS${reset}"
-sudo dnf install -y gnome-extensions-app 
-sudo dnf install -y gnome-tweaks 
- 
 # Neovim
 echo "${green}${bold}INSTALLING NEOVIM${reset}"
 sudo dnf install -y neovim python3-neovim 
