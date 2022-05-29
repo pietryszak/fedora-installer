@@ -459,7 +459,7 @@ echo "${green}${bold}SET QT5 APPS THEME${reset}"
 sudo dnf install -y qt5ct 
 sudo bash -c 'echo "QT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment'
 sudo dnf install -y qt5-qtstyleplugins 
-echo "export QT_QPA_PLATFORMTHEME=gtk2" >> ~/.profile
+#echo "export QT_QPA_PLATFORMTHEME=gtk2" >> ~/.profile
 
 # Papirus gtk icons for gruvbox 
 echo "${green}${bold}SET GTK ICONS${reset}"
