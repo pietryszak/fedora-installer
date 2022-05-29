@@ -589,6 +589,10 @@ mkdir ~/.scripts
 cp -r ~/.gc/dotfiles/update/* ~/.scripts
 chmod +x ~/.scripts/update.sh
 
+# Add Wallpapers
+cd ~/Pictures
+git clone https://github.com/pietryszak/wallpapers
+
 # My Vivaldi browser profile public
 echo "${green}${bold}COPY VIVALDI PROFILE WITH ADDONS AND THEME${reset}"
 cd ~/.gc/dotfiles
