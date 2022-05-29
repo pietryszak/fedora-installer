@@ -458,7 +458,7 @@ sudo flatpak override --env=GTK_THEME=Gruvbox-Material-Dark
 echo "${green}${bold}SET QT5 APPS THEME${reset}"
 sudo dnf install -y qt5ct 
 sudo bash -c 'echo "QT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment'
-sudo dnf install qt5-qtstyleplugins 
+sudo dnf install -y qt5-qtstyleplugins 
 echo "export QT_QPA_PLATFORMTHEME=gtk2" >> ~/.profile
 
 # Papirus gtk icons for gruvbox 
