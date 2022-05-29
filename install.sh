@@ -554,7 +554,7 @@ cp -r ~/.gc/dotfiles/bashrc/.bash_aliases ~/
 sudo cp -r ~/.gc/dotfiles/bashrc/.bash_aliases /root  
 
 # Copy qt5ct config to to proper folder
-cp -r ~/.gc/dotfiles/qt5ct ~/.configblank
+cp -r ~/.gc/dotfiles/qt5ct ~/.config
 
 # Copy gtk config to to proper folder
 cp ~/.gc/dotfiles/gtk/.gtkrc-2.0 ~
