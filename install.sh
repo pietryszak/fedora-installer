@@ -453,6 +453,7 @@ cp -r themes/* ~/.themes
 cd
 sudo flatpak override --filesystem=$HOME/.themes
 sudo flatpak override --env=GTK_THEME=Gruvbox-Material-Dark
+sudo bash -c 'echo "GTK_THEME=Gruvbox-Material-Dark" >> /etc/environment'
 
 # QT5 apps theme
 echo "${green}${bold}SET QT5 APPS THEME${reset}"
@@ -476,7 +477,6 @@ cd
 echo "${green}${bold}SETTING DARK GTK THEME${reset}"
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface gtk-theme "Gruvbox-Material-Dark"
-
 
 # Sensors
 echo "${green}${bold}INSTALLING SENSORS APP AND FINDING ALL SENSORS IN SYSEM. IT'S TAKE A TIME. PLEASE WAIT!${reset}"
