@@ -137,8 +137,8 @@ echo "${green}${bold}INSTALLING FLAMESHOT. SCREENSHOTS APP${reset}"
 sudo dnf install -y flameshot 
 
 # Libreoffice draw
-echo "${green}${bold}INSTALLING LIBREOFFICE DRAW FOR PDF EDITING${reset}"
-sudo dnf install -y libreoffice-draw 
+echo "${green}${bold}INSTALLING LIBREOFFICE${reset}"
+sudo dnf install -y libreoffice
 
 # ClamAV
 echo "${green}${bold}INSTALLING CLAMAV. BEST LINUX ANTIVIRUS${reset}"
