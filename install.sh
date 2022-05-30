@@ -202,6 +202,9 @@ echo "${green}${bold}ADDING VIRTUALBOX NAT AND HOST-ONLY NETWORKS${reset}"
 VBoxManage natnetwork add --netname NatNetwork --network "10.0.2.0/24" --enable 
 VBoxManage hostonlyif create 
 
+# Open-vm-tools for cooperate with vm
+sudo dnf install -y open-vm-tools
+
 # Vmware Workstation
 echo "${green}${bold}INSTALLING VMWARE WORKSTATION. IT'S TAKE A TIME. PLEASE WAIT!${reset}"
 cd ~/.gc

@@ -1,6 +1,3 @@
-# Install open-vm-tools
-sudo dnf install -y open-vm-tools
-
 # Replace polybar config for VmWare
 rm ~/.config/polybar/cuts/config.ini
 mv ~/.config/polybar/cuts/vmware-config.ini ~/.config/polybar/cuts/config.ini
