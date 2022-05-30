@@ -255,6 +255,9 @@ code --install-extension dlasagno.rasi
 code --install-extension dcasella.i3 
 code --install-extension jonathanharty.gruvbox-material-icon-theme 
 
+# Galcularor - calulator
+sudo dnf install -y galculator
+
 # Perl for fzf, Rust, Python pip
 echo "${green}${bold}INSTALLING PERL, RUST. POPULAR PROGRAMMING LANGUAGES IN LINUX. FOR APPS USED IN SYSTEM${reset}"
 sudo dnf install -y perl 
