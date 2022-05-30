@@ -481,8 +481,6 @@ wget -qO- https://git.io/papirus-folders-install | sh
 papirus-folders -C brown --theme Papirus-Dark 
 cd
 
-
-
 # GTK theme
 echo "${green}${bold}SETTING DARK GTK THEME${reset}"
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
