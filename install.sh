@@ -499,7 +499,7 @@ sudo wget -qO- https://git.io/papirus-icon-theme-install | sh
 # Papirus hardcoded icons
 sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:SmartFinn:hardcode-tray/Fedora_35/home:SmartFinn:hardcode-tray.repo -y
 sudo dnf install -y hardcode-tray
-sudo -E hardcode-tray --apply  --conversion-tool RSVGConvert --size 22 --theme Papirus
+sudo -E hardcode-tray --apply --conversion-tool RSVGConvert --size 22 --theme Papirus
 
 # Papirus folders
 echo "${green}${bold}SET FOLDERS COLORS${reset}"
