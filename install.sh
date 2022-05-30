@@ -566,7 +566,7 @@ cp ~/.gc/dotfiles/gtk/settings.ini ~/.config/gtk-3.0/
 
 # Copy arandr config to to proper folder
 mkdir ~/.screenlayout
-cp -r ~/.gc/dotfiles/screenlayout/* ~/.screenlayout
+cp -r ~/.gc/dotfiles/screenlayout/pc/* ~/.screenlayout
 chmod +x ~/.screenlayout/*
 
 # Copy shortcuts list to proper folder
