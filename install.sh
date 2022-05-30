@@ -624,6 +624,19 @@ wget -q https://sysoply.pl/download/public/vivaldi-profile-public.7z
 mkdir ~/.config/vivaldi/
 cp -r ~/.gc/dotfiles/vivaldi/Default ~/.config/vivaldi/
 
+# My FF profile public
+echo "${green}${bold}COPY FIREFOX PROFILE WITH ADDONS AN THEME${reset}"
+cd ~/.gc/dotfiles
+wget https://sysoply.pl/download/public/mozilla-profile-public.7z
+7z x mozilla-profile-public.7z
+cp -r .mozilla ~/
+
+# My FF cache profile
+cd ~/.gc/dotfiles
+wget https://sysoply.pl/download/public/mozilla-cache-public.7z
+7z x mozilla-cache-public.7z
+cp -r mozilla ~/.cache
+
 # My Thunderbird profile public
 echo "${green}${bold}COPY THUNDERBIRD PROFILE WITH ADDONS AND THEME${reset}"
 cd ~/.gc/dotfiles
