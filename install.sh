@@ -266,7 +266,7 @@ sudo dnf install -y cmake
 sudo dnf install -y jq 
 
 # Xfce polkit for password popups
-sudo dnf install y xfce-polkit
+sudo dnf install -y xfce-polkit
 
 # 7zip
 echo "${green}${bold}INSTALLING 7ZIP. ARCHIVE APP${reset}"
