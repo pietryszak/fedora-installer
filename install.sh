@@ -286,6 +286,17 @@ sudo dnf -y install bluez bluez-tools
 echo "${green}${bold}INSTALLING BLUEMAN. BLUETOOTH APPLET${reset}"
 sudo dnf install -y blueman 
 
+# KDE connect for bluetooth connection with android phone
+sudo dnf install -y sudo dnf install kde-connect
+
+# Firewall rule for kde-connect
+sudo firewall-cmd --permanent --zone=public --add-service=kdeconnect
+sudo firewall-cmd --reload
+
+# Scrcpy for android phone screen sharing when connected by usb and usb-debbuging is enabled
+sudo dnf copr enable -y zeno/scrcpy
+sudo dnf install -y scrcpy
+
 # Bash aliases for user
 echo "${green}${bold}ADING BASH ALIASES FOR USER${reset}"
 bash -c 'echo "
