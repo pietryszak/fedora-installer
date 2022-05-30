@@ -277,6 +277,10 @@ sudo dnf install -y xfce-polkit
 echo "${green}${bold}INSTALLING 7ZIP. ARCHIVE APP${reset}"
 sudo dnf install -y p7zip p7zip-plugins 
 
+# Thunar archive plugin
+echo "${green}${bold}INSTALLING THUNAR FILE MANAGER A ARCHIVE PLUGIN${reset}"
+sudo dnf install -y thunar-archive-plugin file-roller
+
 # Bluez for bluetooth 
 echo "${green}${bold}INSTALLING BLUEZ. BLUETOOTH PROTOCOL STACK FOR LINUX${reset}"
 sudo dnf -y install bluez bluez-tools 
@@ -483,7 +487,6 @@ echo "${green}${bold}SET QT5 APPS THEME${reset}"
 sudo dnf install -y qt5ct 
 sudo bash -c 'echo "QT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment'
 sudo dnf install -y qt5-qtstyleplugins 
-#echo "export QT_QPA_PLATFORMTHEME=gtk2" >> ~/.profile
 
 # Papirus gtk icons for gruvbox 
 echo "${green}${bold}SET GTK ICONS${reset}"
