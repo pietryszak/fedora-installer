@@ -265,6 +265,9 @@ sudo dnf install -y meson
 sudo dnf install -y cmake 
 sudo dnf install -y jq 
 
+# Xfce polkit for password popups
+sudo dnf install y xfce-polkit
+
 # 7zip
 echo "${green}${bold}INSTALLING 7ZIP. ARCHIVE APP${reset}"
 sudo dnf install -y p7zip p7zip-plugins 
