@@ -471,11 +471,17 @@ echo "${green}${bold}SET GTK ICONS${reset}"
 cd ~/.gc
 sudo wget -qO- https://git.io/papirus-icon-theme-install | sh 
 
+# Papirus hardcoded icons
+sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:SmartFinn:hardcode-tray/Fedora_35/home:SmartFinn:hardcode-tray.repo -y
+sudo dnf install -y hardcode-tray
+
 # Papirus folders
 echo "${green}${bold}SET FOLDERS COLORS${reset}"
 wget -qO- https://git.io/papirus-folders-install | sh 
 papirus-folders -C brown --theme Papirus-Dark 
 cd
+
+
 
 # GTK theme
 echo "${green}${bold}SETTING DARK GTK THEME${reset}"
