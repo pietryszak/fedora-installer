@@ -420,7 +420,10 @@ sudo dnf install -y dropbox
 # Vivaldi browser
 echo "${green}${bold}INSTALLING VIVALDI BROWSER${reset}"
 sudo dnf config-manager --add-repo https://repo.vivaldi.com/archive/vivaldi-fedora.repo  
-sudo dnf install -y vivaldi-stable 
+sudo dnf install -y vivaldi-stable
+
+# Firefox as second browser
+sudo dnf install -y firefox
 
 ############ FLATPKACKS #####################
 
