@@ -307,6 +307,14 @@ sudo dnf install -y scrcpy
 # Playerctl for control media with keyboard
 sudo dnf install -y playerctl
 
+# Microsoft Teams
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+
+sudo sh -c 'echo -e "[teams]\nname=teams\nbaseurl=https://packages.microsoft.com/yumrepos/ms-teams\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/teams.repo'
+
+sudo dnf check-update
+sudo dnf -y install teams
+
 # Bash aliases for user
 echo "${green}${bold}ADING BASH ALIASES FOR USER${reset}"
 bash -c 'echo "
