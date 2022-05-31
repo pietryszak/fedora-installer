@@ -440,6 +440,9 @@ sudo dnf install -y vivaldi-stable
 # Firefox as second browser
 sudo dnf install -y firefox
 
+# Solaar logitch devices control app
+sudo dnf install -y solaar
+
 ############ FLATPKACKS #####################
 
 # Flathub
