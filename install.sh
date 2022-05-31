@@ -641,6 +641,9 @@ wget -q https://sysoply.pl/download/public/vivaldi-profile-public.7z
 mkdir ~/.config/vivaldi/
 cp -r ~/.gc/dotfiles/vivaldi/Default ~/.config/vivaldi/
 
+# Copy vivaldi speeddial icons to to proper folder
+cp -r ~/.gc/dotfiles/vivaldi-icons ~/Pictures
+
 # My FF profile public
 echo "${green}${bold}COPY FIREFOX PROFILE WITH ADDONS AN THEME${reset}"
 cd ~/.gc/dotfiles
