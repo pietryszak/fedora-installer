@@ -228,12 +228,6 @@ sudo dnf -y install ./teamviewer.x86_64.rpm
 rm teamviewer.x86_64.rpm
 cd
 
-# Caprine - FB messenger
-echo "${green}${bold}INSTALLING CAPRINE. FACEBOOK MESSENGER APP${reset}"
-sudo dnf copr enable -y dusansimic/caprine 
-sudo dnf upgrade -y  
-sudo dnf install -y caprine 
-
 # VSCode
 echo "${green}${bold}INSTALLING VSCODE. CODING APP FROM MICROSOFT${reset}"
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc 
@@ -452,6 +446,9 @@ sudo dnf install -y firefox
 echo "${green}${bold}INSTALLING FLATHUB. FLATPAK SOFTWARE SHOP${reset}"
 sudo dnf install -y flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo 
+
+# Ferdi messenging app
+sudo flatpak install -y flathub com.getferdi.Ferdi
 
 # Spotify
 echo "${green}${bold}INSTALLING SPOTIFY${reset}"
