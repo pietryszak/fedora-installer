@@ -135,6 +135,7 @@ sudo dnf install -y gimp
 # Flameshot
 echo "${green}${bold}INSTALLING FLAMESHOT. SCREENSHOTS APP${reset}"
 sudo dnf install -y flameshot 
+mkdir ~/Pictures/screenshots
 
 # Libreoffice draw
 echo "${green}${bold}INSTALLING LIBREOFFICE${reset}"
