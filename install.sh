@@ -304,6 +304,9 @@ sudo firewall-cmd --reload
 sudo dnf copr enable -y zeno/scrcpy
 sudo dnf install -y scrcpy
 
+# Playerctl for control media with keyboard
+sudo dnf install -y playerctl
+
 # Bash aliases for user
 echo "${green}${bold}ADING BASH ALIASES FOR USER${reset}"
 bash -c 'echo "
