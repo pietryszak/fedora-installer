@@ -8,5 +8,5 @@ mv ~/.gc/dotfiles/i3/scripts/vmware-workspaces ~/.config/i3/scripts/workspaces
 
 # Replace screen layout
 rm -rf ~/.screenlayout/*
-cp -r ~/.screenlayout/ ~/.gc/dotfiles/screenlayout/vmware.sh
+cp -r ~/.gc/dotfiles/screenlayout/vmware.sh ~/.screenlayout/
 chmod +x ~/.screenlayout/*
