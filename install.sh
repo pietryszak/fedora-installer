@@ -553,9 +553,6 @@ chmod +x ~/.config/VirtualBox/update.sh
 mkdir ~/.vmware
 cp -r ~/.gc/dotfiles/vmware/preferences ~/.vmware
 
-# Copy Caprine config to proper folder
-cp -r ~/.gc/dotfiles/Caprine ~/.config
-
 # Copy zsh sripts to proper folder
 cp -r ~/.gc/dotfiles/zsh/scripts/* ~/.oh-my-zsh/custom
 
@@ -604,7 +601,6 @@ cp -r ~/.gc/dotfiles/shortcuts ~/.config
 # Copy i3 config to to proper folder
 cp -r ~/.gc/dotfiles/i3 ~/.config
 rm ~/.config/i3/scripts/vmware-workspaces
-rm ~/.config/i3/scripts/virtualbox-workspaces
 
 # Copy polybar config to to proper folder
 cp -r ~/.gc/dotfiles/polybar ~/.config
