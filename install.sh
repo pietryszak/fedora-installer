@@ -528,6 +528,7 @@ git clone --quiet https://github.com/pietryszak/dotfiles.git
 cd
 
 # Copy libreoffice config to to proper folde
+mkdir -p ~/.config/libreoffice/4/user
 cp -r ~/.gc/dotfiles/libreoffice/* ~/.config/libreoffice/4/user/
 
 # Copy bat  config to proper folder
@@ -588,6 +589,7 @@ cp -r ~/.gc/dotfiles/qt5ct ~/.config
 
 # Copy gtk config to to proper folder
 cp ~/.gc/dotfiles/gtk/.gtkrc-2.0 ~
+mkdir ~/.config/gtk-3.0/
 cp ~/.gc/dotfiles/gtk/settings.ini ~/.config/gtk-3.0/
 
 # Copy arandr config to to proper folder
