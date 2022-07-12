@@ -10,3 +10,4 @@ mv ~/.gc/dotfiles/i3/scripts/vmware-workspaces ~/.config/i3/scripts/workspaces
 rm -rf ~/.screenlayout/*
 cp -r ~/.gc/dotfiles/screenlayout/vmware.sh ~/.screenlayout/
 chmod +x ~/.screenlayout/*
+sudo reboot
