@@ -4,14 +4,6 @@
 sudo dnf install git -y && mkdir ~/.gc && cd ~/.gc && git clone --quiet https://github.com/pietryszak/fedora-installer.git && cd fedora-installer && chmod +x install.sh && ./install.sh 
 ```
 
-### If You install inside VmWare use vm-vmware-install.sh after script above
-It's a mandatory because vm mashines need another polybar config.
-```bash
-cd ~/.gc && cd fedora-installer && chmod +x vm-vmware-install.sh && ./vm-vmware-install.sh
-```
-
----
-
 ### After installation you can add/remove extra futures:
 * Dropbox
 
