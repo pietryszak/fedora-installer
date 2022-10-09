@@ -1,4 +1,4 @@
-### After installation of Fedora run script in teminal
+### After installation of Fedora i3 spin https://spins.fedoraproject.org/en/i3/ run script in teminal
 
 ```bash
 sudo dnf install git -y && mkdir ~/.gc && cd ~/.gc && git clone --quiet https://github.com/pietryszak/fedora-installer.git && cd fedora-installer && chmod +x install.sh && ./install.sh 
