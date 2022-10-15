@@ -5,8 +5,6 @@
 # Fedora i3-gaps installer sysoply.pl Paweł Pietryszak 2021
 
 ############################################################################################################################################
-touch ~/.gc/fedora-installer/install-log
-touch ~/.gc/fedora-installer/warnings-log
 
 # Echo colors
 magenta=`tput setaf 5`
@@ -137,7 +135,7 @@ echo "${green}${bold}INSTALLING FLAMESHOT. SCREENSHOTS APP${reset}"
 sudo dnf install -y flameshot 
 mkdir ~/Pictures/screenshots
 
-# Libreoffice draw
+# Libreoffice
 echo "${green}${bold}INSTALLING LIBREOFFICE${reset}"
 sudo dnf install -y libreoffice
 
@@ -227,20 +225,49 @@ sudo dnf install -y code
 
 # VSCode plugins
 echo "${green}${bold}INSTALLING VSCODE PLUGINS${reset}"
+# AI-assisted development etension
 code --install-extension visualstudioexptteam.vscodeintellicode 
-code --install-extension ms-python.python 
-code --install-extension esbenp.prettier-vscode 
+
+# Code formatter 
+code --install-extension esbenp.prettier-vscode
+
+# Python extension
+code --install-extension ms-python.python  
+
+# Ansible extensions
 code --install-extension redhat.vscode-xml 
 code --install-extension redhat.vscode-yaml 
+
+# Docker extension
 code --install-extension ms-azuretools.vscode-docker 
-code --install-extension xadillax.viml 
-code --install-extension jdinhlife.gruvbox 
-code --install-extension naumovs.color-highlight 
-code --install-extension nico-castell.linux-desktop-file 
-code --install-extension xadillax.viml 
-code --install-extension dlasagno.rasi 
-code --install-extension dcasella.i3 
-code --install-extension jonathanharty.gruvbox-material-icon-theme 
+
+# Git extension
+code --install-extension eamodio.gitlens
+
+# Bookmarks extension    
+code --install-extension alefragnani.Bookmarks
+
+# Terraform extension
+code --install-extension hashicorp.terraform
+
+# Vim Script language extension
+code --install-extension xadillax.viml
+
+# Highlight web colors extension
+code --install-extension naumovs.color-highlight
+
+# Support for .desktop files extension
+code --install-extension nico-castell.linux-desktop-file
+
+# Rofi theme language support extension
+code --install-extension dlasagno.rasi
+
+# Syntax definition for the i3wm configuration file extension
+code --install-extension dcasella.i3
+
+# Themes
+code --install-extension sainnhe.gruvbox-material
+code --install-extension jonathanharty.gruvbox-material-icon-theme
 
 # Galcularor - calulator
 sudo dnf install -y galculator
@@ -410,14 +437,6 @@ cd
 echo "${green}${bold}INSTALLING GNOME POLKIT. POPUP WITH PASSWORD OF SUDO${reset}"
 sudo dnf install -y polkit-gnome 
 
-# Zenkit
-echo "${green}${bold}INSTALLING ZENKIT. KANBAN APP${reset}"
-cd ~/.gc
-wget -q https://static.zenkit.com/downloads/desktop-apps/base/zenkit-base-linux.rpm 
-sudo rpm -i zenkit-base-linux.rpm 
-rm zenkit-base-linux.rpm
-cd
-
 # Dropbox
 echo "${green}${bold}INSTALLING DROPBOX${reset}"
 sudo dnf install -y dropbox 
@@ -430,7 +449,7 @@ sudo dnf install -y vivaldi-stable
 # Firefox as second browser
 sudo dnf install -y firefox
 
-# Solaar logitch devices control app
+# Solaar logitech devices control app
 sudo dnf install -y solaar
 
 ############ FLATPKACKS #####################
@@ -441,7 +460,7 @@ sudo dnf install -y flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo 
 
 # Ferdi messenging app
-sudo flatpak install -y flathub com.getferdi.Ferdi
+sudo sudo flatpak install -y --noninteractive flathub com.getferdi.Ferdi
 
 # Spotify
 echo "${green}${bold}INSTALLING SPOTIFY${reset}"
@@ -450,6 +469,9 @@ sudo sudo flatpak install -y --noninteractive flathub com.spotify.Client
 # Github desktop
 echo "${green}${bold}INSTALLING GITHUB DESKTOP APP${reset}"
 sudo flatpak install -y --noninteractive flathub io.github.shiftey.Desktop 
+
+# Tick Tick 
+sudo sudo flatpak install -y --noninteractive flathub com.ticktick.TickTick
 
 # Joplin
 echo "${green}${bold}INSTALLING JOPLIN. NOTING APP${reset}"
@@ -516,11 +538,7 @@ cd ~/.gc
 git clone --quiet https://github.com/pietryszak/dotfiles.git 
 cd
 
-# Copy libreoffice config to to proper folde
-mkdir -p ~/.config/libreoffice/4/user
-cp -r ~/.gc/dotfiles/libreoffice/* ~/.config/libreoffice/4/user/
-
-# Copy bat  config to proper folder
+# Copy bat config to proper folder
 cp -r ~/.gc/dotfiles/bat ~/.config
 
 # Copy Code config to proper folder
@@ -560,7 +578,7 @@ cp -r ~/.gc/dotfiles/teamviewer/ ~/.config
 # Copy Redshift config to proper folder
 cp -r ~/.gc/dotfiles/redshift/ ~/.config
 
-# Copy Redshift config to proper folder
+# Copy Joplin config to proper folder
 cp -r ~/.gc/dotfiles/joplin/* ~/.config/joplin-desktop
 
 # Copy bash_aliases to user folder
