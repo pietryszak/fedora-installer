@@ -539,10 +539,6 @@ cp -r ~/.gc/dotfiles/nvim ~/.config
 cp -r ~/.gc/dotfiles/VirtualBox ~/.config
 chmod +x ~/.config/VirtualBox/update.sh
 
-# Copy VmWare config to proper folder
-mkdir ~/.vmware
-cp -r ~/.gc/dotfiles/vmware/preferences ~/.vmware
-
 # Copy zsh sripts to proper folder
 cp -r ~/.gc/dotfiles/zsh/scripts/* ~/.oh-my-zsh/custom
 
@@ -622,45 +618,8 @@ cd ~/Pictures
 git clone https://github.com/pietryszak/wallpapers
 sudo cp ~/Pictures/wallpapers/caffe-gruvbox.png /usr/share/pixmaps/
 
-# My Vivaldi browser profile public
-echo "${green}${bold}COPY VIVALDI PROFILE WITH ADDONS AND THEME${reset}"
-cd ~/.gc/dotfiles
-mkdir vivaldi
-cd vivaldi
-wget -q https://sysoply.pl/download/public/vivaldi-profile-public.7z 
-7z x vivaldi-profile-public.7z 
-mkdir ~/.config/vivaldi/
-cp -r ~/.gc/dotfiles/vivaldi/Default ~/.config/vivaldi/
-
 # Copy vivaldi speeddial icons to to proper folder
 cp -r ~/.gc/dotfiles/vivaldi-icons ~/Pictures
-
-# My FF profile public
-echo "${green}${bold}COPY FIREFOX PROFILE WITH ADDONS AN THEME${reset}"
-cd ~/.gc/dotfiles
-wget https://sysoply.pl/download/public/mozilla-profile-public.7z
-7z x mozilla-profile-public.7z
-cp -r .mozilla ~/
-
-# My FF cache profile
-cd ~/.gc/dotfiles
-wget https://sysoply.pl/download/public/mozilla-cache-public.7z
-7z x mozilla-cache-public.7z
-cp -r mozilla ~/.cache
-
-# My Thunderbird profile public
-echo "${green}${bold}COPY THUNDERBIRD PROFILE WITH ADDONS AND THEME${reset}"
-cd ~/.gc/dotfiles
-wget -q https://sysoply.pl/download/public/thunderbird-profile-public.7z 
-7z x thunderbird-profile-public.7z 
-cp -r .thunderbird ~/
-
-# My Thunderbird cache public
-cd ~/.gc/dotfiles
-wget -q https://sysoply.pl/download/public/thunderbird-cache-public.7z 
-7z x thunderbird-cache-public.7z 
-cp -r thunderbird ~/.cache
-cd
 
 # Remove apps 
 echo "${green}${bold}REMOVE UNNECESSARY APPS${reset}"
