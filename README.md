@@ -32,7 +32,7 @@ redshift -l $(curl -s "https://location.services.mozilla.com/v1/geolocate?key=ge
 To add yours location to Redshift use this script:
 ```bash
 sed -i -e '/lat/s/52.23/FIRST VALUE OF SCRIPT/' ~/.config/redshift/redshift.conf
-sed -i -e '/lat/s/21.00/SECOND VALUE OF SCRIPT/' ~/.config/redshift/redshift.conf
+sed -i -e '/lon/s/21.00/SECOND VALUE OF SCRIPT/' ~/.config/redshift/redshift.conf
 ```
 
 *  OpenWeader in Polybar 
