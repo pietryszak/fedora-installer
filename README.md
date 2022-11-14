@@ -1,3 +1,12 @@
+Project status
+:warning: :warning: :warning:
+
+Project has been archived. I don't use Fedora anymore. No updates, fixes provided at future.
+
+#
+#
+#
+
 ### After installation of Fedora i3 spin https://spins.fedoraproject.org/en/i3/ run script in teminal
 
 ```bash
