@@ -1,7 +1,7 @@
 Project status
 :warning: :warning: :warning:
 
-Project has been archived. I don't use Fedora anymore. No updates, fixes provided at future.
+The project has been archived. I don't use Fedora anymore. No updates, fixes provided at future.
 
 #
 #
